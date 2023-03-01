@@ -27,7 +27,7 @@ class StoreRestaurantRequest extends FormRequest
             'name'=>'required|min:5|max:255',
             'vat'=>'required|string',
             'address'=>'required',
-            'image' => 'image'|'nullable',
+            'image' => 'image|nullable',
         ];
     }
     public function messages(){
@@ -35,6 +35,7 @@ class StoreRestaurantRequest extends FormRequest
             "name.required" => "Il titolo è obbligatorio",
             "name.min" =>  "Il titolo deve avere almeno :min caratteri",
             "name.max" =>  "Il titolo deve avere massimo :max caratteri",
+            'address.required' => 'inserisci un indirizzo valido',
             "vat.required" => "Inserire la P. IVA",
             "image.image" =>"Il file che hai inserito non è un immagine",
         ];
