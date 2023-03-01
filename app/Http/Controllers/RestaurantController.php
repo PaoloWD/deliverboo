@@ -39,7 +39,7 @@ class RestaurantController extends Controller
 
         $restaurants = Restaurant::all();
 
-        return view("admin.create", compact('categories', 'restaurants'));
+        return view("restaurants.create", compact('categories', 'restaurants'));
     }
 
     /**
@@ -52,16 +52,15 @@ class RestaurantController extends Controller
     {
         // validated() usa le regole indicate nella funzione rules dello StorePostRequest e ci ritorna i dati validati
         $data = $request->validated();
+        $restaurant = Restaurant::create($data);
 
         // Salviamo il file nello storage e recuperiamo il path
         // carico il file solo se ne ricevo uno
         if (key_exists("image", $data)) {
             // salvo in una variabile temporanea il percorso del nuovo file
             $path = Storage::put("restaurants", $data["image"]);
+            $restaurant->image = $path;
         }
-
-        $restaurant = Restaurant::create($data);
-        $restaurant->image = $path;
         $restaurant->save();
 
         // Controlla che nei dati che il server sta ricevendo, ci sia un valore per la chiave "categories".
@@ -70,7 +69,7 @@ class RestaurantController extends Controller
             $restaurant->categories()->attach($data["categories"]);
         }
 
-        return redirect()->route('projects.show', $restaurant->id);
+        return redirect()->route('dashboard', $restaurant->id);
     }
 
     /**
