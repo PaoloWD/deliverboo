@@ -2,7 +2,17 @@
 
 @section('content')
     <div class="container py-5">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+        I dati inseriti non sono validi:
 
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        </div>
+    @endif
 
         <h1>CREATE NEW RESTAURANT</h1>
 
@@ -27,6 +37,8 @@
                 </div> --}}
                 @enderror
             </div>
+
+            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
 
 
             {{-- address-input --}}

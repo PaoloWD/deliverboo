@@ -53,6 +53,7 @@ class RestaurantController extends Controller
     public function store(StoreRestaurantRequest $request)
     {
         // validated() usa le regole indicate nella funzione rules dello StorePostRequest e ci ritorna i dati validati
+        $user = Auth::user();
         $data = $request->validated();
         $restaurant = Restaurant::create($data);
 
@@ -63,7 +64,8 @@ class RestaurantController extends Controller
             $path = Storage::put("restaurants", $data["image"]);
             $restaurant->image = $path;
         }
-        $restaurant->user_id = Auth::user()->id;
+        /* $restaurant->user_id = Auth::user()->id; */
+        $restaurant->user_id = $user->id;
         $restaurant->save();
 
         // Controlla che nei dati che il server sta ricevendo, ci sia un valore per la chiave "categories".

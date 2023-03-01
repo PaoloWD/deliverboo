@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreRestaurantRequest extends FormRequest
 {
@@ -28,7 +30,13 @@ class StoreRestaurantRequest extends FormRequest
             'vat'=>'required|string',
             'address'=>'required',
             'image' => 'image|nullable',
-            "categories" => "nullable|array|exists:categories,id"
+            "categories" => "nullable|array|exists:categories,id",
+            'user_id' => [
+                'required',
+                Rule::unique('restaurants')->where(function ($query) {
+                    return $query->where('user_id', $this->user()->id);
+                }),
+            ],
         ];
     }
     public function messages(){
@@ -39,6 +47,7 @@ class StoreRestaurantRequest extends FormRequest
             'address.required' => 'inserisci un indirizzo valido',
             "vat.required" => "Inserire la P. IVA",
             "image.image" =>"Il file che hai inserito non è un immagine",
+            'user_id.unique' => 'Hai già creato un ristorante.',
         ];
     }
 }
