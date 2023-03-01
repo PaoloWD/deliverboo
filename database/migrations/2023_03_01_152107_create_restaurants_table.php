@@ -21,6 +21,14 @@ return new class extends Migration
             $table->string('address');
             $table->timestamps();
         });
+
+        Schema::table('dishes', function (Blueprint $table) {
+            $table->unsignedBigInteger("restaurant_id")->nullable();
+            $table->foreign("restaurant_id")
+                ->references("id")
+                ->on("restaurants");
+        });
+
     }
 
     /**
