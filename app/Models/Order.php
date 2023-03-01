@@ -9,4 +9,7 @@ class Order extends Model
 {
     use HasFactory;
     protected $fillable = ['status', 'total_order', 'order_time', 'order_date', 'customer_name', 'customer_address', 'customer_phone'];
+    public function dishes() {
+        return $this->belongsToMany(Dish::class);
+    }
 }
