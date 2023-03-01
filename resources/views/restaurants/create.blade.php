@@ -4,14 +4,14 @@
     <div class="container py-5">
         
 
-        <h1>CREATE NEW PROJECT</h1>
+        <h1>CREATE NEW RESTAURANT</h1>
 
-        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('restaurants.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         {{-- name-input --}}
         <div class="mb-3">
-            <label class="form-label">Name Project</label>
+            <label class="form-label">Name</label>
             <input type="text" 
             class="form-control @error('name') is-invalid @elseif(old('name')) is-valid  @enderror"
             value="{{ $errors->has('name') ? '' : old('name') }}"
@@ -29,55 +29,74 @@
             @enderror
         </div>
 
-        {{-- type -input --}}
+
+        {{-- address-input --}}
         <div class="mb-3">
-          <label class="form-label">Typology</label>
-          <select class="form-select" name="type_id">
-            @foreach ($types as $type )
-              <option value="{{$type->id}}">{{$type->name}}</option>
-            @endforeach
-          </select>
+            <label class="form-label">Address</label>
+            <input type="text" 
+            class="form-control @error('address') is-invalid @elseif(old('address')) is-valid  @enderror"
+            value="{{ $errors->has('address') ? '' : old('address') }}"
+            name="address">
+            
+            @error('address')
+                <div class="invalid-feedback">
+                {{ $message }}
+                </div>
+            {{-- @elseif(old('address'))
+                valid-feedback
+                <div class="valid-feedback">
+                Ottimo lavoro!
+                </div> --}}
+            @enderror
         </div>
 
-        {{-- description-input --}}
+
+        {{-- vat-input --}}
         <div class="mb-3">
-            <label class="form-label">Description</label>
-            <textarea cols="30" rows="5" 
-             name="description"
-             class="form-control @error('description') is-invalid @enderror">{{old('description')}}</textarea>
+            <label class="form-label">Vat-code</label>
+            <input type="text" 
+            class="form-control @error('vat') is-invalid @elseif(old('vat')) is-valid  @enderror"
+            value="{{ $errors->has('vat') ? '' : old('vat') }}"
+            name="vat">
+            
+            @error('vat')
+                <div class="invalid-feedback">
+                {{ $message }}
+                </div>
+            {{-- @elseif(old('vat'))
+                valid-feedback
+                <div class="valid-feedback">
+                Ottimo lavoro!
+                </div> --}}
+            @enderror
         </div>
 
-        {{-- cover_img input --}}
+        {{-- image input --}}
         <div class="mb-3">
             <label class="form-label">Cover Image</label>
-            <input type="file" class="form-control  @error('cover_img') is-invalid @enderror" name="cover_img">
-            {{-- @error('cover_img')
+            <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image">
+            {{-- @error('image')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
             @enderror --}}
           </div>
           
-          {{-- completed input --}}
-          <div class="mb-3 form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="switch_public" name="public"
-              {{ old('public', 1) ? 'checked' : '' }} value="1">
-            <label class="form-check-label" for="switch_public">Completed</label>
-          </div>
+  
 
-          {{-- technologies input --}}
+          {{-- categories input --}}
           {{-- @dd($technologies) --}}
           <div class="py-3">
-            <div class="py-2">Technologies:</div>
-            @foreach ($technologies as $technology)
+            <div class="py-2">Categories:</div>
+            @foreach ($categories as $category)
               <div class="form-check">
-                <input class="form-check-input @error('technologies') is-invalid @enderror"
-                type="checkbox" value="{{$technology->id}}" id="technology_{{$loop->index}}"
-                name="technologies[]"   {{ in_array( $technology->id, old('technologies', [])) ? 'checked' : '' }} >
-                <label class="form-check-label" for="technology_{{$loop->index}}">
-                  {{$technology->name}}
+                <input class="form-check-input @error('categories') is-invalid @enderror"
+                type="checkbox" value="{{$category->id}}" id="category_{{$loop->index}}"
+                name="categories[]"   {{ in_array( $category->id, old('categories', [])) ? 'checked' : '' }} >
+                <label class="form-check-label" for="category_{{$loop->index}}">
+                  {{$category->name}}
                 </label>
-                @error('technologies')
+                @error('categories')
                   <div class="invalid-feedback">
                     {{$message}}
                   </div>
@@ -87,23 +106,9 @@
             @endforeach
           </div>
           
-
-          {{-- github_link --}}
-          <div class="mb-3">
-            <label class="form-label">GitHub Link</label>
-            <input type="url" 
-            class="form-control @error('github_link') is-invalid @elseif(old('github_link')) is-valid  @enderror"
-            name="{{ $errors->has('github_link') ? '' : old('github_link') }}">
-            
-            @error('github_link')
-                <div class="invalid-feedback">
-                {{ $message }}
-                </div>
-            @enderror
-        </div>
       
         <button type="submite" class="btn btn-primary">Save</button>
-
-        <a class="btn btn-warning" href="{{route('admin.projects.index')}}">Return To Projects</a>
+{{-- 
+        <a class="btn btn-warning" href="{{route('admin.projects.index')}}">Return To Projects</a> --}}
     </div>
 @endsection
