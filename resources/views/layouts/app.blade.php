@@ -24,10 +24,10 @@
     <div id="app">
 
 
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm ">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo fs-2 fw-bold">
+                    <div class="logo fs-2 fw-bold d-flex align-items-center text-success">
                         <i class="fa-solid fa-bowl-food px-2"></i>
                         DeliverBoo
                     </div>
@@ -42,7 +42,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ms-auto pe-5">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
+                            <a class="nav-link text-success" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
                     </ul>
 
@@ -51,11 +51,11 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link text-success" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link text-success" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
                         @else
