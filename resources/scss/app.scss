@@ -29,4 +29,25 @@
         }
     
     }
+}; 
+
+.bg-dashboard{
+
+    height: calc(100vh - 70px);
+    background-image: url('https://bcdairy.ca/wp-content/uploads/2021/08/Variety_Image_747px.jpg');
+    background-position: bottom, center;
+    background-size: cover;
+    background-repeat: no-repeat;
+};
+
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5%;
+    padding: 64px 16px;
+    opacity: 0.8;
 }
+
