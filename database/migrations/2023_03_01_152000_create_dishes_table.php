@@ -13,23 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('restaurants', function (Blueprint $table) {
+        Schema::create('dishes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('image')->nullable();
-            $table->string('vat');
-            $table->string('address');
+            $table->string('description');
+            $table->string('ingredients');
+            $table->float('price', 6, 2);
+            $table->boolean('visibility');
             $table->timestamps();
         });
 
-        Schema::table('dishes', function (Blueprint $table) {
-            $table->unsignedBigInteger("restaurant_id")->nullable();
-            $table->foreign("restaurant_id")
-                ->references("id")
-                ->on("restaurants");
-        });
-
+        
     }
+
+    
 
     /**
      * Reverse the migrations.
@@ -38,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('restaurants');
+        Schema::dropIfExists('dishes');
     }
 };

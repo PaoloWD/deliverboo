@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category_restaurant', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedBigInteger("category_id");
-            $table->foreign("category_id")->references("id")->on("categories");
-
-            $table->unsignedBigInteger("restaurant_id");
-            $table->foreign("restaurant_id")->references("id")->on("restaurants");
-
+            $table->string('status');
+            $table->integer('total_order');
+            $table->date('order_time');
+            $table->date('order_date');
+            $table->string('customer_name');
+            $table->string('customer_address');
+            $table->string('customer_phone');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_restaurant');
+        Schema::dropIfExists('orders');
     }
 };
