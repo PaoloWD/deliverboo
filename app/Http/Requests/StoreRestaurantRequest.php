@@ -28,6 +28,7 @@ class StoreRestaurantRequest extends FormRequest
             'vat'=>'required|string',
             'address'=>'required',
             'image' => 'image|nullable',
+            "categories" => "nullable|array|exists:categories,id"
         ];
     }
     public function messages(){
