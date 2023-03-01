@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
+
 .home-jumbotron{
 
     height: calc(100vh - 74px);
@@ -27,5 +28,6 @@
             transform: scale(1);
             opacity: .9;
         }
+    
     }
 }
