@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Restaurant;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
@@ -61,6 +63,7 @@ class RestaurantController extends Controller
             $path = Storage::put("restaurants", $data["image"]);
             $restaurant->image = $path;
         }
+        $restaurant->user_id = Auth::user()->id;
         $restaurant->save();
 
         // Controlla che nei dati che il server sta ricevendo, ci sia un valore per la chiave "categories".
