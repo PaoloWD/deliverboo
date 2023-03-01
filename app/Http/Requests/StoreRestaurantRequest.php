@@ -36,7 +36,7 @@ class StoreRestaurantRequest extends FormRequest
             "name.min" =>  "Il titolo deve avere almeno :min caratteri",
             "name.max" =>  "Il titolo deve avere massimo :max caratteri",
             "vat.required" => "Inserire la P. IVA",
-            "image.image" =>"Il file che hai inserito non è un immagine"
+            "image.image" =>"Il file che hai inserito non è un immagine",
         ];
     }
 }

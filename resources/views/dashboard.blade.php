@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="bg-dashboard">
     <div class="container">
@@ -17,11 +16,11 @@
                         <h3>{{ __('Create your restaurant profile!') }} </h3>
                     <div class="mt-3">
                         <h3>Add your restaurant </h3>
-                        {{-- <a href="{{ route('restaurant.create') }}"> --}}
+                        <a href="{{ route('restaurants.create') }}"> 
                             <button class="btn btn-success">
                                 <i class="fa-solid fa-plus"></i> 
                             </button>
-                        {{-- </a> --}}
+                        </a>
                     </div>
                 </div>
             </div>
