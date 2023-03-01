@@ -12,7 +12,7 @@
         <h3 class="py-5">
             Together we can help you reach more and more customers!
         </h3>
-        <a href="{{ route('login') }}" class="btn btn-lg btn-success my-5 btn-account"><h3>Create your own account!</h3></a>
+        <a href="{{ route('register') }}" class="btn btn-lg btn-success my-5 btn-account"><h3>Create your own account!</h3></a>
     </div>
 
 </div>

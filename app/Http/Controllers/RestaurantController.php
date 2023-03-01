@@ -72,7 +72,7 @@ class RestaurantController extends Controller
             $restaurant->categories()->attach($data["categories"]);
         }
 
-        return redirect()->route('dashboard', $restaurant->id);
+        return redirect()->route('restaurants.show', $restaurant->id);
     }
 
     /**
@@ -83,11 +83,9 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-        // $restaurant = Restaurant::findOrFail($id);
+       $restaurant = Restaurant::findOrFail($id);
 
-        // dd($restaurant->categories);
-
-        return view('admin.show', compact('restaurant'));
+        return view('restaurants.show', compact('restaurant'));
     }
 
     /**
