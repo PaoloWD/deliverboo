@@ -23,8 +23,8 @@ return new class extends Migration
         });
 
         Schema::table('dishes', function (Blueprint $table) {
-            $table->unsignedBigInteger("restaurants_id")->nullable();
-            $table->foreign("restaurants_id")
+            $table->unsignedBigInteger("restaurant_id")->nullable();
+            $table->foreign("restaurant_id")
                 ->references("id")
                 ->on("restaurants");
         });
