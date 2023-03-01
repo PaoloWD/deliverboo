@@ -1,26 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h2 class="fs-4 text-secondary my-4">
-        {{ __('Dashboard') }}
-    </h2>
+<div class="bg-dashboard">
+    <div class="container">
+        <h2 class="fs-4 pt-4 text-white">
+            {{ __('Welcome in your Dashboard') }}
+        </h2>
             <div>
-                <div class="card-header">{{ __('Welcome in your Dashboard') }}</div>
-
                 <div>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
-
-                    <div class="text-center">
-                    {{ __('Create your restaurant profile!') }}
-                        <h4>Add your restaurant </h4>
-                        <button class="btn btn-primary px-3"> + </button>
+                    <div class="card dashboard text-center ">
+                        <h3>{{ __('Create your restaurant profile!') }} </h3>
+                    <div class="mt-3">
+                        <h3>Add your restaurant </h3>
+                        {{-- <a href="{{ route('restaurant.create') }}"> --}}
+                            <button class="btn btn-success">
+                                <i class="fa-solid fa-plus"></i> 
+                            </button>
+                        {{-- </a> --}}
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </div>
 @endsection
