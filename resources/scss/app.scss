@@ -1,1 +1,160 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+.restaurant-img{
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dish-img{
+    object-fit: cover;
+}
+.badge{
+    padding: .5rem .8rem;
+}
+
+.custom-color{
+    color: #c76262 !important;
+}
+.custom-bg{
+    background-color: #c76262 !important;
+}
+
+.btn-custom{
+    background-color: #c76262 !important;
+    border-color: #c76262 !important;
+    transition: all, .3s;
+    &:hover{
+        background-color: #b34d4d !important;
+        transform: scale(1.05);
+    }
+    &:active{
+        transform: scale(.95);
+    }
+
+}
+
+.home-jumbotron{
+
+    
+    height: calc(100vh - 74px);
+    background-image: url('https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=854&q=80');
+    background-position:  center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: opacity, .4s;
+    
+
+
+    .presentation-banner{
+
+        background-color: white;
+        opacity: .7;
+        transform: scale(.8);
+        transition: opacity, .4s, transform, .6s;
+
+    }
+
+    .partners{
+        position: fixed;
+        bottom: -300px;
+        left: 25px;
+        right: 25px;
+        opacity: 0;
+        transition: .7s;
+    }
+
+    &.fix:hover{
+        opacity: .95;
+    }
+
+    &:hover{
+
+        opacity: .8;
+
+        .presentation-banner{
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .partners{
+            opacity: 1;
+            bottom: 25px;
+        }
+    
+    }
+}; 
+
+.bg-dashboard{
+
+    height: calc(100vh - 74px);
+    background-image: url('https://i.pinimg.com/originals/e6/e7/61/e6e7615220db135dfe8832924fb1aebe.jpg');
+    background-position: bottom, center;
+    background-size: cover;
+    background-repeat: no-repeat;
+};
+
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5%;
+    padding: 64px 16px;
+    opacity: 0.8;
+};
+ 
+.show-restaurant{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5%;
+    padding: 64px 16px;
+}; 
+
+.container-form{
+    background-color: white;
+    padding: 2rem;
+
+    opacity: 0.95;
+};
+
+.login-jumbotron{
+
+    
+    height: calc(100vh - 74px);
+    background-image: url('https://images.unsplash.com/photo-1615719413546-198b25453f85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vZCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60');
+    background-position:  center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: opacity, .4s;
+    
+
+
+    .presentation-banner{
+
+        background-color: white;
+        opacity: .7;
+
+        transition: opacity, .4s;
+
+    }
+
+    &:hover{
+
+        opacity: .9;
+
+        .presentation-banner{
+
+            opacity: 1;
+        }
+    
+    }
+}; 
+
+
