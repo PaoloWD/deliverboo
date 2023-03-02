@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-dashboard">
+<div class="bg-dashboard pt-5">
 
-    <div class="container py-4">
+    <div class="container py-5">
         @if ($errors->any())
         <div class="alert alert-danger">
             I dati inseriti non sono validi:
@@ -15,8 +15,8 @@
             </ul>
         </div>
         @endif
-        <div class="container-form">
-            <h1 class=custom-color mb-3">Create new dishes</h1>
+        <div class="container-form rounded-5">
+            <h1 class="custom-color mb-3">Create new dishes</h1>
             
             <form action="{{ route('dishes.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
