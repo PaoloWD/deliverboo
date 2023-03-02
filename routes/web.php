@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DishController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
 use Illuminate\Support\Facades\Auth;
@@ -30,6 +31,8 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [RestaurantController::class, 'index'])->name('dashboard');
     Route::resource('restaurants', RestaurantController::class);
+    Route::resource('dishes', DishController::class);
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

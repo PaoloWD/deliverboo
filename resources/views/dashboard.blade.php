@@ -20,6 +20,8 @@
                     Nome del ristorante: {{$restaurant->name}}
                     P. Iva del ristorante: {{$restaurant->vat}}
                     Proprietario del ristorante: {{$restaurant->user_id}}
+
+                    <a class="btn btn-primary" href="{{ route('dishes.create') }}">Aggiungi nuovo piatto</a>
                 @else
                 <div class="card dashboard text-center ">
                     <h3>{{ __('Create your restaurant profile!') }} </h3>
