@@ -13,7 +13,7 @@
                     </div>
                     @endif
                     @if ($restaurant?->user_id === Auth::user()->id)
-                    
+                    <img src="{{ asset('storage/' . $restaurant->image) }}" alt="">
                     @foreach ($restaurant->categories as $categories )
                         {{$categories->name}}
                     @endforeach
