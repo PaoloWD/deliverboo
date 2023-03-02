@@ -8,15 +8,15 @@
                 <h1 class="custom-color text-center">Your dish!</h1>
                 <div class="card shadow dashboard mt-4 p-4">
                     <div class="card-title text-center">
-                        <h2> - nome del piatto - </h2>
+                        <h2> {{$dish->name}} </h2>
                     </div>
                     <div class="card-img-top text-center pb-3">
                         <img class="img-fluid" src="" alt="">
                     </div>
                     <div class="card-text">
-                        <p>Description: </p>
-                        <p>Ingredients: </p>
-                        <p>Price: €</p>
+                        <p>Description: {{$dish->description}} </p>
+                        <p>Ingredients: {{$dish->ingredients}} </p>
+                        <p>Price: {{$dish->price}}€</p>
                     </div>
                     <div class="text-center mt-3">
                         <a href="{{ route('dashboard') }}">
