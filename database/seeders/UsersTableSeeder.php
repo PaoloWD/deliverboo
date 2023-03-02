@@ -19,28 +19,28 @@ class UsersTableSeeder extends Seeder
         // Definisco i dati degli utenti
         $users = [
             [
-                'name' => 'Mario Rossi',
-                'email' => 'mario@example.com',
+                'name' => 'Francesco Pelliccia',
+                'email' => 'francesco@gmail.com',
                 'password' => Hash::make('password')
             ],
             [
-                'name' => 'Paolo Bianchi',
-                'email' => 'paolo@example.com',
+                'name' => 'Paolo Lo Re',
+                'email' => 'paolo@gmail.com',
                 'password' => Hash::make('password')
             ],
             [
-                'name' => 'Laura Neri',
-                'email' => 'laura@example.com',
+                'name' => 'Matteo Tagliapietra',
+                'email' => 'Matteo@gmail.com',
                 'password' => Hash::make('password')
             ],
             [
-                'name' => 'Marco Verdi',
-                'email' => 'marco@example.com',
+                'name' => 'Luiggina Rossi',
+                'email' => 'marco@gmail.com',
                 'password' => Hash::make('password')
             ],
             [
-                'name' => 'Giuseppe Gialli',
-                'email' => 'giuseppe@example.com',
+                'name' => 'Giorgia Venturelli',
+                'email' => 'giuseppe@gmail.com',
                 'password' => Hash::make('password')
             ]
         ];
