@@ -32,7 +32,7 @@ class RestaurantsTableSeeder extends Seeder
                 
             ],
             [
-                $category_id = Category::find(3)->id, // Recupera l'ID della categoria con ID = 1
+                $category_id = Category::find(3)->id, // Recupera l'ID della categoria con ID = 3
                 $restaurant = new Restaurant(),
                 $restaurant->name = 'Ristorante da Paolo',
                 $restaurant->image = '',
@@ -44,7 +44,7 @@ class RestaurantsTableSeeder extends Seeder
         
             ],
             [
-                $category_id = Category::find(7)->id, // Recupera l'ID della categoria con ID = 1
+                $category_id = Category::find(7)->id, // Recupera l'ID della categoria con ID = 7
                 $restaurant = new Restaurant(),
                 $restaurant->name = 'Ristorante da Matteo',
                 $restaurant->image = '',
@@ -55,7 +55,7 @@ class RestaurantsTableSeeder extends Seeder
                 $restaurant->categories()->attach($category_id),
             ],
             [
-                $category_id = Category::find(10)->id, // Recupera l'ID della categoria con ID = 1
+                $category_id = Category::find(10)->id, // Recupera l'ID della categoria con ID = 10
                 $restaurant = new Restaurant(),
                 $restaurant->name = 'Ristorante da Luiggina',
                 $restaurant->image = '',
@@ -66,7 +66,7 @@ class RestaurantsTableSeeder extends Seeder
                 $restaurant->categories()->attach($category_id),
             ],
             [
-                $category_id = Category::find(3)->id, // Recupera l'ID della categoria con ID = 1
+                $category_id = Category::find(3)->id, // Recupera l'ID della categoria con ID = 3
                 $restaurant = new Restaurant(),
                 $restaurant->name = 'Ristorante da Giorgia',
                 $restaurant->image = '',
