@@ -53,6 +53,10 @@
         transition: .7s;
     }
 
+    &.fix:hover{
+        opacity: .95;
+    }
+
     &:hover{
 
         opacity: .8;

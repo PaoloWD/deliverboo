@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="bg-dashboard">
-    <div class="home-jumbotron home-jumbotron-hover py-5 overflow-hidden">
+    <div class="home-jumbotron fix home-jumbotron-hover py-5 overflow-hidden">
         <div class="container shadow rounded-4 p-5 presentation-banner">
             <div class="">
                 <h2 class="py-2 custom-color">
