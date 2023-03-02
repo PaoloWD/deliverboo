@@ -67,7 +67,7 @@
                                         <div class="mt-3">
                                             <h3>Add your restaurant </h3>
                                             <a href="{{ route('restaurants.create') }}"> 
-                                                <button class="btn btn-success">
+                                                <button class="btn btn-success mt-5 btn-custom">
                                                     <i class="fa-solid fa-plus"></i> 
                                                 </button>
                                             </a>
