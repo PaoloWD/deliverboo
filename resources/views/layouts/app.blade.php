@@ -37,7 +37,7 @@
                 @else
 
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo fs-2 fw-bold d-flex align-items-center text-success">
+                    <div class="logo fs-2 fw-bold d-flex align-items-center text-success" style="height:48px">
                         <i class="fa-solid fa-bowl-food px-2"></i>
                         DeliverBoo
                     </div>
