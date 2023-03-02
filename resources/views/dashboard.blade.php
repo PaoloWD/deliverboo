@@ -86,7 +86,7 @@
 
                                         <a href="#"> 
                                             <button class="btn btn-sm btn-success btn-custom shadow">
-                                                View Your Resaturant <i class="fa-solid fa-magnifying-glass"></i> 
+                                                View Your Resaturant <i class="fa-solid fa-magnifying-glass ms-2"></i> 
                                             </button>
                                         </a>
                                     </div>
