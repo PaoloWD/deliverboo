@@ -12,10 +12,10 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    @if ($userId?->user_id === Auth::user()->id)
-                    Nome del ristorante: {{$userId->name}}
-                    P. Iva del ristorante: {{$userId->vat}}
-                    Proprietario del ristorante: {{$userId->user_id}}
+                    @if ($restaurant?->user_id === Auth::user()->id)
+                    Nome del ristorante: {{$restaurant->name}}
+                    P. Iva del ristorante: {{$restaurant->vat}}
+                    Proprietario del ristorante: {{$restaurant->user_id}}
                 @else
                 <div class="card dashboard text-center ">
                     <h3>{{ __('Create your restaurant profile!') }} </h3>
