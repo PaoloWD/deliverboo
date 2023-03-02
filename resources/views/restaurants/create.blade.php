@@ -123,9 +123,7 @@
                     </div>
 
 
-                    <button type="submite" class="btn btn-primary btn-custom mt-4">Save</button>
-
-                    {{-- <a class="btn btn-warning" href="{{route('admin.projects.index')}}">Return To Projects</a> --}}
+                    <button type="submit" class="btn btn-primary btn-custom mt-4">Save</button>
             </div>
         </div>
     </div>
