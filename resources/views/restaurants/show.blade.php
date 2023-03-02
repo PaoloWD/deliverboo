@@ -5,7 +5,7 @@
     <div class="container">
         <div class="pt-5 text-center">
             <div class="card p-5 rounded-5" style="opacity: 0.95">
-                <h1 class="custom-color">You have created your restaurant!</h1>
+                <h1 class="custom-color">This is your restaurant!</h1>
                 <div class="card show-restaurant mt-4 p-4">
                     <div class="card-title text-center">
                         <h2></h2>
@@ -19,7 +19,9 @@
                         <p>Indirizzo: {{$restaurant->address}}</p>
                         <p>Categorie:
                             @foreach ($restaurant->categories as $categories )
-                                {{$categories->name}}
+                            <div class="badge text-bg-danger custom-bg rounded-pill my-3 shadow">
+                                {{ $categories->name }}
+                            </div>
                             @endforeach 
                         </p>
                     </div>
