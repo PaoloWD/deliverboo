@@ -3,9 +3,27 @@
 .custom-color{
     color: #c76262 !important;
 }
+.custom-bg{
+    background-color: #c76262 !important;
+}
+
+.btn-custom{
+    background-color: #c76262 !important;
+    border-color: #c76262 !important;
+    transition: all, .3s;
+    &:hover{
+        background-color: #b34d4d !important;
+        transform: scale(1.05);
+    }
+    &:active{
+        transform: scale(.95);
+    }
+
+}
 
 .home-jumbotron{
 
+    
     height: calc(100vh - 74px);
     background-image: url('https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=854&q=80');
     background-position:  center;
