@@ -126,7 +126,7 @@
                                     <td><h6 class="py-3">{{$restaurant->vat}}</h6></td>
                                     <td>
                                         @foreach ($restaurant->categories as $categories)
-                                            <div class="badge text-bg-danger custom-bg rounded-pill my-3">
+                                            <div class="badge text-bg-danger custom-bg rounded-pill my-3 shadow">
                                                 {{$categories->name}}
                                             </div>
                                         @endforeach</td>
