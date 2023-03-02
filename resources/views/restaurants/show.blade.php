@@ -16,8 +16,9 @@
                 <img class="img-fluid" src="" alt="">
             </div>
             <div class="card-text">
+                <p>Nome del Ristorante: {{$restaurant->name}}</p>
                 <p>VAT: {{$restaurant->vat}}</p>
-                <p>Address: {{$restaurant->address}}</p>
+                <p>Indirizzo: {{$restaurant->address}}</p>
                 <p>Categorie:
                     @foreach ($restaurant->categories as $categories )
                         {{$categories->name}}
