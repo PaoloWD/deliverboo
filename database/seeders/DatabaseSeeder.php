@@ -20,5 +20,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        // Questa riga farà in modo che il Seeder sia eseguito quando viene chiamato il comando php artisan db:seed.
+        /* $this->call(UsersSeeder::class);
+
+        $this->call(DishesSeeder::class);
+
+        $this->call(CategoriesSeeder::class); */
     }
 }
