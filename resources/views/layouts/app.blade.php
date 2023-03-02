@@ -26,6 +26,16 @@
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                @if (Auth::check())
+                <a class="navbar-brand d-flex align-items-center" href="{{ url('/dashboard') }}">
+                    <div class="logo fs-2 fw-bold d-flex align-items-center text-success">
+                        <i class="fa-solid fa-bowl-food px-2"></i>
+                        DeliverBoo
+                    </div>
+                    {{-- config('app.name', 'Laravel') --}}
+                </a>
+                @else
+
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo fs-2 fw-bold d-flex align-items-center text-success">
                         <i class="fa-solid fa-bowl-food px-2"></i>
@@ -33,6 +43,8 @@
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
+                @endif
+
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -42,7 +54,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ms-auto pe-5">
                         <li class="nav-item">
+                            @if(Auth::check())
+                                <a class="nav-link text-success" href="{{url('/dashboard') }}">{{ __('Vai al tuo Ristorante') }}</a>
+                            @else
                             <a class="nav-link text-success" href="{{url('/') }}">{{ __('Home') }}</a>
+                            @endif
                         </li>
                     </ul>
 
