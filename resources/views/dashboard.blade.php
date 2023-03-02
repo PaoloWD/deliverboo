@@ -93,7 +93,7 @@
                                 </div>
                             </div>
 
-                            <div class="mt-5">
+                            <div class="mt-5 mb-3">
 
                                 <a href="{{ route('dishes.create') }}"> 
                                     <button class="btn btn-success btn-custom shadow">
@@ -101,6 +101,39 @@
                                     </button>
                                 </a>
                             </div>
+
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                      <th scope="col">#</th>
+                                      <th scope="col">Image</th>
+                                    <th scope="col">Owner</th>
+                                    <th scope="col">Restaurant Name</th>
+                                    <th scope="col">VAT</th>
+                                    <th scope="col">Categories</th>
+                                    
+
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row" class="py-3">1</th>
+                                    <td>
+                                        <img class="card-img-top" src="{{ asset('storage/' . $restaurant->image) }}" alt="restaurant image" style="height:51px; width:51px">
+                                    </td>
+                                    <td><h6 class="py-3">{{$restaurant->user_id}}</h6></td>
+                                    <td><h6 class="py-3">{{$restaurant->name}}</h6></td>
+                                    <td><h6 class="py-3">{{$restaurant->vat}}</h6></td>
+                                    <td>
+                                        @foreach ($restaurant->categories as $categories)
+                                            <div class="badge text-bg-danger custom-bg rounded-pill my-3">
+                                                {{$categories->name}}
+                                            </div>
+                                        @endforeach</td>
+                                    
+                                  </tr>
+                                </tbody>
+                              </table>
                         @else
                             <div class="card dashboard text-center ">
                                 <h3>{{ __('Create your restaurant profile!') }} </h3>
