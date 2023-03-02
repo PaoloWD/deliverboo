@@ -43,6 +43,15 @@
 
     }
 
+    .partners{
+        position: fixed;
+        bottom: -300px;
+        left: 25px;
+        right: 25px;
+        opacity: 0;
+        transition: .7s;
+    }
+
     &:hover{
 
         opacity: .8;
@@ -50,6 +59,11 @@
         .presentation-banner{
             transform: scale(1);
             opacity: 1;
+        }
+
+        .partners{
+            opacity: 1;
+            bottom: 25px;
         }
     
     }
