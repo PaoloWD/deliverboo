@@ -90,6 +90,18 @@
                                             </button>
                                         </a>
                                     </div>
+                                    @if($dishes)
+                                        @foreach ($dishes as $dish)
+                                            <div class="position-absolute" style="right:220px; bottom:20px">
+
+                                                <a href="{{ route('dishes.show', $dish->id) }}">
+                                                    <button class="btn btn-sm btn-success btn-custom shadow">
+                                                        View Your Dishes <i class="fa-solid fa-magnifying-glass ms-2"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
 

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Restaurant;
 use App\Models\Category;
+use App\Models\Dish;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -27,7 +28,10 @@ class RestaurantController extends Controller
 
         $restaurant = Restaurant::where('user_id', auth()->id())->first();
 
-        return view("dashboard", compact('users', 'categories', 'restaurant'));
+        $user_id = auth()->user()->id;
+        $dishes = Dish::where('restaurant_id', $user_id)->get();
+
+        return view("dashboard", compact('users', 'categories', 'restaurant', 'dishes'));
     }
 
     /**
