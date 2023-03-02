@@ -5,6 +5,7 @@
     <div class="container">
         <div class="py-5">
             <div class="card shadow p-5 rounded-5" style="opacity: 0.95">
+            @foreach ($dishes as $dish)
                 <h1 class="custom-color text-center">Your dish!</h1>
                 <div class="card shadow dashboard mt-4 p-4">
                     <div class="card-title text-center">
@@ -24,6 +25,7 @@
                         </a>
                     </div>
                 </div>
+            @endforeach
             </div>
         </div>
     </div>

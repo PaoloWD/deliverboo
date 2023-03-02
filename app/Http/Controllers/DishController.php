@@ -63,7 +63,10 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        return view("dishes.show", compact("dish"));
+        $user_id = auth()->user()->id;
+        $dishes = Dish::where('restaurant_id', $user_id)->get();
+
+        return view("dishes.show", compact("dish", "dishes"));
     }
 
     /**
