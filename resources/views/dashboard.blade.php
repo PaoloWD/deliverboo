@@ -119,7 +119,7 @@
                                     <tr>
                                         <th scope="row" class="py-3">1</th>
                                         <td>
-                                            <img class="card-img-top" src="{{ asset('storage/' . $restaurant->image) }}"
+                                            <img class="card-img-top dish-img" src="{{ asset('storage/' . $restaurant->image) }}"
                                                 alt="restaurant image" style="height:51px; width:51px">
                                         </td>
                                         <td>
