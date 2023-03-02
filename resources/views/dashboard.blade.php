@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="bg-dashboard">
-    <div class="home-jumbotron fix home-jumbotron-hover py-5 overflow-hidden">
-        <div class="container shadow rounded-4 p-5 presentation-banner">
+    <div class="home-jumbotron fix py-5 overflow-hidden">
+        <div class="container shadow rounded-4 p-5 presentation-banner h-100 overflow-auto">
             <div class="">
                 <h2 class="py-2 custom-color">
                     Welcome <strong>{{Auth::user()->name}}</strong>!
@@ -17,7 +17,7 @@
                         </div>
                         @endif
 
-                        <div class="container">
+                        {{-- <div class="container">
                                     
                                     @if ($restaurant?->user_id === Auth::user()->id)
 
@@ -39,10 +39,10 @@
                                             <th scope="row">1</th>
                                             <td><h4 class="pt-1">{{$restaurant->user_id}}</h4></td>
                                             <td><h4 class="pt-1">{{$restaurant->name}}</h4></td>
-                                            <td>{{-- image --}}
+                                            <td>
                                                 <img class="card-img-top" src="{{ asset('storage/' . $restaurant->image) }}" alt="restaurant image"></td>
                                             <td><h4 class="pt-1">{{$restaurant->vat}}</h4></td>
-                                            <td>{{-- categories --}}
+                                            <td>
                                                 @foreach ($restaurant->categories as $categories )
                                                     <div class="badge text-bg-danger costum-bg rounded-pill my-3">
                                                         {{$categories->name}}
@@ -75,7 +75,8 @@
                                     </div>
                                     @endif
                               
-                        </div>
+                        </div> --}}
+                        
                 </div>
             </div>
         </div>
