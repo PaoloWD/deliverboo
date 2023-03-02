@@ -6,8 +6,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card presentation-banner shadow rounded-4 overflow-hidden border-0">
-                    <div class="card-header">
-                        {{ __('Register') }}
+                    <div class="card-header custom-bg">
+                        <div class="logo fs-4 fw-bold d-flex align-items-center text-white" style="height:40px">
+                            <i class="fa-solid fa-bowl-food px-2"></i>
+                            DeliverBoo
+                        </div>
                     </div>
     
                     <div class="card-body">
@@ -66,7 +69,7 @@
     
                             <div class="mb-4 row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary btn-custom">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
