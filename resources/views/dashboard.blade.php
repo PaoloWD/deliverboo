@@ -30,6 +30,8 @@
                                             <th scope="col">Image</th>
                                             <th scope="col">VAT</th>
                                             <th scope="col">Categories</th>
+                                            
+
                                           </tr>
                                         </thead>
                                         <tbody>
@@ -46,9 +48,19 @@
                                                         {{$categories->name}}
                                                     </div>
                                                 @endforeach</td>
+                                            
                                           </tr>
                                         </tbody>
                                       </table>
+
+                                      <div class="mt-5">
+
+                                        <a href="{{ route('dishes.create') }}"> 
+                                            <button class="btn btn-success btn-custom">
+                                                Create your Dish <i class=" ps-3 fa-solid fa-plus"></i> 
+                                            </button>
+                                        </a>
+                                    </div>
                                     @else
                                         <div class="card dashboard text-center ">
                                             <h3>{{ __('Create your restaurant profile!') }} </h3>
