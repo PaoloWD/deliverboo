@@ -84,7 +84,7 @@
                                     <h3 class="card-title">{{ $restaurant->name }}</h3>
                                     <div class="position-absolute" style="right:20px; bottom:20px">
 
-                                        <a href="{{ route('restaurants.show') }}">
+                                        <a href="{{ route('restaurants.show', $restaurant->id) }}">
                                             <button class="btn btn-sm btn-success btn-custom shadow">
                                                 View Your Resaturant <i class="fa-solid fa-magnifying-glass ms-2"></i>
                                             </button>
