@@ -15,7 +15,7 @@
             </ul>
         </div>
         @endif
-        <div class="container-form rounded-5">
+        <div class="container-form rounded-5 shadow">
             <h1 class="custom-color mb-3">Create new dishes</h1>
             
             <form action="{{ route('dishes.store') }}" method="POST" enctype="multipart/form-data">
