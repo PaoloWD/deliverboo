@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreDishRequest;
 use App\Models\Dish;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
@@ -35,8 +37,10 @@ class DishController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreDishRequest $request)
     {
+        $restaurant = Auth::user();
+
         $data = $request->validated();
         $dish = Dish::create($data);
     
@@ -44,6 +48,9 @@ class DishController extends Controller
             $path = Storage::put('dishs', $data['image']);
             $dish->image = $path;
         } 
+
+        $dish->restaurant_id = $restaurant->id;
+
         $dish->save();
         return redirect()->route("dishes.show", $dish->id);
     }
