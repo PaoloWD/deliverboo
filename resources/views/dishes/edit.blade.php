@@ -5,8 +5,9 @@
 <div class="container py-5">
     <h1>Edit Project</h1>
 
-
-        <form action="{{ route() }}" method="POST" enctype="multipart/form-data">
+          {{-- aggiungere action:
+            action="{{ route() }}" --}}
+        <form  method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
         {{-- name-input --}}
