@@ -13,6 +13,10 @@
                     </div>
                     @endif
                     @if ($restaurant?->user_id === Auth::user()->id)
+                    
+                    @foreach ($restaurant->categories as $categories )
+                        {{$categories->name}}
+                    @endforeach
                     Nome del ristorante: {{$restaurant->name}}
                     P. Iva del ristorante: {{$restaurant->vat}}
                     Proprietario del ristorante: {{$restaurant->user_id}}
