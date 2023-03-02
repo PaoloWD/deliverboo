@@ -4,7 +4,7 @@
 <div class="home-jumbotron py-5 overflow-hidden">
 
     <div class="container  rounded-4 p-5 presentation-banner text-center">
-        <h1 class="">Welcome on Deliveroo Restaurateur's page</h1>
+        <h1 class="">Welcome on DeliverBoo Restaurateur's page</h1>
    
     
     
