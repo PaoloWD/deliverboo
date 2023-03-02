@@ -84,9 +84,9 @@
                                     <h3 class="card-title">{{ $restaurant->name }}</h3>
                                     <div class="position-absolute" style="right:20px; bottom:20px">
 
-                                        <a href="#"> 
+                                        <a href="#">
                                             <button class="btn btn-sm btn-success btn-custom shadow">
-                                                View Your Resaturant <i class="fa-solid fa-magnifying-glass ms-2"></i> 
+                                                View Your Resaturant <i class="fa-solid fa-magnifying-glass ms-2"></i>
                                             </button>
                                         </a>
                                     </div>
@@ -95,45 +95,53 @@
 
                             <div class="mt-5 mb-3">
 
-                                <a href="{{ route('dishes.create') }}"> 
+                                <a href="{{ route('dishes.create') }}">
                                     <button class="btn btn-success btn-custom shadow">
-                                        Create your Dish <i class=" ps-3 fa-solid fa-plus"></i> 
+                                        Create your Dish <i class=" ps-3 fa-solid fa-plus"></i>
                                     </button>
                                 </a>
                             </div>
 
                             <table class="table">
                                 <thead>
-                                  <tr>
-                                      <th scope="col">#</th>
-                                      <th scope="col">Image</th>
-                                    <th scope="col">Owner</th>
-                                    <th scope="col">Restaurant Name</th>
-                                    <th scope="col">VAT</th>
-                                    <th scope="col">Categories</th>
-                                    
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Owner</th>
+                                        <th scope="col">Restaurant Name</th>
+                                        <th scope="col">VAT</th>
+                                        <th scope="col">Categories</th>
 
-                                  </tr>
+
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <th scope="row" class="py-3">1</th>
-                                    <td>
-                                        <img class="card-img-top" src="{{ asset('storage/' . $restaurant->image) }}" alt="restaurant image" style="height:51px; width:51px">
-                                    </td>
-                                    <td><h6 class="py-3">{{$restaurant->user_id}}</h6></td>
-                                    <td><h6 class="py-3">{{$restaurant->name}}</h6></td>
-                                    <td><h6 class="py-3">{{$restaurant->vat}}</h6></td>
-                                    <td>
-                                        @foreach ($restaurant->categories as $categories)
-                                            <div class="badge text-bg-danger custom-bg rounded-pill my-3 shadow">
-                                                {{$categories->name}}
-                                            </div>
-                                        @endforeach</td>
-                                    
-                                  </tr>
+                                    <tr>
+                                        <th scope="row" class="py-3">1</th>
+                                        <td>
+                                            <img class="card-img-top" src="{{ asset('storage/' . $restaurant->image) }}"
+                                                alt="restaurant image" style="height:51px; width:51px">
+                                        </td>
+                                        <td>
+                                            <h6 class="py-3">{{ $restaurant->user_id }}</h6>
+                                        </td>
+                                        <td>
+                                            <h6 class="py-3">{{ $restaurant->name }}</h6>
+                                        </td>
+                                        <td>
+                                            <h6 class="py-3">{{ $restaurant->vat }}</h6>
+                                        </td>
+                                        <td>
+                                            @foreach ($restaurant->categories as $categories)
+                                                <div class="badge text-bg-danger custom-bg rounded-pill my-3 shadow">
+                                                    {{ $categories->name }}
+                                                </div>
+                                            @endforeach
+                                        </td>
+
+                                    </tr>
                                 </tbody>
-                              </table>
+                            </table>
                         @else
                             <div class="card dashboard text-center ">
                                 <h3>{{ __('Create your restaurant profile!') }} </h3>
