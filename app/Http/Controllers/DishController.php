@@ -54,7 +54,7 @@ class DishController extends Controller
      * @param  \App\Models\dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function show(dish $dish)
+    public function show(Dish $dish)
     {
         return view("dishes.show", compact("dish"));
     }
@@ -65,7 +65,7 @@ class DishController extends Controller
      * @param  \App\Models\dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function edit(dish $dish)
+    public function edit(Dish $dish)
     {
         $dishes = Dish::all();
         return view('dishes.edit', compact('dishes'));
@@ -78,7 +78,7 @@ class DishController extends Controller
      * @param  \App\Models\dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, dish $dish)
+    public function update(Request $request, Dish $dish)
     {
         $data = $request->validated();
         $dish->update($data);
@@ -99,7 +99,7 @@ class DishController extends Controller
      * @param  \App\Models\dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function destroy(dish $dish)
+    public function destroy(Dish $dish)
     {
         if($dish->image){
             Storage::delete($dish->image);
