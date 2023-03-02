@@ -78,7 +78,7 @@
                         </div> --}}
                         @if ($restaurant?->user_id === Auth::user()->id)
                             <div class="card text-bg-dark shadow">
-                                <img src="{{ asset('storage/' . $restaurant->image) }}" class="card-img" alt="..."
+                                <img src="{{ asset('storage/' . $restaurant->image) }}" class="card-img" alt=""
                                     style="height: 200px">
                                 <div class="card-img-overlay">
                                     <h3 class="card-title">{{ $restaurant->name }}</h3>
