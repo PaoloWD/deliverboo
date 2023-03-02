@@ -84,12 +84,11 @@
                 </div>
                 
                 {{-- Visibility-input --}}
-                <div class="mb-3">
-                    <label class="form-label">Visibility:</label>
-                    <input type="number"
-                    class="form-control @error('visibility') is-invalid @elseif(old('visibility')) is-valid  @enderror"
-                    value="{{ $errors->has('visibility') ? '' : old('visibility') }}" name="visibility">
-                </div>
+                <div class="mb-3 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="switch" name="visibility"
+                      {{ old('visibility', 1) ? 'checked' : '' }} value="1">
+                    <label class="form-check-label" for="switch">Visibility</label>
+                  </div>
 
                 <button type="submite" class="btn btn-primary btn-custom">Save</button>
             </div>
