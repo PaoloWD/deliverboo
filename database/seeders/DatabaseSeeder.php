@@ -22,10 +22,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // Questa riga farà in modo che il Seeder sia eseguito quando viene chiamato il comando php artisan db:seed.
-        $this->call(UsersSeeder::class);
+        /* $this->call(UsersSeeder::class);
 
         $this->call(DishesSeeder::class);
 
-        $this->call(CategoriesSeeder::class);
+        $this->call(CategoriesSeeder::class); */
     }
 }
