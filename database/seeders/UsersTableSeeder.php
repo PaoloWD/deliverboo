@@ -30,17 +30,17 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => 'Matteo Tagliapietra',
-                'email' => 'Matteo@gmail.com',
+                'email' => 'matteo@gmail.com',
                 'password' => Hash::make('password')
             ],
             [
                 'name' => 'Luiggina Rossi',
-                'email' => 'marco@gmail.com',
+                'email' => 'luiggina@gmail.com',
                 'password' => Hash::make('password')
             ],
             [
                 'name' => 'Giorgia Venturelli',
-                'email' => 'giuseppe@gmail.com',
+                'email' => 'giorgia@gmail.com',
                 'password' => Hash::make('password')
             ]
         ];
