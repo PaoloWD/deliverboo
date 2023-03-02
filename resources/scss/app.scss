@@ -1,14 +1,20 @@
 @import '~bootstrap/scss/bootstrap';
 
+.custom-color{
+    color: #c76262 !important;
+}
+
 .home-jumbotron{
 
     height: calc(100vh - 74px);
-    background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80');
-    background-position: bottom, center;
+    background-image: url('https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=854&q=80');
+    background-position:  center;
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 1;
     transition: opacity, .4s;
+    
+
 
     .presentation-banner{
 
@@ -25,7 +31,7 @@
 
         .presentation-banner{
             transform: scale(1);
-            opacity: .9;
+            opacity: 1;
         }
     
     }
@@ -33,7 +39,7 @@
 
 .bg-dashboard{
 
-    height: calc(100vh - 70px);
+    height: calc(100vh - 74px);
     background-image: url('https://bcdairy.ca/wp-content/uploads/2021/08/Variety_Image_747px.jpg');
     background-position: bottom, center;
     background-size: cover;
@@ -60,4 +66,5 @@
     border-radius: 5%;
     padding: 64px 16px;
 }
+
 
