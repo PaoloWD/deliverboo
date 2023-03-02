@@ -16,9 +16,14 @@
                 <img class="img-fluid" src="" alt="">
             </div>
             <div class="card-text">
-                <p>VAT: </p>
-                <p>Address: </p>
-                <p>Categories: </p>
+                <p>Nome del Ristorante: {{$restaurant->name}}</p>
+                <p>VAT: {{$restaurant->vat}}</p>
+                <p>Indirizzo: {{$restaurant->address}}</p>
+                <p>Categorie:
+                    @foreach ($restaurant->categories as $categories )
+                        {{$categories->name}}
+                    @endforeach 
+                </p>
             </div>
             <div class="text-center">
                 <a href="{{ route('dashboard') }}">
