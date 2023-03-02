@@ -19,7 +19,9 @@
                         <p>Indirizzo: {{$restaurant->address}}</p>
                         <p>Categorie:
                             @foreach ($restaurant->categories as $categories )
-                                {{$categories->name}}
+                            <div class="badge text-bg-danger custom-bg rounded-pill my-3 shadow">
+                                {{ $categories->name }}
+                            </div>
                             @endforeach 
                         </p>
                     </div>
