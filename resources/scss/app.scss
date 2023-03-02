@@ -1,14 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
 
+.custom-color{
+    color: #c76262 !important;
+}
+
 .home-jumbotron{
 
     height: calc(100vh - 74px);
-    background-image: url('https://img.freepik.com/premium-photo/organic-food-different-healthy-vegetables-fruits-with-beans-black-rustic-background_220768-15867.jpg?w=1800');
-    background-position: top, center;
+    background-image: url('https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=854&q=80');
+    background-position:  center;
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 1;
     transition: opacity, .4s;
+    
 
 
     .presentation-banner{

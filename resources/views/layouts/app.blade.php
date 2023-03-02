@@ -24,11 +24,11 @@
     <div id="app">
 
 
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow">
             <div class="container">
                 @if (Auth::check())
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/dashboard') }}">
-                    <div class="logo fs-2 fw-bold d-flex align-items-center text-success">
+                    <div class="logo fs-2 fw-bold d-flex align-items-center custom-color">
                         <i class="fa-solid fa-bowl-food px-2"></i>
                         DeliverBoo
                     </div>
@@ -37,7 +37,7 @@
                 @else
 
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo fs-2 fw-bold d-flex align-items-center text-success" style="height:48px">
+                    <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                         <i class="fa-solid fa-bowl-food px-2"></i>
                         DeliverBoo
                     </div>
@@ -55,9 +55,9 @@
                     <ul class="navbar-nav ms-auto pe-5">
                         <li class="nav-item">
                             @if(Auth::check())
-                                <a class="nav-link text-success" href="{{url('/dashboard') }}">{{ __('Vai al tuo Ristorante') }}</a>
+                                <a class="nav-link custom-color" href="{{url('/dashboard') }}">{{ __('Vai al tuo Ristorante') }}</a>
                             @else
-                            <a class="nav-link text-success" href="{{url('/') }}">{{ __('Home') }}</a>
+                            <a class="nav-link custom-color" href="{{url('/') }}">{{ __('Home') }}</a>
                             @endif
                         </li>
                     </ul>
@@ -67,11 +67,11 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link text-success" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link custom-color" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link text-success" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link custom-color" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
                         @else
