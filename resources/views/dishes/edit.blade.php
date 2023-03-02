@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container py-5">
-    <h1>Edit Project</h1>
+    <h1>Edit your plate</h1>
 
           {{-- aggiungere action:
             action="{{ route() }}" --}}
