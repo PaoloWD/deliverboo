@@ -18,7 +18,7 @@ class CategoriesTableSeeder extends Seeder
         $categories = [
             'Italiano',
             'Cinese',
-            'Iternazionale',
+            'Internazionale',
             'Giapponese',
             'Messicano',
             'Indiano',
