@@ -154,7 +154,17 @@
                                         </td>
                                         <td>
                                             <a href={{route('dishes.edit', $dish->id)}}>Modifica</a>
-                                        </td>  
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('dishes.destroy', $dish->id) }}" method="POST" class="delete-form d-inline-block">
+                                                @csrf()
+                                                @method('delete')
+                                        
+                                                <button class="btn btn-danger">
+                                                  X
+                                                </button>
+                                              </form>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>

@@ -66,7 +66,7 @@
                 {{-- Price-input --}}
                 <div class="mb-3">
                     <label class="form-label">Price:</label>
-                    <input type="text"
+                    <input type="number"
                     class="form-control @error('price') is-invalid @elseif(old('price')) is-valid  @enderror"
                     value="{{ $errors->has('price') ? '' : old('price') }}" name="price">
                     

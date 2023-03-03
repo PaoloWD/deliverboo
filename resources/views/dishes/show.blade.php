@@ -29,6 +29,14 @@
                             <button class="btn btn-success btn-custom"> Modifica </button>
                         </a>
                     </div>
+                    <form action="{{ route('dishes.destroy', $dish->id) }}" method="POST" class="delete-form d-inline-block">
+                        @csrf()
+                        @method('delete')
+                
+                        <button class="btn btn-danger">
+                          X
+                        </button>
+                      </form>
                 </div>
             @endforeach
             </div>
