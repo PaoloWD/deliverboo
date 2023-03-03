@@ -143,7 +143,7 @@
                                             <h6 class="py-3">{{ $dish->ingredients }}</h6>
                                         </td>
                                         <td>
-                                            <h6 class="py-3">{{ $dish->price }}€</h6>
+                                            <h6 class="py-3">{{ number_format($dish->price, 2, ',', '.') }} €</h6>
                                         </td>                                         
                                         <td>
                                             @if($dish->visibility === 0)

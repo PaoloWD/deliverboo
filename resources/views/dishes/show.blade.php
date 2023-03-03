@@ -20,7 +20,7 @@
                             <div class="card-text flex-grow-1">
                                 <p>Description: {{ $dish->description }} </p>
                                 <p>Ingredients: {{ $dish->ingredients }} </p>
-                                <p>Price: {{ $dish->price }}€</p>
+                                <p>Price: {{ number_format($dish->price, 2, ',', '.') }} €</p>
                             </div>
                             <div class="d-flex gap-2 d-md-inline-block d-lg-flex justify-content-center">
                                 <a class="link-show" href="{{ route('dashboard') }}">
