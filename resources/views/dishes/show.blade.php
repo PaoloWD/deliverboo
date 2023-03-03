@@ -5,18 +5,18 @@
 
 
         <div class="container shadow  p-5 presentation-banner h-100  rounded-4">
-            <div class="row h-100 overflow-auto align-items-center justify-content-center">
+            <div class="row h-100 overflow-auto justify-content-center">
                 <h1 class="custom-color text-center col-12">Your dishes!</h1>
                 @foreach ($dishes as $dish)
-                <div class="col-12 col-md-3 col-lg-4">
-                    <div class="card shadow dashboard mt-4 p-4">
+                <div class="col-12 col-md-3 col-lg-4 pb-3">
+                    <div class="card shadow dashboard mt-4 p-4" style="height: 535px;">
                         <div class="card-title text-center">
                             <h2> {{ $dish->name }} </h2>
                         </div>
                         <div class="card-img-top text-center pb-3">
                             <img class="img-fluid" src="{{ asset('storage/' . $dish->image) }}" alt="">
                         </div>
-                        <div class="card-text">
+                        <div class="card-text flex-grow-1">
                             <p>Description: {{ $dish->description }} </p>
                             <p>Ingredients: {{ $dish->ingredients }} </p>
                             <p>Price: {{ $dish->price }}€</p>
