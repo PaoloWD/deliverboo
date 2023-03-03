@@ -191,4 +191,16 @@
             </div>
         </div>
     </div>
+    <script>
+        const forms = document.querySelectorAll(".delete-form");
+        forms.forEach((form) => {
+            form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const conferma = confirm("Sicuro?");
+            if (conferma === true) {
+                form.submit();
+            }
+            })
+        })
+    </script>
 @endsection
