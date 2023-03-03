@@ -4,17 +4,6 @@
 
     <div class="bg-dashboard py-5">
         <div class="container h-100 overflow-auto">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    I dati inseriti non sono validi:
-
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <div class="container-form rounded-5 shadow h-100 ">
               <div class="h-100 overflow-auto px-3">
                 <h1 class="custom-color">Edit your plate</h1>
@@ -40,6 +29,11 @@
                         <label class="form-label">Description:</label>
                         <textarea cols="30" rows="5" name="description"
                             class="form-control @error('description') is-invalid @enderror">{{ $dish->description }}</textarea>
+                            @error('description')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
                     </div>
 
                     {{-- ingredients-input --}}

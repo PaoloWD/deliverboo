@@ -4,17 +4,6 @@
 <div class="bg-dashboard pt-5">
 
     <div class="container py-5 h-100 ">
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            I dati inseriti non sono validi:
-            
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
         <div class="container-form rounded-5 shadow h-100 ">
             <div class="h-100 overflow-auto px-3">
                 <h1 class="custom-color mb-3">Create new dishes</h1>

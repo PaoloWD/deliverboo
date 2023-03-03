@@ -24,30 +24,32 @@ class StoreDishRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|string',
+            'name'=>'required|string|max:255',
             'image' => 'image|nullable',
             'description'=>'required|string|max:255',
-            'ingredients'=>'required|string',
-            'price' => 'required|numeric|min:0',
+            'ingredients'=>'required|string|max:255',
+            'price' => 'required|numeric|min:0|max:9999.99',
             'visibility' => 'boolean',
         ];
     }
     public function messages(){
         return[
-
             "name.required" => "Il nome è obbligatorio",
+            'name.max' => "Puoi utilizzare un massimo di :max caratteri",
             "image.image" =>"Il file che hai inserito non è un immagine",
-            "description.required" => [
-                'required' => "La descrizione è obbligatorio",
+            "description" => [
+                'required' => "La descrizione è obbligatoria",
                 'max' => "Puoi utilizzare un massimo di :max caratteri",
             ],
             "ingredients.required" => "Gli ingredienti sono obbligatori",
-
+            'ingredients.max' => "Puoi utilizzare un massimo di :max caratteri",
             'price' => [
                 'required' => 'Il prezzo è obbligatorio.',
                 'numeric' => 'Il prezzo deve essere un numero.',
-                'min' => 'Il prezzo deve essere maggiore o uguale a 0.'
-            ]
+                'min' => 'Il prezzo deve essere maggiore o uguale a 0.',
+                'max' => 'il prezzo è troppo alto'
+
+            ],
         ];
     }
 }
