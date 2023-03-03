@@ -4,7 +4,7 @@
 
     <div class="bg-dashboard">
         <div class="home-jumbotron fix home-jumbotron-hover py-5 overflow-hidden">
-            <div class="container  shadow rounded-4 p-5 presentation-banner">
+            <div class="container  shadow rounded-4 p-5 presentation-banner h-100 overflow-auto">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         I dati inseriti non sono validi:
