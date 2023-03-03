@@ -117,41 +117,42 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Image</th>
-                                        <th scope="col">Owner</th>
-                                        <th scope="col">Restaurant Name</th>
-                                        <th scope="col">VAT</th>
-                                        <th scope="col">Categories</th>
-
-
+                                        <th scope="col">Immagine</th>
+                                        <th scope="col">Nome del piatto</th>
+                                        <th scope="col">Descrizione</th>
+                                        <th scope="col">Ingredienti</th>
+                                        <th scope="col">Prezzo</th>
+                                        <th scope="col">Disponibile</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($dishes as $dish)
                                     <tr>
-                                        <th scope="row" class="py-3">1</th>
                                         <td>
-                                            <img class="card-img-top dish-img" src="{{ asset('storage/' . $restaurant->image) }}"
-                                                alt="restaurant image" style="height:51px; width:51px">
+                                            <img class="card-img-top dish-img" src="{{ asset('storage/' . $dish->image) }}"
+                                                alt="" style="height:51px; width:51px">
                                         </td>
                                         <td>
-                                            <h6 class="py-3">{{ $restaurant->user_id }}</h6>
+                                            <h6 class="py-3">{{ $dish->name }}</h6>
                                         </td>
                                         <td>
-                                            <h6 class="py-3">{{ $restaurant->name }}</h6>
+                                            <h6 class="py-3">{{ $dish->description }}</h6>
                                         </td>
                                         <td>
-                                            <h6 class="py-3">{{ $restaurant->vat }}</h6>
+                                            <h6 class="py-3">{{ $dish->ingredients }}</h6>
                                         </td>
                                         <td>
-                                            @foreach ($restaurant->categories as $categories)
-                                                <div class="badge text-bg-danger custom-bg rounded-pill my-3 shadow">
-                                                    {{ $categories->name }}
-                                                </div>
-                                            @endforeach
-                                        </td>
-
+                                            <h6 class="py-3">{{ $dish->price }}€</h6>
+                                        </td>                                         
+                                        <td>
+                                            @if($dish->visibility === 0)
+                                                <h6 class="py-3">Non disponibile</h6>
+                                            @else
+                                                <h6 class="py-3">Disponibile</h6>
+                                            @endif
+                                        </td>  
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         @else

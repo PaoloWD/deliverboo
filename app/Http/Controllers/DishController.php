@@ -43,14 +43,12 @@ class DishController extends Controller
 
         $data = $request->validated();
         $dish = Dish::create($data);
-    
+        
         if (key_exists('image', $data)){
             $path = Storage::put('dishs', $data['image']);
             $dish->image = $path;
         } 
-
         $dish->restaurant_id = $restaurant->id;
-
         $dish->save();
         return redirect()->route("dishes.show", $dish->id);
     }
