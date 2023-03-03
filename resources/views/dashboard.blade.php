@@ -137,7 +137,7 @@
                                             <h6 class="py-3">{{ $dish->name }}</h6>
                                         </td>
                                         <td>
-                                            <h6 class="py-3">{{ $dish->description }}</h6>
+                                            <h6 class="py-3">{{Str::limit($dish->description, 15)}}</h6>
                                         </td>
                                         <td>
                                             <h6 class="py-3">{{ $dish->ingredients }}</h6>
@@ -147,21 +147,25 @@
                                         </td>                                         
                                         <td>
                                             @if($dish->visibility === 0)
-                                                <h6 class="py-3">Non disponibile</h6>
+                                                <h6 class="py-3 text-center"><i class="fa-solid fa-eye-slash custom-color"></i></h6>
                                             @else
-                                                <h6 class="py-3">Disponibile</h6>
+                                                <h6 class="py-3 text-center"><i class="fa-solid fa-eye custom-color"></i></h6>
                                             @endif
                                         </td>
                                         <td>
-                                            <a href={{route('dishes.edit', $dish->id)}}>Modifica</a>
+                                            <a href={{route('dishes.edit', $dish->id)}}>
+                                                <button class="btn btn-custom"> 
+                                                    <i class="fa-solid fa-pen"></i>  
+                                                </button>
+                                            </a>
                                         </td>
                                         <td>
                                             <form action="{{ route('dishes.destroy', $dish->id) }}" method="POST" class="delete-form d-inline-block">
                                                 @csrf()
                                                 @method('delete')
                                         
-                                                <button class="btn btn-danger">
-                                                  X
+                                                <button class="btn btn-success btn-custom">
+                                                    <i class="fa-solid fa-trash"></i>
                                                 </button>
                                               </form>
                                         </td>
