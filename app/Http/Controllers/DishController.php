@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDishRequest;
+use App\Http\Requests\UpdateDishRequest;
 use App\Models\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -76,7 +77,7 @@ class DishController extends Controller
     public function edit(Dish $dish)
     {
         $dishes = Dish::all();
-        return view('dishes.edit', compact('dishes'));
+        return view('dishes.edit', compact('dish', 'dishes'));
     }
 
     /**
@@ -86,9 +87,10 @@ class DishController extends Controller
      * @param  \App\Models\dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dish $dish)
+    public function update(UpdateDishRequest $request, Dish $dish)
     {
         $data = $request->validated();
+        
         $dish->update($data);
         
         if(key_exists("image", $data)){
@@ -96,6 +98,7 @@ class DishController extends Controller
             Storage::delete($dish->image);
             $dish->image = $path;
         }
+        $dish->visibility = $request->has('visibility');
         $dish->save();
 
         return redirect()->route("dishes.show", $dish->id);

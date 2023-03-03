@@ -128,6 +128,7 @@
                                 <tbody>
                                     @foreach ($dishes as $dish)
                                     <tr>
+                                        
                                         <td>
                                             <img class="card-img-top dish-img" src="{{ asset('storage/' . $dish->image) }}"
                                                 alt="" style="height:51px; width:51px">
@@ -150,6 +151,9 @@
                                             @else
                                                 <h6 class="py-3">Disponibile</h6>
                                             @endif
+                                        </td>
+                                        <td>
+                                            <a href={{route('dishes.edit', $dish->id)}}>Modifica</a>
                                         </td>  
                                     </tr>
                                     @endforeach
