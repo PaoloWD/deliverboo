@@ -15,12 +15,17 @@
                                 <h2> {{ $dish->name }} </h2>
                             </div>
                             <div class="card-img-top text-center pb-3">
-                                <img class="img-fluid" src="{{ asset('storage/' . $dish->image) }}" alt="" style="height:230px">
+                                @if (Storage::url($dish->image))
+                                    <img class="img-fluid" src="{{ asset('storage/' . $dish->image) }}" alt="" style="height:230px">
+                                @endif
+                                @if ($dish->image)
+                                    <img class="img-fluid" src="{{ $dish->image }}" alt="">
+                                @endif
                             </div>
                             <div class="card-text flex-grow-1">
-                                <p>Description: {{ $dish->description }} </p>
-                                <p>Ingredients: {{ $dish->ingredients }} </p>
-                                <p>Price: {{ number_format($dish->price, 2, ',', '.') }} €</p>
+                                <p><strong>Description:</strong> {{ $dish->description }} </p>
+                                <p><strong>Ingredients:</strong> {{ $dish->ingredients }} </p>
+                                <p><strong>Price:</strong> {{ number_format($dish->price, 2, ',', '.') }} €</p>
                             </div>
                             <div class="d-flex gap-2 d-md-inline-block d-lg-flex justify-content-center">
                                 <a class="link-show" href="{{ route('dashboard') }}">

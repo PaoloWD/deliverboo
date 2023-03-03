@@ -65,6 +65,12 @@ class DishController extends Controller
         $user_id = auth()->user()->id;
         $dishes = Dish::where('restaurant_id', $user_id)->get();
 
+        // $dishes_image = Dish::with('restaurant')->where('restaurant_id', $restaurant_id)->select('image')->get();
+        // $dishes_image = Dish::with('restaurants')->select('id', 'name', 'image')->get();
+        // $dishes_image = Dish::all();
+
+        // $image_url = Dish::where('image')->get();
+
         return view("dishes.show", compact("dish", "dishes"));
     }
 

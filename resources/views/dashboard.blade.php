@@ -128,11 +128,19 @@
                                 <tbody>
                                     @foreach ($dishes as $dish)
                                     <tr>
-                                        
-                                        <td>
-                                            <img class="card-img-top dish-img" src="{{ asset('storage/' . $dish->image) }}"
+                                    {{-- Da correggere l'if in modo da mostrare solo un immagine (o il file storage o l'url) --}}
+                                        @if (Storage::url($dish->image))
+                                            <td>
+                                                <img class="card-img-top dish-img" src="{{ asset('storage/' . $dish->image) }}"
                                                 alt="" style="height:51px; width:51px">
-                                        </td>
+                                            </td>
+                                        @endif
+                                        @if ($dish->image)
+                                            <td>
+                                                <img class="card-img-top dish-img" src="{{ $dish->image }}"
+                                                alt="" style="height:51px; width:51px">
+                                            </td>
+                                        @endif
                                         <td>
                                             <h6 class="py-3">{{ $dish->name }}</h6>
                                         </td>
