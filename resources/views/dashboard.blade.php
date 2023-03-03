@@ -7,10 +7,10 @@
                     <h2 class="py-2 custom-color">
                         Welcome <strong>{{ Auth::user()->name }}</strong>!
                     </h2>
-                    <h5 class="py-2 custom-color"> This is your personal page!</h5>
+                    <h5 class="custom-color"> This is your personal page!</h5>
                 </div>
                 <div>
-                    <div class="py-5">
+                    <div class="py-3">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
@@ -172,9 +172,9 @@
                                     </tr>
                                     @endforeach
                                 </tbody>
-                            </table>
+                            </table> 
                         @else
-                            <div class="card dashboard text-center ">
+                            <div class="card dashboard shadow text-center ">
                                 <h3>{{ __('Create your restaurant profile!') }} </h3>
                                 <div class="mt-3">
                                     <h3>Add your restaurant </h3>
