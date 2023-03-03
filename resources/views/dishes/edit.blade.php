@@ -58,7 +58,7 @@
         {{-- price-input --}}
         <div class="mb-3">
           <label class="form-label">Prezzo</label>
-          <input type="number" 
+          <input type="number" step="0.01" pattern="[0-9]+(\.[0-9]{1,2})?"
           class="form-control @error('price') is-invalid @elseif(old('price')) is-valid  @enderror"
           value="{{$dish->price}}"
           name="price">
