@@ -24,6 +24,11 @@
                             <button class="btn btn-success btn-custom"> Back to Dashboard </button>
                         </a>
                     </div>
+                    <div class="text-center mt-3">
+                        <a href={{route('dishes.edit', $dish->id)}}>
+                            <button class="btn btn-success btn-custom"> Modifica </button>
+                        </a>
+                    </div>
                 </div>
             @endforeach
             </div>
