@@ -100,7 +100,7 @@
                     {{-- @dd($technologies) --}}
                     <div class="py-3">
                         <div class="py-2">Categories:</div>
-                        <div class="row justify-content-center px-3">
+                        <div class="row d-block d-md-flex justify-content-center px-3">
                             @foreach ($categories as $category)
                                 <div class="form-check col-2">
                                     <input class="form-check-input @error('categories') is-invalid @enderror"
