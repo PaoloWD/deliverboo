@@ -23,6 +23,7 @@
 .btn-custom{
     background-color: #c76262 !important;
     border-color: #c76262 !important;
+    color: #fff!important;
     transition: all, .3s;
     &:hover{
         background-color: #b34d4d !important;
@@ -157,4 +158,13 @@
     }
 }; 
 
+.link-show{
+    color: transparent;
+    list-style: none !important;
+
+    &:hover{
+        color: transparent;
+        list-style: none !important;
+    }
+}
 
