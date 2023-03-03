@@ -11,15 +11,15 @@
                 <div class="col-12 col-md-3 col-lg-4 pb-3 ">
                     <div class="py-5 h-100">
                         <div class="card shadow dashboard mt-4 p-4 h-100 rounded-4">
-                            <div class="card-title text-center">
+                            <div class="card-title title-dishes text-center">
                                 <h2> {{ $dish->name }} </h2>
                             </div>
                             <div class="card-img-top text-center pb-3">
                                 @if (Storage::url($dish->image))
-                                    <img class="img-fluid" src="{{ asset('storage/' . $dish->image) }}" alt="" style="height:230px">
+                                    <img class="img-fluid dishes-imgs" src="{{ asset('storage/' . $dish->image) }}" alt="" style="height:230px">
                                 @endif
                                 @if ($dish->image)
-                                    <img class="img-fluid" src="{{ $dish->image }}" alt="">
+                                    <img class="img-fluid dishes-imgs" src="{{ $dish->image }}" alt="">
                                 @endif
                             </div>
                             <div class="card-text flex-grow-1">

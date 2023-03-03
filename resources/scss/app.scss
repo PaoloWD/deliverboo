@@ -1,5 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 
+.title-dishes{
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dishes-imgs{
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center;
+}
+
 .restaurant-img{
     height: 350px;
     object-fit: cover;
