@@ -26,7 +26,7 @@ class StoreDishRequest extends FormRequest
         return [
             'name'=>'required|string',
             'image' => 'image|nullable',
-            'description'=>'required|string',
+            'description'=>'required|string|max:255',
             'ingredients'=>'required|string',
             'price' => 'required|numeric|min:0',
             'visibility' => 'boolean',
@@ -34,10 +34,15 @@ class StoreDishRequest extends FormRequest
     }
     public function messages(){
         return[
+
             "name.required" => "Il nome è obbligatorio",
             "image.image" =>"Il file che hai inserito non è un immagine",
-            "description.required" => "La descrizione è obbligatorio",
+            "description.required" => [
+                'required' => "La descrizione è obbligatorio",
+                'max' => "Puoi utilizzare un massimo di :max caratteri",
+            ],
             "ingredients.required" => "Gli ingredienti sono obbligatori",
+
             'price' => [
                 'required' => 'Il prezzo è obbligatorio.',
                 'numeric' => 'Il prezzo deve essere un numero.',
