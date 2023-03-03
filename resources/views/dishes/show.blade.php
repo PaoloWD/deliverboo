@@ -21,7 +21,6 @@
                             <p>Ingredients: {{ $dish->ingredients }} </p>
                             <p>Price: {{ $dish->price }}€</p>
                         </div>
-                    
                         <div class="text-center mt-3">
                             <a href="{{ route('dashboard') }}">
                                 <button class="btn btn-success btn-custom"> Back to Dashboard </button>
