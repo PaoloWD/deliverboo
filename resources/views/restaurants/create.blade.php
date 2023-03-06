@@ -27,7 +27,7 @@
                         <label class="form-label">Name</label>
                         <input type="text"
                             class="form-control @error('name') is-invalid @elseif(old('name')) is-valid  @enderror"
-                            value="{{ $errors->has('name') ? '' : old('name') }}" name="name">
+                            value="{{ $errors->has('name') ? '' : old('name') }}" name="name" required>
 
                         @error('name')
                             <div class="invalid-feedback">
@@ -49,7 +49,7 @@
                         <label class="form-label">Address</label>
                         <input type="text"
                             class="form-control @error('address') is-invalid @elseif(old('address')) is-valid  @enderror"
-                            value="{{ $errors->has('address') ? '' : old('address') }}" name="address">
+                            value="{{ $errors->has('address') ? '' : old('address') }}" name="address" required>
 
                         @error('address')
                             <div class="invalid-feedback">
@@ -69,7 +69,7 @@
                         <label class="form-label">Vat-code</label>
                         <input type="text"
                             class="form-control @error('vat') is-invalid @elseif(old('vat')) is-valid  @enderror"
-                            value="{{ $errors->has('vat') ? '' : old('vat') }}" name="vat">
+                            value="{{ $errors->has('vat') ? '' : old('vat') }}" name="vat" required>
 
                         @error('vat')
                             <div class="invalid-feedback">
@@ -86,7 +86,7 @@
                     {{-- image input --}}
                     <div class="mb-3">
                         <label class="form-label">Cover Image</label>
-                        <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image">
+                        <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image" required>
                         {{-- @error('image')
                       <div class="invalid-feedback">
                         {{ $message }}

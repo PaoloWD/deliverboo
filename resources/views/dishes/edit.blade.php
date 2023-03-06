@@ -15,7 +15,7 @@
                         <label class="form-label">Name:</label>
                         <input type="text"
                             class="form-control @error('name') is-invalid @elseif(old('name')) is-valid  @enderror"
-                            value="{{ $dish->name }}" name="name">
+                            value="{{ $dish->name }}" name="name" required>
 
                         @error('name')
                             <div class="invalid-feedback">
@@ -28,7 +28,7 @@
                     <div class="mb-3">
                         <label class="form-label">Description:</label>
                         <textarea cols="30" rows="5" name="description"
-                            class="form-control @error('description') is-invalid @enderror">{{ $dish->description }}</textarea>
+                            class="form-control @error('description') is-invalid @enderror" required>{{ $dish->description }}</textarea>
                             @error('description')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -41,7 +41,7 @@
                         <label class="form-label">Ingredients:</label>
                         <input type="text"
                             class="form-control @error('ingredients') is-invalid @elseif(old('ingredients')) is-valid  @enderror"
-                            value="{{ $dish->ingredients }}" name="ingredients">
+                            value="{{ $dish->ingredients }}" name="ingredients" required>
 
                         @error('ingredients')
                             <div class="invalid-feedback">
@@ -55,7 +55,7 @@
                         <label class="form-label">Price:</label>
                         <input type="number" step="0.01" pattern="[0-9]+(\.[0-9]{1,2})?"
                             class="form-control @error('price') is-invalid @elseif(old('price')) is-valid  @enderror"
-                            value="{{ $dish->price }}" name="price">
+                            value="{{ $dish->price }}" name="price" required>
 
                         @error('price')
                             <div class="invalid-feedback">
@@ -67,7 +67,7 @@
                     {{-- image input --}}
                     <div class="mb-3">
                         <label class="form-label">Image:</label>
-                        <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image">
+                        <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image" required>
                         @error('image')
                             <div class="invalid-feedback">
                                 {{ $message }}

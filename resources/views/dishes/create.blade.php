@@ -16,7 +16,7 @@
                     <label class="form-label">Name:</label>
                     <input type="text"
                     class="form-control @error('name') is-invalid @elseif(old('name')) is-valid  @enderror"
-                    value="{{ $errors->has('name') ? '' : old('name') }}" name="name">
+                    value="{{ $errors->has('name') ? '' : old('name') }}" name="name" required>
                     
                     @error('name')
                     <div class="invalid-feedback">
@@ -30,7 +30,7 @@
                     <label class="form-label">Description:</label>
                     <input type="text"
                     class="form-control @error('description') is-invalid @elseif(old('description')) is-valid  @enderror"
-                    value="{{ $errors->has('description') ? '' : old('description') }}" name="description">
+                    value="{{ $errors->has('description') ? '' : old('description') }}" name="description" required>
                     
                     @error('description')
                     <div class="invalid-feedback">
@@ -44,7 +44,7 @@
                     <label class="form-label">Ingredients:</label>
                     <input type="text"
                     class="form-control @error('ingredients') is-invalid @elseif(old('ingredients')) is-valid  @enderror"
-                    value="{{ $errors->has('ingredients') ? '' : old('ingredients') }}" name="ingredients">
+                    value="{{ $errors->has('ingredients') ? '' : old('ingredients') }}" name="ingredients" required>
                     
                     @error('ingredients')
                     <div class="invalid-feedback">
@@ -58,7 +58,7 @@
                     <label class="form-label">Price:</label>
                     <input type="number" step="0.01" pattern="[0-9]+(\.[0-9]{1,2})?"
                     class="form-control @error('price') is-invalid @elseif(old('price')) is-valid  @enderror"
-                    value="{{ $errors->has('price') ? '' : old('price') }}" name="price">
+                    value="{{ $errors->has('price') ? '' : old('price') }}" name="price" required>
                     
                     @error('price')
                     <div class="invalid-feedback">
@@ -70,7 +70,7 @@
                 {{-- Cover-image-input --}}
                 <div class="mb-3">
                     <label class="form-label">Image:</label>
-                    <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image">
+                    <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image" required>
                 </div>
                 
                 {{-- Visibility-input --}}
