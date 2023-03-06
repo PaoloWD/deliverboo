@@ -75,9 +75,9 @@
                         @enderror
                         
                         @if(str_contains($dish->image, "https"))
-                        <img class="img-thumbnail" src="{{ $dish->image }}" style="height:230px" alt="">
+                        <img class="img-thumbnail mt-4" src="{{ $dish->image }}" style="height:230px" alt="">
                         @else
-                        <img  class="img-thumbnail" src="{{asset('/storage/'. $dish->image)}}" style="height:230px" alt="">
+                        <img  class="img-thumbnail mt-4" src="{{asset('/storage/'. $dish->image)}}" style="height:230px" alt="">
                         @endif
                     </div>
 
