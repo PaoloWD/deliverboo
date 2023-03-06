@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,6 @@ Route::get('/restaurants/{restaurant}',[Restaurant::class, 'show']);
 
 Route::get('/dishes', [Dish::class], 'index');
 Route::get('/dishes/{dish}',[Dish::class, 'show']);
+
+Route::get('/categories', [Category::class], 'index');
+Route::get('/categories/{category}',[Category::class, 'show']);
