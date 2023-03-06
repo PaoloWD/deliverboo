@@ -14,10 +14,10 @@
                         <img class="img-fluid" src="{{ asset('storage/' . $restaurant->image) }}" alt="" style="height:200px" alt="">
                     </div>
                     <div class="card-text">
-                        <p>Nome del Ristorante: {{$restaurant->name}}</p>
-                        <p>Partita iva: {{$restaurant->vat}}</p>
-                        <p>Indirizzo: {{$restaurant->address}}</p>
-                        <p>Categorie:
+                        <p><strong>Nome del Ristorante:</strong> {{$restaurant->name}}</p>
+                        <p><strong>Partita iva:</strong> {{$restaurant->vat}}</p>
+                        <p><strong>Indirizzo:</strong> {{$restaurant->address}}</p>
+                        <p><strong>Categorie:</strong>
                             @foreach ($restaurant->categories as $categories )
                             <div class="badge text-bg-danger custom-bg rounded-pill my-3 shadow">
                                 {{ $categories->name }}
