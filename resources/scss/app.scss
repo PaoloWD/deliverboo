@@ -1,12 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
 
-input:invalid {
-    box-shadow: 0 0 5px 1px red;
-}
-  
-input:focus:invalid {
-    box-shadow: none;
-}
 
 .title-dishes{
     height: 4.5rem;
