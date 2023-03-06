@@ -15,11 +15,13 @@
                                 <h2> {{ $dish->name }} </h2>
                             </div>
                             <div class="card-img-top text-center pb-3">
-                                @if (Storage::url($dish->image))
-                                    <img class="img-fluid dishes-imgs" src="{{ asset('storage/' . $dish->image) }}" alt="" style="height:230px">
-                                @endif
-                                @if ($dish->image)
-                                    <img class="img-fluid dishes-imgs" src="{{ $dish->image }}" alt="">
+                                @if(str_contains($dish->image, "https"))
+                                    <img class="card-img-top dish-img" src="{{$dish->image}}"
+                                    alt="" style="height:230px">
+                                    @else
+                                    <img class="card-img-top dish-img" src="{{ asset('storage/' . $dish->image) }}"
+                                    alt="" style="height:230px">
+                                    <div class="card-text">
                                 @endif
                             </div>
                             <div class="card-text flex-grow-1">

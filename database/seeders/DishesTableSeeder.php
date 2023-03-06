@@ -16,6 +16,7 @@ class DishesTableSeeder extends Seeder
      */
     public function run()
     {
+        $link = "https://";
         // Definisco i dati dei piatti
         $dishes = [
             // Piatti del primo ristorante
