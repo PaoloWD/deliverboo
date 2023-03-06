@@ -78,8 +78,13 @@
                         </div> --}}
                         @if ($restaurant?->user_id === Auth::user()->id)
                             <div class="card text-bg-dark shadow">
-                                <img src="{{ asset('storage/' . $restaurant->image) }}" class="card-img restaurant-img" alt="..."
+                                @if(str_contains($restaurant->image, "https"))
+                                    <img class="card-img-top dish-img" src="{{$restaurant->image}}"
+                                    alt="" style="height: 200px">
+                                @else
+                                    <img src="{{ asset('storage/' . $restaurant->image) }}" class="card-img restaurant-img" alt="..."
                                     style="height: 200px">
+                                @endif
                                 <div class="card-img-overlay">
                                     <h3 class="card-title">{{ $restaurant->name }}</h3>
                                     <div class="position-absolute" style="right:20px; bottom:20px">
