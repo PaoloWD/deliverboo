@@ -30,7 +30,7 @@ class StoreRestaurantRequest extends FormRequest
             'vat'=>'required|string',
             'address'=>'required',
             'image' => 'image|nullable',
-            "categories" => "nullable|array|exists:categories,id",
+            "categories" => "required|array|exists:categories,id",
             'user_id' => [
                 'required',
                 Rule::unique('restaurants')->where(function ($query) {
@@ -47,6 +47,7 @@ class StoreRestaurantRequest extends FormRequest
             'address.required' => 'inserisci un indirizzo valido',
             "vat.required" => "Inserire la P. IVA",
             "image.image" =>"Il file che hai inserito non è un immagine",
+            'categories.required' => 'Seleziona almeno una categoria',
             'user_id.unique' => 'Hai già creato un ristorante.',
         ];
     }

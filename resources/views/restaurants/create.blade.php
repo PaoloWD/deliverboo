@@ -110,12 +110,6 @@
                                     <label class="form-check-label" for="category_{{ $loop->index }}">
                                         {{ $category->name }}
                                     </label>
-                                    @error('categories')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-
                                 </div>
                             @endforeach
                         </div>
