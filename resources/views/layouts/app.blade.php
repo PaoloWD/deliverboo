@@ -30,7 +30,7 @@
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/dashboard') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
-                            DeliverBoo
+                            DeliveBoo
                         </div>
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
@@ -38,7 +38,7 @@
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
-                            DeliverBoo
+                            DeliveBoo
                         </div>
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
@@ -60,7 +60,7 @@
                     <a class="navbar-brand d-flex align-items-center offcanvas-title" id="offcanvasNavbarLabel href="{{ url('/dashboard') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
-                            DeliverBoo
+                            DeliveBoo
                         </div>
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
@@ -68,7 +68,7 @@
                     <a class="navbar-brand d-flex align-items-center offcanvas-title" id="offcanvasNavbarLabel href="{{ url('/') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
-                            DeliverBoo
+                            DeliveBoo
                         </div>
                         {{-- config('app.name', 'Laravel') --}}
                     </a>

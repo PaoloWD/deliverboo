@@ -5,7 +5,7 @@
     <div class="container">
         <div class="pt-5 text-center">
             <div class="card p-5 rounded-5" style="opacity: 0.95">
-                <h1 class="custom-color">This is your restaurant!</h1>
+                <h1 class="custom-color">Questo è il tuo ristorante!</h1>
                 <div class="card show-restaurant mt-4 p-4">
                     <div class="card-title text-center">
                         <h2></h2>
@@ -14,10 +14,10 @@
                         <img class="img-fluid" src="{{ asset('storage/' . $restaurant->image) }}" alt="" style="height:200px" alt="">
                     </div>
                     <div class="card-text">
-                        <p>Nome del Ristorante: {{$restaurant->name}}</p>
-                        <p>VAT: {{$restaurant->vat}}</p>
-                        <p>Indirizzo: {{$restaurant->address}}</p>
-                        <p>Categorie:
+                        <p><strong>Nome del Ristorante:</strong> {{$restaurant->name}}</p>
+                        <p><strong>Partita iva:</strong> {{$restaurant->vat}}</p>
+                        <p><strong>Indirizzo:</strong> {{$restaurant->address}}</p>
+                        <p><strong>Categorie:</strong>
                             @foreach ($restaurant->categories as $categories )
                             <div class="badge text-bg-danger custom-bg rounded-pill my-3 shadow">
                                 {{ $categories->name }}
@@ -27,7 +27,7 @@
                     </div>
                     <div class="text-center mt-4">
                         <a href="{{ route('dashboard') }}">
-                            <button class="btn btn-success btn-custom"> Back to Dashboard </button>
+                            <button class="btn btn-success btn-custom"> Torna al pannello di controllo </button>
                         </a>
                     </div>
                 </div>

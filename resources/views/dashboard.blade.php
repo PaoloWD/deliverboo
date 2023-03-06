@@ -5,9 +5,9 @@
             <div class="container shadow rounded-4 p-5 presentation-banner h-100 overflow-auto">
                 <div class="">
                     <h2 class="py-2 custom-color">
-                        Welcome <strong>{{ Auth::user()->name }}</strong>!
+                        Ciao <strong>{{ Auth::user()->name }}</strong>!
                     </h2>
-                    <h5 class="custom-color"> This is your personal page!</h5>
+                    <h5 class="custom-color">  Questa è la tua pagina personale!</h5>
                 </div>
                 <div>
                     <div class="py-3">
@@ -94,17 +94,17 @@
 
                                         <a href="{{ route('restaurants.show', $restaurant->id) }}">
                                             <button class="btn btn-sm btn-success btn-custom shadow">
-                                                View Your Resaturant <i class="fa-solid fa-magnifying-glass ms-2"></i>
+                                                Il tuo ristorante <i class="fa-solid fa-magnifying-glass ms-2"></i>
                                             </button>
                                         </a>
                                     </div>
                                     @if($dishes)
                                         @foreach ($dishes as $dish)
-                                            <div class="position-absolute" style="right:220px; bottom:20px">
+                                            <div class="position-absolute" style="right:200px; bottom:20px">
 
                                                 <a href="{{ route('dishes.show', $dish->id) }}">
                                                     <button class="btn btn-sm btn-success btn-custom shadow">
-                                                        View Your Dishes <i class="fa-solid fa-magnifying-glass ms-2"></i>
+                                                        I tuoi piatti <i class="fa-solid fa-magnifying-glass ms-2"></i>
                                                     </button>
                                                 </a>
                                             </div>
@@ -117,7 +117,7 @@
 
                                 <a href="{{ route('dishes.create') }}">
                                     <button class="btn btn-success btn-custom shadow">
-                                        Create your Dish <i class=" ps-3 fa-solid fa-plus"></i>
+                                        Crea il tuo piatto <i class=" ps-3 fa-solid fa-plus"></i>
                                     </button>
                                 </a>
                             </div>
@@ -130,7 +130,7 @@
                                         <th scope="col">Descrizione</th>
                                         <th scope="col">Ingredienti</th>
                                         <th scope="col">Prezzo</th>
-                                        <th scope="col">Disponibile</th>
+                                        <th scope="col">Visibilità</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -192,9 +192,9 @@
                             </table> 
                         @else
                             <div class="card dashboard shadow text-center ">
-                                <h3>{{ __('Create your restaurant profile!') }} </h3>
+                                <h3>{{ __('Crea il profilo del tuo ristorante!') }} </h3>
                                 <div class="mt-3">
-                                    <h3>Add your restaurant </h3>
+                                    <h3>Aggiungi il tuo ristorante!</h3>
                                     <a href="{{ route('restaurants.create') }}">
                                         <button class="btn btn-success mt-5 btn-custom">
                                             <i class="fa-solid fa-plus"></i>
