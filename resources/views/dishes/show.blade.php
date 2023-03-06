@@ -8,7 +8,7 @@
             <div class="row h-100 overflow-auto justify-content-center">
                 <h1 class="custom-color text-center col-12">Your dishes!</h1>
                 @foreach ($dishes as $dish)
-                <div class="col-12 col-md-3 col-lg-4 pb-3 ">
+                <div class="col-12 col-md-6 col-lg-4 pb-3 ">
                     <div class="py-5 h-100">
                         <div class="card shadow dashboard mt-4 p-4 h-100 rounded-4">
                             <div class="card-title title-dishes text-center">
@@ -29,7 +29,7 @@
                                 <p><strong>Ingredients:</strong> {{ $dish->ingredients }} </p>
                                 <p><strong>Price:</strong> {{ number_format($dish->price, 2, ',', '.') }} €</p>
                             </div>
-                            <div class="d-flex gap-2 d-md-inline-block d-lg-flex justify-content-center">
+                            <div class="d-flex gap-2  justify-content-center">
                                 <a class="link-show" href="{{ route('dashboard') }}">
                                     <button class="btn btn-success btn-custom">
                                         <i class="fa-solid fa-arrow-left"></i>
@@ -44,7 +44,7 @@
                                 class="delete-form d-inline-block">
                                 @csrf()
                                 @method('delete')
-                                    <button class="btn btn-success btn-custom mt-md-1 mt-lg-0">
+                                    <button class="btn btn-success btn-custom ">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
