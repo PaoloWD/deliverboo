@@ -128,7 +128,6 @@
                                 <tbody>
                                     @foreach ($dishes as $dish)
                                     <tr>
-                                    {{-- Da correggere l'if in modo da mostrare solo un immagine (o il file storage o l'url) --}}
                                         @if(str_contains($dish->image, "https"))
                                         
                                         <td>
@@ -150,7 +149,7 @@
                                             <h6 class="py-3">{{Str::limit($dish->description, 15)}}</h6>
                                         </td>
                                         <td>
-                                            <h6 class="py-3">{{ $dish->ingredients }}</h6>
+                                            <h6 class="py-3">{{Str::limit($dish->ingredients, 20) }}</h6>
                                         </td>
                                         <td>
                                             <h6 class="py-3">{{ number_format($dish->price, 2, ',', '.') }} €</h6>
