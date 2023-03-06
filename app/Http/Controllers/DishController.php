@@ -76,7 +76,7 @@ class DishController extends Controller
     public function edit(Dish $dish)
     {
         $dishes = Dish::all();
-        $this->authorize('view', $dish);
+        $this->authorize('update', $dish);
         return view('dishes.edit', compact('dish', 'dishes'));
     }
 
