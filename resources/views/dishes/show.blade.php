@@ -21,7 +21,6 @@
                                     @else
                                     <img class="card-img-top dish-img" src="{{ asset('storage/' . $dish->image) }}"
                                     alt="" style="height:230px">
-                                    <div class="card-text">
                                 @endif
                             </div>
                             <div class="card-text flex-grow-1">
