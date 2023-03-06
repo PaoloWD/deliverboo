@@ -6,7 +6,7 @@
 
         <div class="container shadow  p-5 presentation-banner h-100  rounded-4">
             <div class="row h-100 overflow-auto justify-content-center">
-                <h1 class="custom-color text-center col-12">Your dishes!</h1>
+                <h1 class="custom-color text-center col-12">I tuoi piatti!</h1>
                 @foreach ($dishes as $dish)
                     <div class="col-12 col-md-6 col-lg-4 pb-3 ">
                         <div class="py-5 h-100">
@@ -24,9 +24,9 @@
                                     @endif
                                 </div>
                                 <div class="card-text flex-grow-1">
-                                    <p><strong>Description:</strong> {{ $dish->description }} </p>
-                                    <p><strong>Ingredients:</strong> {{ $dish->ingredients }} </p>
-                                    <p><strong>Price:</strong> {{ number_format($dish->price, 2, ',', '.') }} €</p>
+                                    <p><strong>Descrizione:</strong> {{ $dish->description }} </p>
+                                    <p><strong>Ingredienti:</strong> {{ $dish->ingredients }} </p>
+                                    <p><strong>Prezzo:</strong> {{ number_format($dish->price, 2, ',', '.') }} €</p>
                                 </div>
                                 <div class="d-flex gap-2  justify-content-center">
                                     <a class="link-show" href="{{ route('dashboard') }}">
