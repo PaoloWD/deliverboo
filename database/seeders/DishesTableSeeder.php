@@ -39,7 +39,7 @@ class DishesTableSeeder extends Seeder
             ],
             [
                 'name' => 'Insalata mista',
-                'image' => 'hhttps://www.calendariodelciboitaliano.it/wp-content/uploads/2017/07/insalatamistaheader1.jpg',
+                'image' => 'https://www.calendariodelciboitaliano.it/wp-content/uploads/2017/07/insalatamistaheader1.jpg',
                 'description' => 'Ciotola grande di insalata mista tutti i gusti più uno',
                 'ingredients' => 'lattuga, pomodoro, cetriolo, olive nere',
                 'price' => 6.00,
