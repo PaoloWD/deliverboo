@@ -67,7 +67,7 @@
                     {{-- image input --}}
                     <div class="mb-3">
                         <label class="form-label">Immagine:</label>
-                        <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image" required>
+                        <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image">
                         @error('image')
                             <div class="invalid-feedback">
                                 {{ $message }}
