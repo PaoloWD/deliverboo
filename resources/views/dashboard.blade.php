@@ -164,9 +164,9 @@
                                         </td>                                         
                                         <td>
                                             @if($dish->visibility === 0)
-                                                <h6 class="py-3 text-center"><i class="fa-solid fa-eye-slash custom-color"></i></h6>
+                                                <h6 class="py-3 text-center"><i class="fa-solid fa-eye-slash "></i></h6>
                                             @else
-                                                <h6 class="py-3 text-center"><i class="fa-solid fa-eye custom-color"></i></h6>
+                                                <h6 class="py-3 text-center"><i class="fa-solid fa-eye "></i></h6>
                                             @endif
                                         </td>
                                         <td>
