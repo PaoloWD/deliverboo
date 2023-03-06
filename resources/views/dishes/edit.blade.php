@@ -73,8 +73,12 @@
                                 {{ $message }}
                             </div>
                         @enderror
-
-                        {{-- <img class="img-thumbnail" src="{{ asset('/dish' . $dish->image) }}" alt=""> --}}
+                        
+                        @if(str_contains($dish->image, "https"))
+                        <img class="img-thumbnail" src="{{ $dish->image }}" style="height:230px" alt="">
+                        @else
+                        <img  class="img-thumbnail" src="{{asset('/storage/'. $dish->image)}}" style="height:230px" alt="">
+                        @endif
                     </div>
 
                     {{-- visibility input --}}
