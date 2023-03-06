@@ -10,7 +10,7 @@
 
 
 
-                <h2 class="py-3">Unisciti alla community di DeliverBoo!</h2>
+                <h2 class="py-3">Unisciti alla community di DeliveBoo!</h2>
                 <h3 class="py-3">
                     Insieme possiamo aiutarti a raggiungere sempre più clienti!
                 </h3>

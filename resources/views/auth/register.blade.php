@@ -9,7 +9,7 @@
                     <div class="card-header custom-bg">
                         <div class="logo fs-4 fw-bold d-flex align-items-center text-white" style="height:40px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
-                            DeliverBoo
+                            DeliveBoo
                         </div>
                     </div>
     

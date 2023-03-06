@@ -97,7 +97,7 @@
                                     </div>
                                     @if($dishes)
                                         @foreach ($dishes as $dish)
-                                            <div class="position-absolute" style="right:220px; bottom:20px">
+                                            <div class="position-absolute" style="right:200px; bottom:20px">
 
                                                 <a href="{{ route('dishes.show', $dish->id) }}">
                                                     <button class="btn btn-sm btn-success btn-custom shadow">
