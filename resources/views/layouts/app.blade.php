@@ -35,7 +35,7 @@
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
                 @else
-                    <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                    <a class="navbar-brand d-flex align-items-center" href="{{ url('http://localhost:5174/') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
                             DeliveBoo
@@ -57,7 +57,7 @@
                     <div class="offcanvas-header">
                         {{-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> --}}
                         @if (Auth::check())
-                    <a class="navbar-brand d-flex align-items-center offcanvas-title" id="offcanvasNavbarLabel href="{{ url('/dashboard') }}">
+                    <a class="navbar-brand d-flex align-items-center offcanvas-title" id="offcanvasNavbarLabel" href="{{ url('/dashboard') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
                             DeliveBoo
@@ -65,7 +65,7 @@
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
                 @else
-                    <a class="navbar-brand d-flex align-items-center offcanvas-title" id="offcanvasNavbarLabel href="{{ url('/') }}">
+                    <a class="navbar-brand d-flex align-items-center offcanvas-title" id="offcanvasNavbarLabel" href="{{ url('/') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
                             DeliveBoo
@@ -86,7 +86,7 @@
                                     <a class="nav-link custom-color"
                                         href="{{ url('/dashboard') }}">{{ __('Vai al tuo Ristorante') }}</a>
                                 @else
-                                    <a class="nav-link custom-color" href="{{ url('/') }}">{{ __('Home') }}</a>
+                                    <a class="nav-link custom-color" href="{{ url('http://localhost:5174/') }}">{{ __('Home') }}</a>
                                 @endif
                             </li>
                         </ul>
