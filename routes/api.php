@@ -33,9 +33,9 @@ Route::get('/categories/{category}',[CategoryController::class, 'show']);
 
 Route::get('/restaurants/search', [RestaurantController::class, 'search']);
 Route::get('/restaurants', function(Request $request) {
-    $category = $request->input('category');
-    $restaurants = Restaurant::whereHas('categories', function($query) use ($category) {
-      $query->where('name', $category);
+    $categories = $request->input('category');
+    $restaurants = Restaurant::whereHas('categories', function($query) use ($categories) {
+        $query->whereIn('name', $categories);
     })->get();
     return response()->json($restaurants);
-  });
+});
