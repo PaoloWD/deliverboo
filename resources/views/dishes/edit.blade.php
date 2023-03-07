@@ -145,14 +145,16 @@
                   errorElement.classList.add('invalid-feedback');
                   errorElement.innerText = element.dataset.error;
                   element.parentNode.appendChild(errorElement);
-              }
-              if (element.dataset.error === ''){
-                  element.classList.remove('is-invalid');
-                  element.classList.add('is-valid');
               }else {
-                  element.classList.remove('is-invalid');
-                  element.classList.add('is-invalid');
-              }
+                    element.dataset.error = '';
+                }
+                if (element.dataset.error === ''){
+                    element.classList.remove('invalid-feedback');
+                    element.classList.remove('is-invalid');
+                }else {
+                    element.classList.remove('is-invalid');
+                    element.classList.add('is-invalid');
+                }
           });
           price.forEach(element => {
             if (element.value.length === 0){
@@ -175,15 +177,16 @@
                   errorElement.classList.add('invalid-feedback');
                   errorElement.innerText = element.dataset.error;
                   element.parentNode.appendChild(errorElement);
-                  }
-                  if (element.dataset.error === ''){
-                  element.classList.remove('is-invalid');
-                  element.classList.remove('invalid-feedback');
-
-              }else {
-                  element.classList.remove('is-invalid');
-                  element.classList.add('is-invalid');
-              }
+                  }else {
+                    element.dataset.error = '';
+                }
+                if (element.dataset.error === ''){
+                    element.classList.remove('invalid-feedback');
+                    element.classList.remove('is-invalid');
+                }else {
+                    element.classList.remove('is-invalid');
+                    element.classList.add('is-invalid');
+                }
           });
           if(validText1 && validText2 & validText3 && validPrice1 && validPrice2){
               this.submit();
