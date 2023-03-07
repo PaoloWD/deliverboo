@@ -8,7 +8,7 @@
                 <div class="h-100 overflow-auto px-3">
                     <h1 class="custom-color mb-3">Crea un nuovo piatto</h1>
 
-                    <form action="{{ route('dishes.store') }}" method="POST" enctype="multipart/form-data">
+                    <form id="my-form" action="{{ route('dishes.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         {{-- name-input --}}
@@ -83,24 +83,29 @@
                             <label class="form-check-label" for="switch">Visibilità</label>
                         </div>
 
-                        <button type="submite" class="btn btn-primary btn-custom">Salva</button>
+                        <button type="submit" class="btn btn-primary btn-custom">Salva</button>
+                    </form>
                 </div>
             </div>
 
         </div>
     </div>
 <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelector('#my-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            let validText = true;
-            let validEmail = true;
-            let validPassword = true;
+            console.log("click");
+            let validText1 = true;
+            let validText2 = true;
+            let validText3 = true;
+            let validPrice1 = true;
+            let validPrice2 = true;
+            let validFile = true;
             let texts = document.querySelectorAll('input[type="text"]');
-            let emails = document.querySelectorAll('input[type="email"]');
-            let passwords = document.querySelectorAll('input[type="password"]');
+            let price = document.querySelectorAll('input[type="price"]');
+            let input = document.querySelectorAll('input[type="input"]');
             texts.forEach(element => {
                 if (element.value.length === 0){
-                    validText = false;
+                    validText1 = false;
                     element.dataset.error = 'Il campo di testo deve essere compilato';
                     if(element.parentNode.children.length > 1){
                         element.parentNode.removeChild(element.parentNode.lastChild)
@@ -110,7 +115,7 @@
                     errorElement.innerText = element.dataset.error;
                     element.parentNode.appendChild(errorElement);
                 } else if (element.value.length < 8){
-                    validText = false;
+                    validText2 = false;
                     element.dataset.error = 'Il campo di testo deve contenere minimo 8 caratteri';
                     if(element.parentNode.children.length > 1){
                         element.parentNode.removeChild(element.parentNode.lastChild)
@@ -120,7 +125,7 @@
                     errorElement.innerText = element.dataset.error;
                     element.parentNode.appendChild(errorElement);
                 } else if (element.value.length > 255){
-                    validText = false;
+                    validText3 = false;
                     element.dataset.error = 'Il campo di testo non può superare i 255 caratteri';
                     if(element.parentNode.children.length > 1){
                         element.parentNode.removeChild(element.parentNode.lastChild)
@@ -140,87 +145,36 @@
                     element.classList.add('is-invalid');
                 }
             });
-            emails.forEach(element => {
-                if (element.value.length === 0){
-                    validEmail = false;
-                    element.dataset.error = 'Il campo email deve essere compilato';
-                    if(element.parentNode.children.length > 1){
-                        element.parentNode.removeChild(element.parentNode.lastChild)
-                    }
-                    const errorElement = document.createElement('div');
-                    errorElement.classList.add('invalid-feedback');
-                    errorElement.innerText = element.dataset.error;
-                    element.parentNode.appendChild(errorElement);
-                } else if (element.value.length < 8){
-                    validEmail = false;
-                    element.dataset.error = 'La mail deve avere minimo 8 caratteri';
-                    if(element.parentNode.children.length > 1){
-                        element.parentNode.removeChild(element.parentNode.lastChild)
-                    }
-                        const errorElement = document.createElement('div');
-                        errorElement.classList.add('invalid-feedback');
-                        errorElement.innerText = element.dataset.error;
-                        element.parentNode.appendChild(errorElement);
-                    
-                } else if (element.value.length > 255){
-                    validEmail = false;
-                    element.dataset.error = 'La mail non può superare i 255 caratteri';
-                    if(element.parentNode.children.length > 1){
-                        element.parentNode.removeChild(element.parentNode.lastChild)
-                    }
-                    const errorElement = document.createElement('div');
-                    errorElement.classList.add('invalid-feedback');
-                    errorElement.innerText = element.dataset.error;
-                    element.parentNode.appendChild(errorElement);
-                }else {
-                    validEmail = true;
-                    element.dataset.error = '';
-                }
-                if (element.dataset.error === ''){
-                    element.classList.remove('is-invalid');
-                }else {
-                    element.classList.remove('is-invalid');
-                    element.classList.add('is-invalid');
-                }
-            });
-            passwords.forEach(element => {
-                if (element.value.length === 0){
-                    validPassword = false;
-                    element.dataset.error = 'La password deve essere compilato';
-                    const errorElement = document.createElement('div');
-                    errorElement.classList.add('invalid-feedback');
-                    errorElement.innerText = element.dataset.error;
-                    element.parentNode.appendChild(errorElement);
-                } else if (element.value.length < 8){
-                    validPassword = false;
-                    element.dataset.error = 'La password deve contenere minimo 8 caratteri';
-                    const errorElement = document.createElement('div');
-                    errorElement.classList.add('invalid-feedback');
-                    errorElement.innerText = element.dataset.error;
-                    element.parentNode.appendChild(errorElement);
-                } else if (element.value.length > 255){
-                    validPassword = false;
-                    element.dataset.error = 'La password non può superare i 255 caratteri';
-                    if(errorElement){
-                        return
-                    } else {
-                        const errorElement = document.createElement('div');
-                        errorElement.classList.add('invalid-feedback');
-                        errorElement.innerText = element.dataset.error;
-                        element.parentNode.appendChild(errorElement);
-                    }
-                }else {
-                    validPassword = true;
-                    element.dataset.error = '';
-                }
-                if (element.dataset.error === ''){
-                    element.classList.remove('is-invalid');
-                }else {
-                    element.classList.remove('is-invalid');
-                    element.classList.add('is-invalid');
-                }
-            });
-            if(validText && validEmail && validPassword){
+            price.forEach(element => {
+            if (element.value.length === 0){
+                  validPrice1 = false;
+                  element.dataset.error = 'inserisci un prezzo';
+                  if(element.parentNode.children.length > 1){
+                      element.parentNode.removeChild(element.parentNode.lastChild)
+                  }
+                  const errorElement = document.createElement('div');
+                  errorElement.classList.add('invalid-feedback');
+                  errorElement.innerText = element.dataset.error;
+                  element.parentNode.appendChild(errorElement);
+              } else if (element.value.length >= 5){
+                console.log(element.value.length);
+                  validPrice2 = false;
+                  element.dataset.error = 'Il prezzo è troppo alto';
+                  if(element.parentNode.children.length > 1){
+                      element.parentNode.removeChild(element.parentNode.lastChild)
+                  }
+                  const errorElement = document.createElement('div');
+                  errorElement.classList.add('invalid-feedback');
+                  errorElement.innerText = element.dataset.error;
+                  element.parentNode.appendChild(errorElement);
+                  }
+                  if (element.dataset.error === ''){
+                  element.classList.remove('is-invalid');
+              }else {
+                  element.classList.remove('is-invalid');
+                  element.classList.add('is-invalid');
+              }
+            if(validText1 && validText2 && validText3 && validPrice1 && validPrice2){
                 this.submit();
             }
         });
