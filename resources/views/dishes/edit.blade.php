@@ -125,7 +125,6 @@
                   errorElement.innerText = element.dataset.error;
                   element.parentNode.appendChild(errorElement);
               } else if (element.value.length < 8){
-                console.log("click nome",element.value.length );
                   validText2 = false;
                   element.dataset.error = 'Il campo di testo deve contenere minimo 8 caratteri';
                   if(element.parentNode.children.length > 1){

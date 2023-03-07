@@ -178,14 +178,11 @@
                         const selectedCategories = document.querySelectorAll('input[type="checkbox"]:checked');
                         const container = document.querySelector('.category-container');
                         const prevErrorElement = container.querySelector('.invalid-feedback');
-                        console.log("click");
                         if (selectedCategories.length > 0) {
-                            console.log("click 3");
                             if (prevErrorElement) {
                                 prevErrorElement.remove();
                                 errorDisplayed = false;
                                 checkbox = true;
-                                console.log("click 4");
                             }
                         } else if (!prevErrorElement && !errorDisplayed) {
                             const errorElement = document.createElement('div');
@@ -194,7 +191,6 @@
                             errorElement.innerText = 'Seleziona almeno una categoria per continuare.';
                             container.appendChild(errorElement);
                             errorDisplayed = true;
-                            console.log("click 2");
                         }
                 });
             if(validText1 && validText2 && validText3 && checkbox){
