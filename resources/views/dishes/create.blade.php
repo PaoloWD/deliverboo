@@ -92,60 +92,60 @@
     </div>
 <script>
         document.querySelector('#my-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            console.log("click");
-            let validText1 = true;
-            let validText2 = true;
-            let validText3 = true;
-            let validPrice1 = true;
-            let validPrice2 = true;
-            let validFile = true;
-            let texts = document.querySelectorAll('input[type="text"]');
-            let price = document.querySelectorAll('input[type="price"]');
-            let input = document.querySelectorAll('input[type="input"]');
-            texts.forEach(element => {
-                if (element.value.length === 0){
-                    validText1 = false;
-                    element.dataset.error = 'Il campo di testo deve essere compilato';
-                    if(element.parentNode.children.length > 1){
-                        element.parentNode.removeChild(element.parentNode.lastChild)
-                    }
-                    const errorElement = document.createElement('div');
-                    errorElement.classList.add('invalid-feedback');
-                    errorElement.innerText = element.dataset.error;
-                    element.parentNode.appendChild(errorElement);
-                } else if (element.value.length < 8){
-                    validText2 = false;
-                    element.dataset.error = 'Il campo di testo deve contenere minimo 8 caratteri';
-                    if(element.parentNode.children.length > 1){
-                        element.parentNode.removeChild(element.parentNode.lastChild)
-                    }
-                    const errorElement = document.createElement('div');
-                    errorElement.classList.add('invalid-feedback');
-                    errorElement.innerText = element.dataset.error;
-                    element.parentNode.appendChild(errorElement);
-                } else if (element.value.length > 255){
-                    validText3 = false;
-                    element.dataset.error = 'Il campo di testo non può superare i 255 caratteri';
-                    if(element.parentNode.children.length > 1){
-                        element.parentNode.removeChild(element.parentNode.lastChild)
-                    }
-                    const errorElement = document.createElement('div');
-                    errorElement.classList.add('invalid-feedback');
-                    errorElement.innerText = element.dataset.error;
-                    element.parentNode.appendChild(errorElement);
-                }else {
-                    validText = true;
+          e.preventDefault();
+          let validText1 = true;
+          let validText2 = true;
+          let validText3 = true;
+          let validPrice1 = true;
+          let validPrice2 = true;
+          let validFile = true;
+          let texts = document.querySelectorAll('input[type="text"]');
+          let price = document.querySelectorAll('input[type="number"]');
+          let file = document.querySelectorAll('input[type="file"]');
+          texts.forEach(element => {
+              if (element.value.length === 0){
+                  validText1 = false;
+                  element.dataset.error = 'Il campo di testo deve essere compilato';
+                  if(element.parentNode.children.length > 1){
+                      element.parentNode.removeChild(element.parentNode.lastChild)
+                  }
+                  const errorElement = document.createElement('div');
+                  errorElement.classList.add('invalid-feedback');
+                  errorElement.innerText = element.dataset.error;
+                  element.parentNode.appendChild(errorElement);
+              } else if (element.value.length < 8){
+                console.log("click nome",element.value.length );
+                  validText2 = false;
+                  element.dataset.error = 'Il campo di testo deve contenere minimo 8 caratteri';
+                  if(element.parentNode.children.length > 1){
+                      element.parentNode.removeChild(element.parentNode.lastChild)
+                  }
+                  const errorElement = document.createElement('div');
+                  errorElement.classList.add('invalid-feedback');
+                  errorElement.innerText = element.dataset.error;
+                  element.parentNode.appendChild(errorElement);
+                  } else if (element.value.length > 255){
+                  validText3 = false;
+                  element.dataset.error = 'Il campo di testo non può superare i 255 caratteri';
+                  if(element.parentNode.children.length > 1){
+                      element.parentNode.removeChild(element.parentNode.lastChild)
+                  }
+                  const errorElement = document.createElement('div');
+                  errorElement.classList.add('invalid-feedback');
+                  errorElement.innerText = element.dataset.error;
+                  element.parentNode.appendChild(errorElement);
+              }else {
                     element.dataset.error = '';
                 }
                 if (element.dataset.error === ''){
+                    element.classList.remove('invalid-feedback');
                     element.classList.remove('is-invalid');
                 }else {
                     element.classList.remove('is-invalid');
                     element.classList.add('is-invalid');
                 }
-            });
-            price.forEach(element => {
+          });
+          price.forEach(element => {
             if (element.value.length === 0){
                   validPrice1 = false;
                   element.dataset.error = 'inserisci un prezzo';
@@ -157,7 +157,6 @@
                   errorElement.innerText = element.dataset.error;
                   element.parentNode.appendChild(errorElement);
               } else if (element.value.length >= 5){
-                console.log(element.value.length);
                   validPrice2 = false;
                   element.dataset.error = 'Il prezzo è troppo alto';
                   if(element.parentNode.children.length > 1){
@@ -167,16 +166,20 @@
                   errorElement.classList.add('invalid-feedback');
                   errorElement.innerText = element.dataset.error;
                   element.parentNode.appendChild(errorElement);
-                  }
-                  if (element.dataset.error === ''){
-                  element.classList.remove('is-invalid');
-              }else {
-                  element.classList.remove('is-invalid');
-                  element.classList.add('is-invalid');
-              }
-            if(validText1 && validText2 && validText3 && validPrice1 && validPrice2){
-                this.submit();
-            }
-        });
+                  }else {
+                    element.dataset.error = '';
+                }
+                if (element.dataset.error === ''){
+                    element.classList.remove('invalid-feedback');
+                    element.classList.remove('is-invalid');
+                }else {
+                    element.classList.remove('is-invalid');
+                    element.classList.add('is-invalid');
+                }
+          });
+          if(validText1 && validText2 & validText3 && validPrice1 && validPrice2){
+              this.submit();
+          }
+      });
 </script>
 @endsection
