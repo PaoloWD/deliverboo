@@ -190,6 +190,7 @@
                         } else if (!prevErrorElement && !errorDisplayed) {
                             const errorElement = document.createElement('div');
                             errorElement.classList.add('invalid-feedback');
+                            errorElement.classList.add('d-block');
                             errorElement.innerText = 'Seleziona almeno una categoria per continuare.';
                             container.appendChild(errorElement);
                             errorDisplayed = true;
