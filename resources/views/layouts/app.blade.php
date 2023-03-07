@@ -86,7 +86,7 @@
                                     <a class="nav-link custom-color"
                                         href="{{ url('/dashboard') }}">{{ __('Vai al tuo Ristorante') }}</a>
                                 @else
-                                    <a class="nav-link custom-color" href="{{ url('http://localhost:5174/') }}">{{ __('Home') }}</a>
+                                    <a class="nav-link custom-color" href="{{ url('/') }}">{{ __('Home') }}</a>
                                 @endif
                             </li>
                         </ul>
