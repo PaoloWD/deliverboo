@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\DishController;
 use App\Http\Controllers\API\RestaurantController;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,10 @@ Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{category}',[CategoryController::class, 'show']);
 
 Route::get('/restaurants/search', [RestaurantController::class, 'search'])->name('restaurants.search');
+Route::get('/restaurants', function(Request $request) {
+    $category = $request->input('category');
+    $restaurants = Restaurant::whereHas('categories', function($query) use ($category) {
+      $query->where('name', $category);
+    })->get();
+    return $restaurants;
+  });
