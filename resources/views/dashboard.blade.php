@@ -112,15 +112,23 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="mt-5 mb-3">
 
-                            <div class="mt-5 mb-3">
-
-                                <a href="{{ route('dishes.create') }}">
-                                    <button class="btn btn-success btn-custom shadow">
-                                        Crea il tuo piatto <i class=" ps-3 fa-solid fa-plus"></i>
-                                    </button>
-                                </a>
+                                    <a href="{{ route('dishes.create') }}">
+                                        <button class="btn btn-success btn-custom shadow">
+                                            Crea il tuo piatto <i class=" ps-3 fa-solid fa-plus"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="mt-5 mb-3">
+                                    <form action="{{ route('dishes.search') }}" method="GET">
+                                        <input type="text" name="name" placeholder="Cerca nome del piatto">
+                                        <button type="submit" class="btn btn-success btn-custom shadow">Cerca</button>
+                                    </form>
+                                </div>
                             </div>
+                            
 
                             <table class="table">
                                 <thead>

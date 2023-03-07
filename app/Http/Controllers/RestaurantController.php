@@ -34,6 +34,21 @@ class RestaurantController extends Controller
         return view("dashboard", compact('users', 'categories', 'restaurant', 'dishes'));
     }
 
+    public function search(Request $request)
+{   
+    $user = Auth::user();
+    $query = $request->get('name');
+    $restaurant = Restaurant::where('user_id', auth()->id())->first();
+    $user_id = auth()->user()->id;
+    $dishes = [];
+    if(isset($restaurant)) {
+        $dishes = Dish::where('restaurant_id', $restaurant->id)
+              ->where('name', 'like', '%'.$query.'%')
+              ->get();
+    }
+    return view('dishes.show', compact('dishes'));
+}
+
     /**
      * Show the form for creating a new resource.
      *

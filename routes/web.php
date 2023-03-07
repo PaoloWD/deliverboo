@@ -38,4 +38,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/search', [RestaurantController::class, 'search'])->name('dishes.search'); 
+
 require __DIR__.'/auth.php';
