@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/restaurants', [RestaurantController::class, 'index']);
+Route::get('/restaurants/index', [RestaurantController::class, 'index']);
 Route::get('/restaurants/{restaurant}',[RestaurantController::class, 'show']);
 
 Route::get('/dishes', [DishController::class, 'index']);
@@ -31,11 +31,11 @@ Route::get('/dishes/{dish}',[DishController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{category}',[CategoryController::class, 'show']);
 
-Route::get('/restaurants/search', [RestaurantController::class, 'search'])->name('restaurants.search');
+Route::get('/restaurants/search', [RestaurantController::class, 'search']);
 Route::get('/restaurants', function(Request $request) {
     $category = $request->input('category');
     $restaurants = Restaurant::whereHas('categories', function($query) use ($category) {
       $query->where('name', $category);
     })->get();
-    return $restaurants;
+    return response()->json($restaurants);
   });
