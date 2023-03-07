@@ -39,7 +39,6 @@ class RestaurantController extends Controller
     $user = Auth::user();
     $query = $request->get('name');
     $restaurant = Restaurant::where('user_id', auth()->id())->first();
-    $user_id = auth()->user()->id;
     $dishes = [];
     if(isset($restaurant)) {
         $dishes = Dish::where('restaurant_id', $restaurant->id)
