@@ -6,7 +6,7 @@
 
 
             <div class="container  rounded-4 p-5 presentation-banner text-center shadow">
-                <h1 class="custom-color">Benvenuto sulla pagina del Ristorante Deliveboo</h1>
+                <h1 class="custom-color">Benvenuto sulla pagina del Ristorante DeliveBoo</h1>
 
 
 
