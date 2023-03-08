@@ -13,8 +13,8 @@ class DishController extends Controller
 
         return response()->json($dishes);
     }
-    public function show(Dish $dish){
-        
-        return response()->json($dish);
-    }
+    public function show($restaurant_id) {
+        $dishes = Dish::where('restaurant_id', $restaurant_id)->get();
+        return response()->json($dishes);
+      }
 }
