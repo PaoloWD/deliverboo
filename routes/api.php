@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\DishController;
+use App\Http\Controllers\Api\Orders\OrderController;
 use App\Http\Controllers\API\RestaurantController;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
@@ -39,3 +40,6 @@ Route::get('/restaurants', function(Request $request) {
     })->get();
     return response()->json($restaurants);
 });
+
+Route::get('/orders/generate', [OrderController::class, 'generate']);
+Route::post('/orders/make/payment', [OrderController::class, 'makePayment']);
