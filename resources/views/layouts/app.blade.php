@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-md navbar-light  shadow">
             <div class="container">
                 @if (Auth::check())
-                    <a class="navbar-brand d-flex align-items-center" href="{{ url('/dashboard') }}">
+                    <a class="navbar-brand d-flex align-items-center" href="{{ url('http://localhost:5174/') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
                             DeliveBoo
