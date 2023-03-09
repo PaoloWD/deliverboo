@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Orders;
 
+use App\Rules\ValidProduct;
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderRequest extends FormRequest
@@ -24,11 +25,17 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
+            // Valore token lato FrontEnd json --> "token" :"fake-valid-nonce",
             'token' => 'required',
             // amount: Dovremo passargli l'Id del prodotto e poi il BackEnd deve andare a recuperarsi dal Database il Prodotto
             // si prende l'Id, si prende l'amount (quanto costa) si fa i calcoli magari con il prezzo di spedizione ecc.. e poi si fa tutto il conto
             // Così invece adesso stiamo passando direttamente il prezzo sul FrontEnd
-            'amount' => 'required',
+
+            // Validazione Prodotto
+            'product' => [
+                'required',
+                new ValidProduct(),
+            ]
         ];
     }
 }
