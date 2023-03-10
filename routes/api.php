@@ -35,7 +35,8 @@ Route::get('/categories/{category}',[CategoryController::class, 'show']);
 Route::get('/restaurants/search', [RestaurantController::class, 'search']);
 Route::get('/restaurants', function(Request $request) {
     $categories = $request->input('category');
-    $restaurants = Restaurant::whereHas('categories', function($query) use ($categories) {
+    $restaurants = Restaurant::with('categories')
+    ->whereHas('categories', function($query) use ($categories) {
         $query->whereIn('name', $categories);
     })
     ->where(function ($query) use ($categories) {
