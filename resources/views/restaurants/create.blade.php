@@ -179,6 +179,7 @@
                         const container = document.querySelector('.category-container');
                         const prevErrorElement = container.querySelector('.invalid-feedback');
                         if (selectedCategories.length > 0) {
+                            checkbox = true;
                             if (prevErrorElement) {
                                 prevErrorElement.remove();
                                 errorDisplayed = false;

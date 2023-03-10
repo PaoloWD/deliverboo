@@ -29,7 +29,9 @@ class RestaurantController extends Controller
         $restaurant = Restaurant::where('user_id', auth()->id())->first();
 
         $user_id = auth()->user()->id;
-        $dishes = Dish::where('restaurant_id', $user_id)->get();
+        $dishes = Dish::where('restaurant_id', $user_id)
+        ->orderBy('name', 'asc')
+        ->get();
 
         return view("dashboard", compact('users', 'categories', 'restaurant', 'dishes'));
     }

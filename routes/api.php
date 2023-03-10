@@ -37,6 +37,14 @@ Route::get('/restaurants', function(Request $request) {
     $categories = $request->input('category');
     $restaurants = Restaurant::whereHas('categories', function($query) use ($categories) {
         $query->whereIn('name', $categories);
-    })->get();
+    })
+    ->where(function ($query) use ($categories) {
+        foreach ($categories as $category) {
+            $query->whereHas('categories', function ($query) use ($category) {
+                $query->where('name', $category);
+            });
+        }
+    })
+    ->get();
     return response()->json($restaurants);
 });
