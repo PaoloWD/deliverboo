@@ -86,7 +86,7 @@
                                     <a class="nav-link custom-color"
                                         href="{{ url('/dashboard') }}">{{ __('Vai al tuo Ristorante') }}</a>
                                 @else
-                                    <a class="nav-link custom-color" href="{{ url('/') }}">{{ __('Home') }}</a>
+                                    <a class="nav-link custom-color" href="{{ url('/') }}">{{ __('Benvenuto') }}</a>
                                 @endif
                             </li>
                         </ul>
@@ -96,12 +96,12 @@
                             <!-- Authentication Links -->
                             @guest
                                 <li class="nav-item">
-                                    <a class="nav-link custom-color" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link custom-color" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                                 </li>
                                 @if (Route::has('register'))
                                     <li class="nav-item">
                                         <a class="nav-link custom-color"
-                                            href="{{ route('register') }}">{{ __('Register') }}</a>
+                                            href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                     </li>
                                 @endif
                             @else
@@ -112,12 +112,12 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right custom-color" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item custom-color" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
-                                        <a class="dropdown-item custom-color" href="{{ url('profile') }}">{{ __('Profile') }}</a>
+                                        <a class="dropdown-item custom-color" href="{{ url('dashboard') }}">{{ __('Pannello di controllo') }}</a>
+                                        <a class="dropdown-item custom-color" href="{{ url('profile') }}">{{ __('Profilo') }}</a>
                                         <a class="dropdown-item custom-color" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Esci') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
