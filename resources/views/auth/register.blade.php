@@ -102,9 +102,9 @@
                 errorElement.classList.add('invalid-feedback');
                 errorElement.innerText = element.dataset.error;
                 element.parentNode.appendChild(errorElement);
-            } else if (element.value.length < 8){
+            } else if (element.value.length < 4){
                 validText = false;
-                element.dataset.error = 'Il campo di testo deve contenere minimo 8 caratteri';
+                element.dataset.error = 'Il campo di testo deve contenere minimo 4 caratteri';
                 if(element.parentNode.children.length > 1){
                     element.parentNode.removeChild(element.parentNode.lastChild)
                 }
