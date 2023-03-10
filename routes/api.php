@@ -48,11 +48,15 @@ Route::get('/restaurants', function(Request $request) {
     })
     ->get();
     
-    $message = "Categoria selezionata: ";
+    $message = "Categorie selezionate: ";
     if ($categories) {
-        $message .= implode(', ', $categories);
+        if (count($categories) === 1) {
+            $message .= $categories[0];
+        } else {
+            $message .= implode(', ', $categories);
+        }
     } else {
-        $message .= "nessuna cateegoria selezionata";
+        $message .= "Nessuna categoria selezionata.";
     }
     
     return response()->json([
