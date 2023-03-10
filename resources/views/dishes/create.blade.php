@@ -13,7 +13,7 @@
 
                         {{-- name-input --}}
                         <div class="mb-3">
-                            <label class="form-label">Nome:</label>
+                            <label class="form-label">Nome *</label>
                             <input type="text"
                                 class="form-control @error('name') is-invalid @elseif(old('name')) is-valid  @enderror"
                                 value="{{ $errors->has('name') ? '' : old('name') }}" name="name" required>
@@ -27,7 +27,7 @@
 
                         {{-- Description-input --}}
                         <div class="mb-3">
-                            <label class="form-label">Descrizione:</label>
+                            <label class="form-label">Descrizione *</label>
                             <input type="text"
                                 class="form-control @error('description') is-invalid @elseif(old('description')) is-valid  @enderror"
                                 value="{{ $errors->has('description') ? '' : old('description') }}" name="description"
@@ -42,7 +42,7 @@
 
                         {{-- Ingredients-input --}}
                         <div class="mb-3">
-                            <label class="form-label">Ingredienti:</label>
+                            <label class="form-label">Ingredienti *</label>
                             <input type="text"
                                 class="form-control @error('ingredients') is-invalid @elseif(old('ingredients')) is-valid  @enderror"
                                 value="{{ $errors->has('ingredients') ? '' : old('ingredients') }}" name="ingredients"
@@ -57,7 +57,7 @@
 
                         {{-- Price-input --}}
                         <div class="mb-3">
-                            <label class="form-label">Prezzo:</label>
+                            <label class="form-label">Prezzo *</label>
                             <input type="number" step="0.01" pattern="[0-9]+(\.[0-9]{1,2})?"
                                 class="form-control @error('price') is-invalid @elseif(old('price')) is-valid  @enderror"
                                 value="{{ $errors->has('price') ? '' : old('price') }}" name="price" required>
@@ -71,7 +71,7 @@
 
                         {{-- Cover-image-input --}}
                         <div class="mb-3">
-                            <label class="form-label">Immagine:</label>
+                            <label class="form-label">Immagine *</label>
                             <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image"
                                 required>
                         </div>
@@ -80,7 +80,7 @@
                         <div class="mb-3 form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="switch" name="visibility"
                                 {{ old('visibility', 1) ? 'checked' : '' }} value="1">
-                            <label class="form-check-label" for="switch">Visibilità</label>
+                            <label class="form-check-label" for="switch">Visibilità *</label>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-custom">Salva</button>

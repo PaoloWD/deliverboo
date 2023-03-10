@@ -24,7 +24,7 @@
 
                     {{-- name-input --}}
                     <div class="mb-3">
-                        <label class="form-label">Nome</label>
+                        <label class="form-label">Nome *</label>
                         <input type="text"
                             class="form-control @error('name') is-invalid @elseif(old('name')) is-valid  @enderror"
                             value="{{ $errors->has('name') ? '' : old('name') }}" name="name" required>
@@ -46,7 +46,7 @@
 
                     {{-- address-input --}}
                     <div class="mb-3">
-                        <label class="form-label">Indirizzo</label>
+                        <label class="form-label">Indirizzo *</label>
                         <input type="text"
                             class="form-control @error('address') is-invalid @elseif(old('address')) is-valid  @enderror"
                             value="{{ $errors->has('address') ? '' : old('address') }}" name="address" required>
@@ -66,7 +66,7 @@
 
                     {{-- vat-input --}}
                     <div class="mb-3">
-                        <label class="form-label">Partita Iva </label>
+                        <label class="form-label">Partita Iva *</label>
                         <input type="text"
                             class="form-control @error('vat') is-invalid @elseif(old('vat')) is-valid  @enderror"
                             value="{{ $errors->has('vat') ? '' : old('vat') }}" name="vat" required>
@@ -85,7 +85,7 @@
 
                     {{-- image input --}}
                     <div class="mb-3">
-                        <label class="form-label">Immagine di copertina</label>
+                        <label class="form-label">Immagine di copertina *</label>
                         <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image" required>
                         {{-- @error('image')
                       <div class="invalid-feedback">
@@ -98,7 +98,7 @@
 
                     {{-- categories input --}}
                     <div class="py-3 category-container">
-                        <div class="py-2">Categorie</div>
+                        <div class="py-2">Categorie *</div>
                         <div class="row d-block d-md-flex justify-content-center px-3">
                             @foreach ($categories as $category)
                                 <div class="form-check col-2">
