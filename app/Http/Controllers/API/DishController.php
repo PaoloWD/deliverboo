@@ -14,7 +14,9 @@ class DishController extends Controller
         return response()->json($dishes);
     }
     public function show($restaurant_id) {
-        $dishes = Dish::where('restaurant_id', $restaurant_id)->get();
+        $dishes = Dish::where('restaurant_id', $restaurant_id)
+        ->orderBy('name', 'asc')
+        ->get();
         return response()->json($dishes);
       }
       public function showSingleDish($dish_id){

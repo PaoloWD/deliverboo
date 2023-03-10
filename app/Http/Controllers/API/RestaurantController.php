@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class RestaurantController extends Controller
 {
     public function index(){
-        $restaurants = Restaurant::paginate();
+        $restaurants = Restaurant::orderBy('name')->paginate();
 
         return response()->json($restaurants);
     }
