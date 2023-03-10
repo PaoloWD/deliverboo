@@ -10,9 +10,8 @@ use Illuminate\Http\Request;
 class RestaurantController extends Controller
 {
     public function index(){
-        $restaurants = Restaurant::orderBy('name')->paginate();
-
-        return response()->json($restaurants);
+        $restaurants = Restaurant::with('categories')->orderBy('name')->paginate();
+        return $restaurants->toJson();
     }
     public function show(Restaurant $restaurant){
         
