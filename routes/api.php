@@ -47,5 +47,16 @@ Route::get('/restaurants', function(Request $request) {
         }
     })
     ->get();
-    return response()->json($restaurants);
+    
+    $message = "Categoria selezionata: ";
+    if ($categories) {
+        $message .= implode(', ', $categories);
+    } else {
+        $message .= "nessuna cateegoria selezionata";
+    }
+    
+    return response()->json([
+        'message' => $message,
+        'restaurants' => $restaurants,
+    ]);
 });
