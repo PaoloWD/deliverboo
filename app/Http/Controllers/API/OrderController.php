@@ -19,10 +19,17 @@ class OrderController extends Controller
         return response()->json($data, 200);
     }
     public function makePayment(Request $request, Gateway $gateway){
-        $dish = Dish::find($request->dish);
+        $dishIds = $request->input('dishes');
+        $totalPrice = 0;
+        
+        foreach($dishIds as $dishId) {
+            $dish = Dish::find($dishId);
+            $totalPrice += $dish->price;
+        }
+    
         $result = $gateway->transaction()->sale([
-            'amount' => $dish->price,
-            'paymentMethodNonce' => $request->token,
+            'amount' => $totalPrice,
+            'paymentMethodNonce' => $request->input('token'),
             'options' => [
                 'submitForSettlement' => true,
             ]
@@ -33,13 +40,14 @@ class OrderController extends Controller
                 'message' => 'Transazione avvenuta con successo'
             ];
             return response()->json($data, 200);
-        }else{
+        } else {
             $data = [
                 'success' => false,
                 'message' => 'Transazione negata'
             ];
             return response()->json($data, 401);
         }
-        return ;
     }
+    
+    
 }
