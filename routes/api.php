@@ -4,9 +4,11 @@ use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\DishController;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\RestaurantController;
+use App\Models\Order;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Fruitcake\Cors\HandleCors;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/orders/generate', [OrderController::class, 'generate']);
 Route::post('/orders/make/payment', [OrderController::class, 'makePayment']);
+Route::post('/take-data-order', [OrderController::class, 'store']);
+/* function (Request $request) {
+    $data = new Order();
+    $data->customer_name = $request->input('name');
+    $data->customer_address = $request->input('customer_address');
+    $data->customer_phone = $request->input('customer_phone');
+    dd($data);
+    $data->save();
+    
+    return response()->json([
+      'message' => 'Data saved successfully'
+    ]);
+  }); */
 
 Route::get('/restaurants/index', [RestaurantController::class, 'index']);
 Route::get('/restaurants/{restaurant}',[RestaurantController::class, 'show']);

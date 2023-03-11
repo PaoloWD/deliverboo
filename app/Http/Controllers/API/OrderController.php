@@ -4,7 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
+use App\Http\Requests\StoreOrderRequest;
 use App\Models\Dish;
+use App\Models\Order;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
 
@@ -47,6 +49,22 @@ class OrderController extends Controller
             ];
             return response()->json($data, 401);
         }
+    }
+
+    public function store(StoreOrderRequest $request){
+        {
+
+            $data = $request->validated();
+            $order = Order::create($data);
+            /* if ($request->has("dishesIds")) {
+                foreach ($data["dishesIds"] as $dishId) {
+                    $order->dishes()->attach($dishId, ['order_id' => $order->id]);
+                }
+            } */
+
+            $order->save(); 
+        }
+
     }
     
     
