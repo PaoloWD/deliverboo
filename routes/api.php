@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\DishController;
+use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\RestaurantController;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
@@ -21,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/orders/generate', [OrderController::class, 'generate']);
+Route::post('/orders/make/payment', [OrderController::class, 'makePayment']);
 
 Route::get('/restaurants/index', [RestaurantController::class, 'index']);
 Route::get('/restaurants/{restaurant}',[RestaurantController::class, 'show']);
