@@ -52,18 +52,23 @@ class OrderController extends Controller
     }
 
     public function store(StoreOrderRequest $request){
-        {
+        
 
             $data = $request->validated();
             $order = Order::create($data);
-            /* if ($request->has("dishesIds")) {
-                foreach ($data["dishesIds"] as $dishId) {
+            if ($request->has("dish_id")) {
+                $order->dishes()->attach($data['dish_id']);
+                /* foreach ($data["dishesIds"] as $dishId) {
                     $order->dishes()->attach($dishId, ['order_id' => $order->id]);
-                }
-            } */
+                } */
+            }
 
             $order->save(); 
-        }
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Ordine creato con successo',
+                'data' => $order
+            ]);
 
     }
     

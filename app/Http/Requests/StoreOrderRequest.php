@@ -31,7 +31,7 @@ class StoreOrderRequest extends FormRequest
            'total_order' =>'required',
             'order_date' =>'required',
             'order_time' =>'required',
-            /* 'dishesIds' => 'required' */
+            'dish_id' => 'required',
               
         ];
     }
