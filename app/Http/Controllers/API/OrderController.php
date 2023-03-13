@@ -5,10 +5,13 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
 use App\Http\Requests\StoreOrderRequest;
+use App\Mail\Mail\NewContactConfirmed;
+use App\Mail\NewContact;
 use App\Models\Dish;
 use App\Models\Order;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -64,11 +67,22 @@ class OrderController extends Controller
             }
 
             $order->save(); 
+
+            Mail::to($order->customer_email)->send(new NewContactConfirmed($data));
+
+            // $dishes = Dish::where('restaurant_id', $restaurant_id)
+            // ->orderBy('name', 'asc')
+            // ->get();
+            
+            // return response()->json($data);
+            // dd($order->customer_email);
             return response()->json([
                 'status' => 'success',
                 'message' => 'Ordine creato con successo',
-                'data' => $order
+                'data' => $data,
             ]);
+
+            
 
     }
     

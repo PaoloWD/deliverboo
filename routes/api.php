@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\API\DishController;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\RestaurantController;
@@ -84,3 +85,5 @@ Route::get('/restaurants', function(Request $request) {
         'restaurants' => $restaurants,
     ]);
 });
+
+Route::post('/contacts', [ContactController::class, 'store']);
