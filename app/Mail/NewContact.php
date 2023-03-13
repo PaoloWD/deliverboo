@@ -12,16 +12,16 @@ use Illuminate\Queue\SerializesModels;
 class NewContact extends Mailable
 {
     use Queueable, SerializesModels;
-    public $lead;
+    public $info;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($info)
     {
-        //
+        $this->info= $info;
     }
 
     /**
@@ -32,7 +32,7 @@ class NewContact extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'É stato effettuato un nuovo ordine!',
+            subject: "É stato effettuato un nuovo ordine da {$this->info["customer_email"]}!",
         );
     }
 

@@ -70,9 +70,12 @@ class OrderController extends Controller
             $order->save(); 
 
             Mail::to($order->customer_email)->send(new NewContactConfirmed($data));
+
             $id=$order->restaurant_id;
-            $emailUser=  User::where( "email", $id) ;
-            Mail::to($emailUser)->send(new NewContact($data));
+            $idUser=  User::where( "id", $id)->first() ;
+            $mailUser= $idUser->email;
+            Mail::to($mailUser)->send(new NewContact($data));
+            
             return response()->json([
                 'status' => 'success',
                 'message' => 'Ordine creato con successo',

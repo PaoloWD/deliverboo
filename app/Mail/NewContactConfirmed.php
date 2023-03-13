@@ -12,15 +12,15 @@ use Illuminate\Queue\SerializesModels;
 class NewContactConfirmed extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $info;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($info)
     {
-        //
+        $this->info= $info;
     }
 
     /**
@@ -30,8 +30,9 @@ class NewContactConfirmed extends Mailable
      */
     public function envelope()
     {
+        
         return new Envelope(
-            subject: 'New Contact Confirmed',
+            subject: "Grazie {$this->info["customer_name"]}, abbiamo confermato il tuo ordine!",
         );
     }
 
@@ -43,7 +44,7 @@ class NewContactConfirmed extends Mailable
     public function content()
     {
         return new Content(
-            markdown: 'mail.newMailConfirmed',
+            markdown: 'mail.newContactConfirmed',
         );
     }
 

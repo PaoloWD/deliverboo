@@ -5,9 +5,12 @@
   ti confermiamo di aver ricevuto la tua richiesta.
 
   Di seguito un riepilogo dei dati ricevuti:<br>
-  <strong>Titolo</strong>: {{ $contactData->title }}<br>
-  <strong>Messaggio</strong>: {{ $contactData->message }}
-
+ 
+  <strong>Riepilogo ordine</strong>: 
+  <p>Nome: {{$info["customer_name"]}}</p>
+  <p>Indirizzo: {{$info["customer_address"]}}</p>
+  <p>Telefono: {{$info["customer_phone"]}}</p>
+  <p>Totale Ordine: {{$info["total_order"]}}€</p><br>
   Cordiali saluti,<br>
-  {{ config('app.name') }}!
+  <strong>DeliveBoo!</strong>
 </x-mail::message>
