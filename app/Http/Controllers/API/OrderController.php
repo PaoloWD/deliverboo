@@ -9,6 +9,7 @@ use App\Mail\NewContact;
 use App\Mail\NewContactConfirmed;
 use App\Models\Dish;
 use App\Models\Order;
+use App\Models\User;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -69,13 +70,9 @@ class OrderController extends Controller
             $order->save(); 
 
             Mail::to($order->customer_email)->send(new NewContactConfirmed($data));
-
-            // $dishes = Dish::where('restaurant_id', $restaurant_id)
-            // ->orderBy('name', 'asc')
-            // ->get();
-            
-            // return response()->json($data);
-            // dd($order->customer_email);
+            $id=$order->restaurant_id;
+            $emailUser=  User::where( "email", $id) ;
+            Mail::to($emailUser)->send(new NewContact($data));
             return response()->json([
                 'status' => 'success',
                 'message' => 'Ordine creato con successo',
