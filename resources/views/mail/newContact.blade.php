@@ -1,13 +1,13 @@
 <x-mail::message>
     {{-- codice markdown --}}
- <h1>{{$newContactData->objects}}</h1>
+ {{-- <h1>{{$newContactData->objects}}</h1> --}}
 # Nuovo ordine dal tuo sito!:
  
 Clicca sul bottone per maggiori dettagli!
 
-<x-mail::button :url="$url">
+{{-- <x-mail::button :url="$url">
 Dettagli
-</x-mail::button>
+</x-mail::button> --}}
  
 Grazie,<br>
 {{ config('app.name') }}

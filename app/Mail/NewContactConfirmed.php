@@ -9,10 +9,9 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class NewContact extends Mailable
+class NewContactConfirmed extends Mailable
 {
     use Queueable, SerializesModels;
-    public $lead;
 
     /**
      * Create a new message instance.
@@ -32,7 +31,7 @@ class NewContact extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'É stato effettuato un nuovo ordine!',
+            subject: 'New Contact Confirmed',
         );
     }
 
@@ -44,7 +43,7 @@ class NewContact extends Mailable
     public function content()
     {
         return new Content(
-            markdown: 'mail.newContact',
+            markdown: 'mail.newMailConfirmed',
         );
     }
 
