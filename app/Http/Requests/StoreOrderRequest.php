@@ -33,6 +33,7 @@ class StoreOrderRequest extends FormRequest
             'order_date' =>'required',
             'order_time' =>'required',
             'dish_id' => 'required',
+            'restaurant_id' => 'required'
               
         ];
     }
