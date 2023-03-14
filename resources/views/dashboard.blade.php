@@ -134,7 +134,7 @@
                             </div>
                             
 
-                            <table class="table">
+                            <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">Immagine</th>
