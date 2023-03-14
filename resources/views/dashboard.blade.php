@@ -202,6 +202,14 @@
                                     @endforeach
                                 </tbody>
                             </table> 
+
+                            <div class="container text-center">
+                                <a href="{{ route('chart') }}">
+                                    <button class="btn btn-success mt-5 btn-custom">
+                                        Vedi le tue statistiche
+                                    </button>
+                                </a>
+                            </div>
                         @else
                             <div class="card dashboard shadow text-center ">
                                 <h3>{{ __('Crea il profilo del tuo ristorante!') }} </h3>
