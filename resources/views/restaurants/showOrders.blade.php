@@ -54,6 +54,17 @@
                                                     <th scope="col">Quantità</th>
                                                 </tr>
                                             </thead>
+                                            @foreach($orders as $order)
+                                                <div>
+                                                    <h2>Ordine #{{ $order->id }}</h2>
+                                                    <ul>
+                                                    @foreach($order->dishes->groupBy('id') as $dish)
+                                                        <li>{{ $dish->first()->name }} x{{ $dish->count() }}</li>
+                                                    @endforeach
+                                                    
+                                                    </ul>
+                                                </div>
+                                            @endforeach
                                             <tbody>
                                                 <tr>
                                                     <td>
