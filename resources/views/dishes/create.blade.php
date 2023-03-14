@@ -83,7 +83,8 @@
                             <label class="form-check-label" for="switch">Visibilità </label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-custom">Salva</button>
+                        <button type="submit" class="btn btn-primary btn-custom me-2">Salva</button>
+                        <a class="btn btn-primary btn-custom" href="{{ route('dashboard') }}">Annulla</a>
                     </form>
                 </div>
             </div>
