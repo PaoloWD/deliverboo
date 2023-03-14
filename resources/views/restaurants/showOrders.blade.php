@@ -7,7 +7,7 @@
             <div class="container-form rounded-4">
                 <h1 class="fw-bolder custom-color">Ordini ricevuti</h1>
                 <table class="table table-striped table-hover">
-                    <thead>
+                    <thead class="text-white custom-bg">
                         <tr>
                             <th scope="col">Cliente</th>
                             <th scope="col">Indirizzo</th>
@@ -47,9 +47,9 @@
                             
                     </tbody>
                 </table> 
-
+                
                 {{-- <table class="table table-striped table-hover">
-                    <thead>
+                    <thead class="text-white custom-bg">
                         <tr>
                             <th scope="col">Nome</th>
                             <th scope="col">Quantità</th>
