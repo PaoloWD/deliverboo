@@ -56,27 +56,20 @@ class OrderController extends Controller
     }
 
     public function store(StoreOrderRequest $request){
+        $data = $request->validated();
+        $order = Order::create($data);
+        $order->save(); 
+        Mail::to($order->customer_email)->send(new NewContactConfirmed($data));
+        $id=$order->restaurant_id;
+        $idUser=  User::where( "id", $id)->first() ;
+        $mailUser= $idUser->email;
+        Mail::to($mailUser)->send(new NewContact($data));
         
-
-            $data = $request->validated();
-            $order = Order::create($data);
-            $order->save(); 
-
-            Mail::to($order->customer_email)->send(new NewContactConfirmed($data));
-
-            $id=$order->restaurant_id;
-            $idUser=  User::where( "id", $id)->first() ;
-            $mailUser= $idUser->email;
-            Mail::to($mailUser)->send(new NewContact($data));
-            
-            return response()->json([
-                'status' => 'success',
-                'message' => 'Ordine creato con successo',
-                'data' => $data,
-            ]);
-
-            
-
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Ordine creato con successo',
+            'data' => $data,
+        ]);
     }
     
     
