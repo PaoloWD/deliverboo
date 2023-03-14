@@ -4,9 +4,9 @@
     <div class="bg-dashboard pt-5">
 
         <div class="container py-5 h-100 ">
-            <div class="container-form rounded-3">
+            <div class="container-form rounded-4">
                 <h1 class="fw-bolder custom-color">Ordini ricevuti</h1>
-                <table class="table">
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">Cliente</th>
@@ -48,6 +48,25 @@
                     </tbody>
                 </table> 
 
+                {{-- <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Quantità</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h6 class="py-3">Nome</h6>
+                            </td>
+                            <td>
+                                <h6 class="py-3">quantità</h6>
+                            </td>
+                        </tr>
+                            
+                    </tbody>
+                </table>  --}}
             </div>
 
         </div>
