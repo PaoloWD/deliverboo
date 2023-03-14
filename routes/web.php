@@ -41,4 +41,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/search', [RestaurantController::class, 'search'])->name('dishes.search'); 
 
+Route::get('/chart', function(){
+    return view('testingChart.chart');
+});
+
 require __DIR__.'/auth.php';
