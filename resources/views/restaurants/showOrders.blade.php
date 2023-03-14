@@ -6,7 +6,7 @@
         <div class="container py-5 h-100 ">
             <div class="container-form rounded-4">
                 <h1 class="fw-bolder custom-color">Ordini ricevuti</h1>
-                <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover mt-3">
                     <thead class="text-white custom-bg">
                         <tr>
                             <th scope="col">Cliente</th>
@@ -40,7 +40,33 @@
                                 <h6 class="py-3">{{$order->created_at}}</h6>
                             </td>    
                             <td>
-                                <button class="btn btn-custom mt-2">Vedi dettagli</button>
+                                <button type="button" class="btn btn-custom mt-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"> Vedi dettagli </button>
+                                <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                                    <div class="offcanvas-header">
+                                      <h2 class="offcanvas-title custom-color fw-bold" id="offcanvasLabel">Piatti Ordinati</h2>
+                                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <table class="table table-striped table-hover">
+                                            <thead class="text-white custom-bg">
+                                                <tr>
+                                                    <th scope="col" class="prova">Nome</th>
+                                                    <th scope="col">Quantità</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <h6 class="py-3">Nome</h6>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="py-3">quantità</h6>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table> 
+                                    </div>
+                                  </div>
                             </td>
                         </tr>
                             @endforeach
@@ -48,33 +74,12 @@
                     </tbody>
                 </table> 
                 
-                <table class="table table-striped table-hover">
-                    <thead class="text-white custom-bg">
-                        <tr>
-                            <th scope="col" class="prova">Nome</th>
-                            <th scope="col">Quantità</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <h6 class="py-3">Nome</h6>
-                            </td>
-                            <td>
-                                <h6 class="py-3">quantità</h6>
-                            </td>
-                        </tr>
-                            
-                    </tbody>
-                </table> 
+                
             </div>
 
         </div>
     </div>
 
 <script>
-
-
-
 </script>
 @endsection
