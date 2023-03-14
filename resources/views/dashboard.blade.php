@@ -101,7 +101,6 @@
                                     @if($dishes)
                                         @foreach ($dishes as $dish)
                                             <div class="position-absolute" style="right:200px; bottom:20px">
-
                                                 <a href="{{ route('dishes.show', $dish->id) }}">
                                                     <button class="btn btn-sm btn-success btn-custom shadow">
                                                         I tuoi piatti <i class="fa-solid fa-magnifying-glass ms-2"></i>
@@ -110,6 +109,11 @@
                                             </div>
                                         @endforeach
                                     @endif
+                                    <a href="{{ route('restaurants.showOrders', $restaurant->id) }}">
+                                        <button class="btn btn-success btn-custom shadow">
+                                            Riepilogo ordini <i class=" ps-3 fa-solid fa-plus"></i>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between">

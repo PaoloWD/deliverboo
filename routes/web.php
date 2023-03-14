@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [RestaurantController::class, 'index'])->name('dashboard');
     Route::resource('restaurants', RestaurantController::class);
     Route::resource('dishes', DishController::class);
+    Route::get('/restaurantsOrders/{restaurant}', [RestaurantController::class, 'showOrders'])->name("restaurants.showOrders");
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
