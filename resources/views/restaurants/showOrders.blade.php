@@ -48,10 +48,10 @@
                     </tbody>
                 </table> 
                 
-                {{-- <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover">
                     <thead class="text-white custom-bg">
                         <tr>
-                            <th scope="col">Nome</th>
+                            <th scope="col" class="prova">Nome</th>
                             <th scope="col">Quantità</th>
                         </tr>
                     </thead>
@@ -66,12 +66,15 @@
                         </tr>
                             
                     </tbody>
-                </table>  --}}
+                </table> 
             </div>
 
         </div>
     </div>
 
 <script>
+
+
+
 </script>
 @endsection
