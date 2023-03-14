@@ -80,7 +80,7 @@
                         <div class="mb-3 form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="switch" name="visibility"
                                 {{ old('visibility', 1) ? 'checked' : '' }} value="1">
-                            <label class="form-check-label" for="switch">Visibilità *</label>
+                            <label class="form-check-label" for="switch">Visibilità </label>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-custom">Salva</button>

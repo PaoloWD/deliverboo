@@ -12,7 +12,7 @@
                     @csrf
                     {{-- name-input --}}
                     <div class="mb-3">
-                        <label class="form-label">Nome *</label>
+                        <label class="form-label">Nome </label>
                         <input type="text"
                             class="form-control @error('name') is-invalid @elseif(old('name')) is-valid   @enderror"
                             value="{{ $dish->name }}" name="name" required>
@@ -26,7 +26,7 @@
 
                     {{-- description-input --}}
                     <div class="mb-3">
-                        <label class="form-label">Descrizione *</label>
+                        <label class="form-label">Descrizione </label>
                         <textarea cols="30" rows="5" name="description"
                             class="form-control @error('description') is-invalid @enderror" required>{{ $dish->description }}</textarea>
                             @error('description')
@@ -38,7 +38,7 @@
 
                     {{-- ingredients-input --}}
                     <div class="mb-3">
-                        <label class="form-label">Ingredienti *</label>
+                        <label class="form-label">Ingredienti </label>
                         <input type="text"
                             class="form-control @error('ingredients') is-invalid @elseif(old('ingredients')) is-valid  @enderror"
                             value="{{ $dish->ingredients }}" name="ingredients" required>
@@ -52,7 +52,7 @@
 
                     {{-- price-input --}}
                     <div class="mb-3">
-                        <label class="form-label">Prezzo *</label>
+                        <label class="form-label">Prezzo </label>
                         <input type="number" step="0.01" pattern="[0-9]+(\.[0-9]{1,2})?"
                             class="form-control @error('price') is-invalid @elseif(old('price')) is-valid  @enderror"
                             value="{{ $dish->price }}" name="price" required>
@@ -66,14 +66,8 @@
 
                     {{-- image input --}}
                     <div class="mb-3">
-                        <label class="form-label">Immagine *</label>
-                        <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image">
-                        @error('image')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                        
+                        <label class="form-label">Immagine </label>
+                        <input type="file" class="form-control name="image">
                         @if(str_contains($dish->image, "https"))
                         <img class="img-thumbnail mt-4" src="{{ $dish->image }}" style="height:230px" alt="">
                         @else
@@ -86,7 +80,7 @@
                     <div class="mb-3 form-check form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="switch" name="visibility"
                             {{ old('visibility', $dish->visibility) ? 'checked' : '' }} value="1">
-                        <label class="form-check-label" for="switch">Visibilità *</label>
+                        <label class="form-check-label" for="switch">Visibilità</label>
                     </div>
                     <button type="submit" class="btn btn-primary btn-custom me-2">Salva</button>
 
