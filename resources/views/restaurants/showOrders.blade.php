@@ -8,7 +8,8 @@
                 <h1 class="fw-bolder custom-color">Ordini ricevuti</h1>
                 <table class="table table-striped table-hover mt-3">
                     <thead class="text-white custom-bg">
-                        <tr>
+                        <tr class="text-center">
+                            <th scope="col">ID </th>
                             <th scope="col">Cliente</th>
                             <th scope="col">Indirizzo</th>
                             <th scope="col">Numero di telefono</th>
@@ -19,8 +20,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
                         @foreach ($orders as $order )
+                        <tr class="text-center">
+                            <td>
+                                <h6 class="py-3">Ordine #{{ $order->id }}</h6>
+                            </td>
                             <td>
                                 <h6 class="py-3">{{$order->customer_name}}</h6>
                             </td>
@@ -40,54 +44,31 @@
                                 <h6 class="py-3">{{$order->created_at}}</h6>
                             </td>    
                             <td>
-                                <button type="button" class="btn btn-custom mt-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"> Vedi dettagli </button>
-                                <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                                <button type="button" class="btn btn-custom p-2 mt-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"> Vedi dettagli </button>
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
                                     <div class="offcanvas-header">
-                                      <h2 class="offcanvas-title custom-color fw-bold" id="offcanvasLabel">Piatti Ordinati</h2>
-                                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        <h2 class="offcanvas-title custom-color fw-bold" id="offcanvasLabel">Piatti Ordinati</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
-                                    <div class="offcanvas-body">
-                                        <table class="table table-striped table-hover">
-                                            <thead class="text-white custom-bg">
-                                                <tr>
-                                                    <th scope="col" class="prova">Nome</th>
-                                                    <th scope="col">Quantità</th>
-                                                </tr>
-                                            </thead>
-                                            @foreach($orders as $order)
-                                                <div>
-                                                    <h2>Ordine #{{ $order->id }}</h2>
-                                                    <ul>
+                                    <div class="offcanvas-body text-start">
+                                        @foreach($orders as $order)
+                                            <div>
+                                                <h3 class="custom-color fw-bold">Ordine #{{ $order->id }}</h3>
+                                                <ul>
                                                     @foreach($order->dishes->groupBy('id') as $dish)
-                                                        <li>{{ $dish->first()->name }} x{{ $dish->count() }}</li>
+                                                        <li> <span class="fw-bold">Nome:</span> {{ $dish->first()->name }} <span class="fw-bold">Quantità:</span> {{ $dish->count() }}</li>
                                                     @endforeach
-                                                    
-                                                    </ul>
-                                                </div>
-                                            @endforeach
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <h6 class="py-3">Nome</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="py-3">quantità</h6>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table> 
+                                                </ul>
+                                            </div>
+                                        @endforeach
                                     </div>
-                                  </div>
+                                </div>
                             </td>
                         </tr>
-                            @endforeach
-                            
+                        @endforeach  
                     </tbody>
                 </table> 
-                
-                
             </div>
-
         </div>
     </div>
 
