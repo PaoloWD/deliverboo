@@ -113,7 +113,9 @@ class RestaurantController extends Controller
 
     public function showOrders(Restaurant $restaurant){
         $this->authorize('view', $restaurant);
+       
         $orders = Order::where('restaurant_id', $restaurant->id)
+                    ->with('dishes')
                     ->orderBy('created_at', 'desc')
                     ->get();
         return view('restaurants.showOrders', compact('orders'));
