@@ -2,89 +2,188 @@
 
 @section('content')
 
-<div class="container py-5">
-    <h1>Edit your plate</h1>
+    <div class="bg-dashboard py-5">
+        <div class="container h-100 overflow-auto">
+            <div class="container-form rounded-5 shadow h-100 ">
+              <div class="h-100 overflow-auto px-3">
+                <h1 class="custom-color">Modifica il tuo piatto</h1>
+                  <form id="my-form" action="{{ route('dishes.update', $dish->id) }}" method="POST" enctype="multipart/form-data">
+                    @method('PUT')
+                    @csrf
+                    {{-- name-input --}}
+                    <div class="mb-3">
+                        <label class="form-label">Nome </label>
+                        <input type="text"
+                            class="form-control @error('name') is-invalid @elseif(old('name')) is-valid   @enderror"
+                            value="{{ $dish->name }}" name="name" required>
 
-          {{-- aggiungere action:
-            action="{{ route() }}" --}}
-        <form  method="POST" enctype="multipart/form-data">
-        @method('PUT')
-        @csrf
-        {{-- name-input --}}
-        <div class="mb-3">
-            <label class="form-label">Flatname</label>
-            <input type="text" 
-            class="form-control @error('name') is-invalid @elseif(old('name')) is-valid  @enderror"
-            value="{{$project->description}}"
-            name="name">
+                        @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
 
-            @error('name')
-                <div class="invalid-feedback">
-                {{ $message }}
-                </div>
-            @enderror
-        </div>
+                    {{-- description-input --}}
+                    <div class="mb-3">
+                        <label class="form-label">Descrizione </label>
+                        <textarea cols="30" rows="5" name="description"
+                            class="form-control @error('description') is-invalid @enderror" required>{{ $dish->description }}</textarea>
+                            @error('description')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                    </div>
 
-        {{-- description-input --}}
-        <div class="mb-3">
-            <label class="form-label">Description</label>
-            <textarea cols="30" rows="5" 
-             name="description"
-             class="form-control @error('description') is-invalid @enderror">{{$project->description}}</textarea>
-        </div>
+                    {{-- ingredients-input --}}
+                    <div class="mb-3">
+                        <label class="form-label">Ingredienti </label>
+                        <input type="text"
+                            class="form-control @error('ingredients') is-invalid @elseif(old('ingredients')) is-valid  @enderror"
+                            value="{{ $dish->ingredients }}" name="ingredients" required>
 
-        {{-- image input --}}
-        <div class="mb-3">
-            <label class="form-label">Cover Image</label>
-            <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image">
-            @error('image')
-              <div class="invalid-feedback">
-                {{ $message }}
+                        @error('ingredients')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    {{-- price-input --}}
+                    <div class="mb-3">
+                        <label class="form-label">Prezzo </label>
+                        <input type="number" step="0.01" pattern="[0-9]+(\.[0-9]{1,2})?"
+                            class="form-control @error('price') is-invalid @elseif(old('price')) is-valid  @enderror"
+                            value="{{ $dish->price }}" name="price" required>
+
+                        @error('price')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    {{-- image input --}}
+                    <div class="mb-3">
+                        <label class="form-label">Immagine </label>
+                        <input type="file" class="form-control name="image">
+                        @if(str_contains($dish->image, "https"))
+                        <img class="img-thumbnail mt-4" src="{{ $dish->image }}" style="height:230px" alt="">
+                        @else
+                        <img  class="img-thumbnail mt-4" src="{{asset('/storage/'. $dish->image)}}" style="height:230px" alt="">
+                        @endif
+                    </div>
+
+                    {{-- visibility input --}}
+
+                    <div class="mb-3 form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switch" name="visibility"
+                            {{ old('visibility', $dish->visibility) ? 'checked' : '' }} value="1">
+                        <label class="form-check-label" for="switch">Visibilità</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-custom me-2">Salva</button>
+
+                    <a class="btn btn-primary btn-custom" href="{{ route('dashboard') }}">Ritorna ai tuoi piatti</a>
+                  </form>
+
               </div>
-            @enderror 
-
-            <img  class="img-thumbnail" src="{{asset('/storage/'. $project->cover_img)}}" alt="">
-          </div>
-          
-          {{-- visibility input --}}
-          <div class="mb-3 form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="switch_visibility" name="visibility"
-              {{ old('visibility', 1) ? 'checked' : '' }} >
-            <label class="form-check-label" for="switch_visibility">Visibility</label>
-          </div>
-
-           {{-- categories input --}}
-          {{-- @dd($categories) --}}
-          <div class="py-3">
-            <div class="py-2">Categories:</div>
-            @foreach ($categories as $category)
-              <div class="form-check">
-                <input class="form-check-input @error('categories') is-invalid @enderror"
-                type="checkbox" value="{{$category->id}}" id="category_{{$loop->index}}"
-                name="categories[]"   {{ $project->categories->contains( 'id', $category->id) ? 'checked' : '' }} >
-                <label class="form-check-label" for="category_{{$loop->index}}">
-                  {{$category->name}}
-                </label>
-                @error('categories')
-                  <div class="invalid-feedback">
-                    {{$message}}
-                  </div>
-                @enderror
                 
-              </div>
-            @endforeach
-          </div>
+            </div>
+        </div>
 
-          
-      
-        <button type="submite" class="btn btn-primary">Save</button>
+    </div>
 
-        <a class="btn btn-warning" href="{{route('dashboard')}}">Return To Projects</a>
+    <script>
 
-
-        {{-- <a href="{{route('admin.projects.index')}}">Return index</a> --}}
-
-        </form>
-</div>
-
+          document.querySelector('#my-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          let validText1 = true;
+          let validText2 = true;
+          let validText3 = true;
+          let validPrice1 = true;
+          let validPrice2 = true;
+          let validFile = true;
+          let texts = document.querySelectorAll('input[type="text"]');
+          let price = document.querySelectorAll('input[type="number"]');
+          let file = document.querySelectorAll('input[type="file"]');
+          texts.forEach(element => {
+              if (element.value.length === 0){
+                  validText1 = false;
+                  element.dataset.error = 'Il campo di testo deve essere compilato';
+                  if(element.parentNode.children.length > 1){
+                      element.parentNode.removeChild(element.parentNode.lastChild)
+                  }
+                  const errorElement = document.createElement('div');
+                  errorElement.classList.add('invalid-feedback');
+                  errorElement.innerText = element.dataset.error;
+                  element.parentNode.appendChild(errorElement);
+              } else if (element.value.length < 8){
+                  validText2 = false;
+                  element.dataset.error = 'Il campo di testo deve contenere minimo 8 caratteri';
+                  if(element.parentNode.children.length > 1){
+                      element.parentNode.removeChild(element.parentNode.lastChild)
+                  }
+                  const errorElement = document.createElement('div');
+                  errorElement.classList.add('invalid-feedback');
+                  errorElement.innerText = element.dataset.error;
+                  element.parentNode.appendChild(errorElement);
+                  } else if (element.value.length > 255){
+                  validText3 = false;
+                  element.dataset.error = 'Il campo di testo non può superare i 255 caratteri';
+                  if(element.parentNode.children.length > 1){
+                      element.parentNode.removeChild(element.parentNode.lastChild)
+                  }
+                  const errorElement = document.createElement('div');
+                  errorElement.classList.add('invalid-feedback');
+                  errorElement.innerText = element.dataset.error;
+                  element.parentNode.appendChild(errorElement);
+              }else {
+                    element.dataset.error = '';
+                }
+                if (element.dataset.error === ''){
+                    element.classList.remove('invalid-feedback');
+                    element.classList.remove('is-invalid');
+                }else {
+                    element.classList.remove('is-invalid');
+                    element.classList.add('is-invalid');
+                }
+          });
+          price.forEach(element => {
+            if (element.value.length === 0){
+                  validPrice1 = false;
+                  element.dataset.error = 'inserisci un prezzo';
+                  if(element.parentNode.children.length > 1){
+                      element.parentNode.removeChild(element.parentNode.lastChild)
+                  }
+                  const errorElement = document.createElement('div');
+                  errorElement.classList.add('invalid-feedback');
+                  errorElement.innerText = element.dataset.error;
+                  element.parentNode.appendChild(errorElement);
+              } else if (element.value.length >= 5){
+                  validPrice2 = false;
+                  element.dataset.error = 'Il prezzo è troppo alto';
+                  if(element.parentNode.children.length > 1){
+                      element.parentNode.removeChild(element.parentNode.lastChild)
+                  }
+                  const errorElement = document.createElement('div');
+                  errorElement.classList.add('invalid-feedback');
+                  errorElement.innerText = element.dataset.error;
+                  element.parentNode.appendChild(errorElement);
+                  }else {
+                    element.dataset.error = '';
+                }
+                if (element.dataset.error === ''){
+                    element.classList.remove('invalid-feedback');
+                    element.classList.remove('is-invalid');
+                }else {
+                    element.classList.remove('is-invalid');
+                    element.classList.add('is-invalid');
+                }
+          });
+          if(validText1 && validText2 & validText3 && validPrice1 && validPrice2){
+              this.submit();
+          }
+      });
+  </script>
 @endsection

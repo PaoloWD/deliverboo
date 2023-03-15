@@ -27,18 +27,18 @@
         <nav class="navbar navbar-expand-md navbar-light  shadow">
             <div class="container">
                 @if (Auth::check())
-                    <a class="navbar-brand d-flex align-items-center" href="{{ url('/dashboard') }}">
+                    <a class="navbar-brand d-flex align-items-center" href="{{ url('http://localhost:5174/') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
-                            DeliverBoo
+                            DeliveBoo
                         </div>
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
                 @else
-                    <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                    <a class="navbar-brand d-flex align-items-center" href="{{ url('http://localhost:5174/') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
-                            DeliverBoo
+                            DeliveBoo
                         </div>
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
@@ -57,18 +57,18 @@
                     <div class="offcanvas-header">
                         {{-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> --}}
                         @if (Auth::check())
-                    <a class="navbar-brand d-flex align-items-center offcanvas-title" id="offcanvasNavbarLabel href="{{ url('/dashboard') }}">
+                    <a class="navbar-brand d-flex align-items-center offcanvas-title" id="offcanvasNavbarLabel" href="{{ url('/dashboard') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
-                            DeliverBoo
+                            DeliveBoo
                         </div>
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
                 @else
-                    <a class="navbar-brand d-flex align-items-center offcanvas-title" id="offcanvasNavbarLabel href="{{ url('/') }}">
+                    <a class="navbar-brand d-flex align-items-center offcanvas-title" id="offcanvasNavbarLabel" href="{{ url('/') }}">
                         <div class="logo fs-2 fw-bold d-flex align-items-center custom-color" style="height:48px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
-                            DeliverBoo
+                            DeliveBoo
                         </div>
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
@@ -86,7 +86,7 @@
                                     <a class="nav-link custom-color"
                                         href="{{ url('/dashboard') }}">{{ __('Vai al tuo Ristorante') }}</a>
                                 @else
-                                    <a class="nav-link custom-color" href="{{ url('/') }}">{{ __('Home') }}</a>
+                                    <a class="nav-link custom-color" href="{{ url('/') }}">{{ __('Benvenuto') }}</a>
                                 @endif
                             </li>
                         </ul>
@@ -96,12 +96,12 @@
                             <!-- Authentication Links -->
                             @guest
                                 <li class="nav-item">
-                                    <a class="nav-link custom-color" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link custom-color" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                                 </li>
                                 @if (Route::has('register'))
                                     <li class="nav-item">
                                         <a class="nav-link custom-color"
-                                            href="{{ route('register') }}">{{ __('Register') }}</a>
+                                            href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                     </li>
                                 @endif
                             @else
@@ -112,12 +112,12 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right custom-color" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item custom-color" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
-                                        <a class="dropdown-item custom-color" href="{{ url('profile') }}">{{ __('Profile') }}</a>
+                                        <a class="dropdown-item custom-color" href="{{ url('dashboard') }}">{{ __('Pannello di controllo') }}</a>
+                                        <a class="dropdown-item custom-color" href="{{ url('profile') }}">{{ __('Profilo') }}</a>
                                         <a class="dropdown-item custom-color" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Esci') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"

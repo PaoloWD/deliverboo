@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('ingredients');
             $table->float('price', 6, 2);
-            $table->boolean('visibility');
+            $table->boolean('visibility')->default(0);
             $table->timestamps();
         });
 

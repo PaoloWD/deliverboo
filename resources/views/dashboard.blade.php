@@ -5,12 +5,12 @@
             <div class="container shadow rounded-4 p-5 presentation-banner h-100 overflow-auto">
                 <div class="">
                     <h2 class="py-2 custom-color">
-                        Welcome <strong>{{ Auth::user()->name }}</strong>!
+                        Ciao <strong>{{ Auth::user()->name }}</strong>!
                     </h2>
-                    <h5 class="py-2 custom-color"> This is your personal page!</h5>
+                    <h5 class="custom-color">  Questa è la tua pagina personale!</h5>
                 </div>
                 <div>
-                    <div class="py-5">
+                    <div class="py-3">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
@@ -78,75 +78,143 @@
                         </div> --}}
                         @if ($restaurant?->user_id === Auth::user()->id)
                             <div class="card text-bg-dark shadow">
-                                <img src="{{ asset('storage/' . $restaurant->image) }}" class="card-img restaurant-img" alt="..."
+                                @if(str_contains($restaurant->image, "https"))
+                                    <img class="card-img-top dish-img" src="{{$restaurant->image}}"
+                                    alt="" style="height: 200px">
+                                @elseif (!$restaurant->image)
+                                <img class="card-img-top  restaurant-img" src="https://www.lerocce.com/wp-content/uploads/2019/01/terrazza_ulivi.jpg" alt="" style="height: 200px">
+                                @else  
+                                    <img src="{{ asset('storage/' . $restaurant->image) }}" class="card-img restaurant-img" alt="..."
                                     style="height: 200px">
+                                @endif
+
                                 <div class="card-img-overlay">
                                     <h3 class="card-title">{{ $restaurant->name }}</h3>
                                     <div class="position-absolute" style="right:20px; bottom:20px">
 
                                         <a href="{{ route('restaurants.show', $restaurant->id) }}">
                                             <button class="btn btn-sm btn-success btn-custom shadow">
-                                                View Your Resaturant <i class="fa-solid fa-magnifying-glass ms-2"></i>
+                                                Il tuo ristorante <i class="fa-solid fa-magnifying-glass ms-2"></i>
                                             </button>
                                         </a>
                                     </div>
+                                    @if($dishes)
+                                        @foreach ($dishes as $dish)
+                                            <div class="position-absolute" style="right:200px; bottom:20px">
+                                                <a href="{{ route('dishes.show', $dish->id) }}">
+                                                    <button class="btn btn-sm btn-success btn-custom shadow">
+                                                        I tuoi piatti <i class="fa-solid fa-magnifying-glass ms-2"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                    <a href="{{ route('restaurants.showOrders', $restaurant->id) }}">
+                                        <button class="btn btn-success btn-custom shadow">
+                                            Riepilogo ordini <i class=" ps-3 fa-solid fa-plus"></i>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="mt-5 mb-3">
 
-                            <div class="mt-5 mb-3">
-
-                                <a href="{{ route('dishes.create') }}">
-                                    <button class="btn btn-success btn-custom shadow">
-                                        Create your Dish <i class=" ps-3 fa-solid fa-plus"></i>
-                                    </button>
-                                </a>
+                                    <a href="{{ route('dishes.create') }}">
+                                        <button class="btn btn-success btn-custom shadow">
+                                            Crea il tuo piatto <i class=" ps-3 fa-solid fa-plus"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="mt-5 mb-3">
+                                    <form action="{{ route('dishes.search') }}" method="GET">
+                                        <input type="text" name="name" placeholder="Cerca nome del piatto">
+                                        <button type="submit" class="btn btn-success btn-custom shadow">Cerca</button>
+                                    </form>
+                                </div>
                             </div>
+                            
 
-                            <table class="table">
+                            <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Image</th>
-                                        <th scope="col">Owner</th>
-                                        <th scope="col">Restaurant Name</th>
-                                        <th scope="col">VAT</th>
-                                        <th scope="col">Categories</th>
-
-
+                                        <th scope="col">Immagine</th>
+                                        <th scope="col">Nome del piatto</th>
+                                        <th scope="col">Descrizione</th>
+                                        <th scope="col">Ingredienti</th>
+                                        <th scope="col">Prezzo</th>
+                                        <th scope="col">Visibilità</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($dishes as $dish)
                                     <tr>
-                                        <th scope="row" class="py-3">1</th>
+                                        @if(str_contains($dish->image, "https"))
+                                        
                                         <td>
-                                            <img class="card-img-top dish-img" src="{{ asset('storage/' . $restaurant->image) }}"
-                                                alt="restaurant image" style="height:51px; width:51px">
+                                            <img class="card-img-top dish-img" src="{{$dish->image}}"
+                                            alt="" style="height:51px; width:51px">
+                                        </td>
+                                        @else
+                                        <td>
+                                            <img class="card-img-top dish-img" src="{{ asset('storage/' . $dish->image) }}"
+                                            alt="" style="height:51px; width:51px">
+                                        </td>
+                                        @endif
+                                       
+                                        
+                                        <td>
+                                            <h6 class="py-3">{{ $dish->name }}</h6>
                                         </td>
                                         <td>
-                                            <h6 class="py-3">{{ $restaurant->user_id }}</h6>
+                                            <h6 class="py-3">{{Str::limit($dish->description, 15)}}</h6>
                                         </td>
                                         <td>
-                                            <h6 class="py-3">{{ $restaurant->name }}</h6>
+                                            <h6 class="py-3">{{Str::limit($dish->ingredients, 20) }}</h6>
                                         </td>
                                         <td>
-                                            <h6 class="py-3">{{ $restaurant->vat }}</h6>
+                                            <h6 class="py-3">{{ number_format($dish->price, 2, ',', '.') }} €</h6>
+                                        </td>                                         
+                                        <td>
+                                            @if($dish->visibility === 0)
+                                                <h6 class="py-3 text-center"><i class="fa-solid fa-eye-slash "></i></h6>
+                                            @else
+                                                <h6 class="py-3 text-center"><i class="fa-solid fa-eye "></i></h6>
+                                            @endif
                                         </td>
                                         <td>
-                                            @foreach ($restaurant->categories as $categories)
-                                                <div class="badge text-bg-danger custom-bg rounded-pill my-3 shadow">
-                                                    {{ $categories->name }}
-                                                </div>
-                                            @endforeach
+                                            <a href={{route('dishes.edit', $dish->id)}}>
+                                                <button class="btn btn-custom"> 
+                                                    <i class="fa-solid fa-pen"></i>  
+                                                </button>
+                                            </a>
                                         </td>
-
+                                        <td>
+                                            <form action="{{ route('dishes.destroy', $dish->id) }}" method="POST" class="delete-form d-inline-block">
+                                                @csrf()
+                                                @method('delete')
+                                        
+                                                <button class="btn btn-success btn-custom">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                              </form>
+                                        </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
-                            </table>
+                            </table> 
+
+                            <div class="container text-center">
+                                <a href="{{ route('chart') }}">
+                                    <button class="btn btn-success mt-5 btn-custom">
+                                        Vedi le tue statistiche
+                                    </button>
+                                </a>
+                            </div>
                         @else
-                            <div class="card dashboard text-center ">
-                                <h3>{{ __('Create your restaurant profile!') }} </h3>
+                            <div class="card dashboard shadow text-center ">
+                                <h3>{{ __('Crea il profilo del tuo ristorante!') }} </h3>
                                 <div class="mt-3">
-                                    <h3>Add your restaurant </h3>
+                                    <h3>Aggiungi il tuo ristorante!</h3>
                                     <a href="{{ route('restaurants.create') }}">
                                         <button class="btn btn-success mt-5 btn-custom">
                                             <i class="fa-solid fa-plus"></i>
@@ -160,4 +228,16 @@
             </div>
         </div>
     </div>
+    <script>
+        const forms = document.querySelectorAll(".delete-form");
+        forms.forEach((form) => {
+            form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const conferma = confirm("Sicuro?");
+            if (conferma === true) {
+                form.submit();
+            }
+            })
+        })
+    </script>
 @endsection

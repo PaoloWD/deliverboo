@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreDishRequest;
+use App\Http\Requests\UpdateDishRequest;
 use App\Models\Dish;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
@@ -35,15 +38,18 @@ class DishController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreDishRequest $request)
     {
+        $restaurant = Auth::user();
+
         $data = $request->validated();
         $dish = Dish::create($data);
-    
+        
         if (key_exists('image', $data)){
             $path = Storage::put('dishs', $data['image']);
             $dish->image = $path;
         } 
+        $dish->restaurant_id = $restaurant->id;
         $dish->save();
         return redirect()->route("dishes.show", $dish->id);
     }
@@ -56,7 +62,11 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        return view("dishes.show", compact("dish"));
+        $user_id = auth()->user()->id;
+        $dishes = Dish::where('restaurant_id', $user_id)
+        ->orderBy('name', 'asc')
+        ->get();
+        return view("dishes.show", compact("dish", "dishes"));
     }
 
     /**
@@ -68,7 +78,8 @@ class DishController extends Controller
     public function edit(Dish $dish)
     {
         $dishes = Dish::all();
-        return view('dishes.edit', compact('dishes'));
+        $this->authorize('update', $dish);
+        return view('dishes.edit', compact('dish', 'dishes'));
     }
 
     /**
@@ -78,9 +89,10 @@ class DishController extends Controller
      * @param  \App\Models\dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dish $dish)
+    public function update(UpdateDishRequest $request, Dish $dish)
     {
         $data = $request->validated();
+        
         $dish->update($data);
         
         if(key_exists("image", $data)){
@@ -88,6 +100,7 @@ class DishController extends Controller
             Storage::delete($dish->image);
             $dish->image = $path;
         }
+        $dish->visibility = $request->has('visibility');
         $dish->save();
 
         return redirect()->route("dishes.show", $dish->id);

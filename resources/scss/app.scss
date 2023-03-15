@@ -1,7 +1,20 @@
 @import '~bootstrap/scss/bootstrap';
 
+
+.title-dishes{
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dishes-imgs{
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center;
+}
+
 .restaurant-img{
-    height: 350px;
     object-fit: cover;
     object-position: center;
 }
@@ -23,6 +36,7 @@
 .btn-custom{
     background-color: #c76262 !important;
     border-color: #c76262 !important;
+    color: #fff!important;
     transition: all, .3s;
     &:hover{
         background-color: #b34d4d !important;
@@ -157,4 +171,17 @@
     }
 }; 
 
+.link-show{
+    color: transparent;
+    list-style: none !important;
+
+    &:hover{
+        color: transparent;
+        list-style: none !important;
+    }
+}
+
+ul{
+    list-style: none;
+}
 

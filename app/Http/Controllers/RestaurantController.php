@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Restaurant;
 use App\Models\Category;
+use App\Models\Dish;
+use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -27,8 +29,27 @@ class RestaurantController extends Controller
 
         $restaurant = Restaurant::where('user_id', auth()->id())->first();
 
-        return view("dashboard", compact('users', 'categories', 'restaurant'));
+        $user_id = auth()->user()->id;
+        $dishes = Dish::where('restaurant_id', $user_id)
+        ->orderBy('name', 'asc')
+        ->get();
+
+        return view("dashboard", compact('users', 'categories', 'restaurant', 'dishes'));
     }
+
+    public function search(Request $request)
+{   
+    $user = Auth::user();
+    $query = $request->get('name');
+    $restaurant = Restaurant::where('user_id', auth()->id())->first();
+    $dishes = [];
+    if(isset($restaurant)) {
+        $dishes = Dish::where('restaurant_id', $restaurant->id)
+              ->where('name', 'like', '%'.$query.'%')
+              ->get();
+    }
+    return view('dishes.show', compact('dishes'));
+}
 
     /**
      * Show the form for creating a new resource.
@@ -88,6 +109,16 @@ class RestaurantController extends Controller
         $this->authorize('view', $restaurant);
 
         return view('restaurants.show', compact('restaurant'));
+    }
+
+    public function showOrders(Restaurant $restaurant){
+        $this->authorize('view', $restaurant);
+       
+        $orders = Order::where('restaurant_id', $restaurant->id)
+                    ->with('dishes')
+                    ->orderBy('created_at', 'desc')
+                    ->get();
+        return view('restaurants.showOrders', compact('orders'));
     }
 
     /**
