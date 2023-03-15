@@ -26,7 +26,7 @@ class StoreRestaurantRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|min:5|max:255',
+            'name'=>'required|string|min:5|max:255',
             'vat'=>'required|string',
             'address'=>'required',
             'image' => 'image|nullable',
