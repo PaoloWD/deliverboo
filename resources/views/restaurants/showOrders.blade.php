@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="bg-dashboard pt-5">
-
-        <div class="container py-5 h-100 ">
+    <div class="bg-dashboard py-5 ">
+        <div class="container h-100 overflow-auto">
             <div class="container-form rounded-4">
                 <h1 class="fw-bolder custom-color">Ordini ricevuti</h1>
                 <table class="table table-striped table-hover mt-3">
@@ -44,34 +43,23 @@
                                 <h6 class="py-3">{{$order->created_at}}</h6>
                             </td>    
                             <td>
-                                <button type="button" class="btn btn-custom p-2 mt-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"> Vedi dettagli </button>
-                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-                                    <div class="offcanvas-header">
-                                        <h2 class="offcanvas-title custom-color fw-bold" id="offcanvasLabel">Piatti Ordinati</h2>
-                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                    </div>
-                                    <div class="offcanvas-body text-start">
-                                        @foreach($orders as $order)
-                                            <div>
-                                                <h3 class="custom-color fw-bold">Ordine #{{ $order->id }}</h3>
-                                                <ul>
-                                                    @foreach($order->dishes->groupBy('id') as $dish)
-                                                        <li> <span class="fw-bold">Nome:</span> {{ $dish->first()->name }} <span class="fw-bold">Quantità:</span> {{ $dish->count() }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        @endforeach
+                                <button class="btn btn-custom p-2 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{$order->id}}" aria-expanded="false" aria-controls="collapseExample">Vedi dettagli</button>
+                                <div class="collapse pt-3" id="collapseExample{{$order->id}}">
+                                    <div class="card card-body">
+                                        @foreach($order->dishes->groupBy('id') as $dish)
+                                        <span class="fw-bold">Nome:</span> {{ $dish->first()->name }} <span class="fw-bold">Quantità:</span> {{ $dish->count() }}
+                                    @endforeach
                                     </div>
                                 </div>
+                                     
                             </td>
                         </tr>
-                        @endforeach  
+                         @endforeach  
                     </tbody>
                 </table> 
             </div>
         </div>
     </div>
-
 <script>
 </script>
 @endsection
