@@ -44,18 +44,49 @@
                             </td>    
                             <td>
                                 <button class="btn btn-custom p-2 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{$order->id}}" aria-expanded="false" aria-controls="collapseExample">Vedi dettagli</button>
-                                <div class="collapse pt-3" id="collapseExample{{$order->id}}">
-                                    <div class="card card-body">
-                                        @foreach($order->dishes->groupBy('id') as $dish)
-                                        <span class="fw-bold">Nome:</span> {{ $dish->first()->name }} <span class="fw-bold">Quantità:</span> {{ $dish->count() }}
-                                    @endforeach
-                                    </div>
-                                </div>
-                                     
+                                
                             </td>
                         </tr>
+                        <tr class="collapse pt-3" id="collapseExample{{$order->id}}">
+                            <td><span class="fw-bold">Nome:</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><span class="fw-bold">Quantità:</span> </td>
+                        </tr>
+                        @foreach($order->dishes->groupBy('id') as $dish)
+                        <tr class="collapse pt-3" id="collapseExample{{$order->id}}">
+
+                        
+                               
+                                    
+                                    <td>
+                                        {{ $dish->first()->name }}
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td> </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ $dish->count() }}</td>
+                                     
+                                
+                            
+                           
+                        </tr>
+                        @endforeach
                          @endforeach  
                     </tbody>
+                    
+                    
+                               
+
+
+                     
                 </table> 
             </div>
         </div>
