@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function(){
-    Route::resources('categories', CategoryController::class);
+    Route::resource('categories', CategoryController::class);
 });
 
 
