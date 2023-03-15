@@ -93,9 +93,9 @@ class CategoryController extends Controller
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         $data = $request->validated();
-
         $category->update($data);
-
+        if()
+        
         $category->save();
 
         // $category->categories()->sync($data["categories"]);

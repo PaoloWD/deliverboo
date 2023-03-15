@@ -176,14 +176,11 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="delete-form d-inline-block">
-                                            @csrf()
-                                            @method('delete')
-                                    
-                                            <button class="btn btn-success btn-custom">
+                                        <a href={{route('categories.destroy', $category->id)}}>
+                                            <button class="btn btn-custom">  
                                                 <i class="fa-solid fa-trash"></i>
                                             </button>
-                                          </form>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
