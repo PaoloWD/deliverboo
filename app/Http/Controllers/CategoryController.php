@@ -37,7 +37,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view("categories.create", compact('categories'));
+        return view("admin.create", compact('categories'));
     }
 
     /**
@@ -49,6 +49,7 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request)
     {
         // $admin = AdminMiddleware::user();
+        
 
         $data = $request->validated();
         $category = Category::create($data);
@@ -65,10 +66,10 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
+    
     {
-        $this->authorize('view', $category);
-
-        return view('categories.show', compact('category'));
+        
+        return view('admin.show', compact('category'));
     }
 
     /**
@@ -77,11 +78,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        $categories = Category::all();
-
-        return view('categories.edit', compact('categories'));
+        return view('admin.edit', compact('category'));
     }
 
     /**

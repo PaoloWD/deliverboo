@@ -30,9 +30,9 @@ class StoreCategoryRequest extends FormRequest
 
     public function messages(){
         return[
-            "name.required" => "La categoria è obbligatorio",
-            "name.min" =>  "La categoria deve avere almeno :min caratteri",
-            "name.max" =>  "La categoria deve avere massimo :max caratteri",
+            "name.required" => "La categoria è obbligatoria",
+            "name.min" =>  "La categoria deve avere almeno di :min caratteri",
+            "name.max" =>  "La categoria deve avere massimo di :max caratteri",
         ];
     }
 }
