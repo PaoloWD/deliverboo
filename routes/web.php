@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('restaurants', RestaurantController::class);
     Route::resource('dishes', DishController::class)->only(['index', 'show', 'create', 'store', 'edit', 'update', 'destroy']);
     Route::get('/restaurantsOrders/{restaurant}', [RestaurantController::class, 'showOrders'])->name("restaurants.showOrders");
+    Route::put('/restaurantsOrders/{restaurant}', [OrderController::class, 'update'])->name("restaurants.showOrders");
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
