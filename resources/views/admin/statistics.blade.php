@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container pb-5">
     <h4 class="py-5 ">Statistiche Generali:</h4>
     <canvas id="myChart"></canvas>
 </div>
