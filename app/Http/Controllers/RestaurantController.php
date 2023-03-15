@@ -28,13 +28,14 @@ class RestaurantController extends Controller
         $categories = Category::all();
 
         $restaurant = Restaurant::where('user_id', auth()->id())->first();
+        $restaurants = Restaurant::all();
 
         $user_id = auth()->user()->id;
         $dishes = Dish::where('restaurant_id', $user_id)
         ->orderBy('name', 'asc')
         ->get();
 
-        return view("dashboard", compact('users', 'categories', 'restaurant', 'dishes'));
+        return view("dashboard", compact('users', 'categories', 'restaurant', 'dishes', 'restaurants'));
     }
 
     public function search(Request $request)

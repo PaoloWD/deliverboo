@@ -210,6 +210,105 @@
                                     </button>
                                 </a>
                             </div>
+                        @elseif (Auth::user()->role === 'admin')
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome Categoria</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($categories as $category)
+                                <tr>
+                                    <td>
+                                        <h6 class="py-3">{{ $category->name }}</h6>
+                                    </td>
+                                    <td>
+                                        <a href={{route('categories.edit', $category->id)}}>
+                                            <button class="btn btn-custom"> 
+                                                <i class="fa-solid fa-pen"></i>  
+                                            </button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="delete-form d-inline-block">
+                                            @csrf()
+                                            @method('delete')
+                                    
+                                            <button class="btn btn-success btn-custom">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                          </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Immagine</th>
+                                    <th scope="col">Nome del Ristorante</th>
+                                    <th scope="col">Partita Iva</th>
+                                    <th scope="col">Via</th>
+                                    <th scope="col">Proprietario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                @if(isset($restaurants) )
+                                @foreach ($restaurants as $restaurant)
+                                <tr>
+                                    @if(str_contains($restaurant->image, "https"))
+                                    
+                                    <td>
+                                        <img class="card-img-top restaurant-img" src="{{$restaurant->image}}"
+                                        alt="" style="height:51px; width:51px">
+                                    </td>
+                                    @else
+                                    <td>
+                                        <img class="card-img-top restaurant-img" src="{{ asset('storage/' . $restaurant->image) }}"
+                                        alt="" style="height:51px; width:51px">
+                                    </td>
+                                    @endif
+                                   
+                                    
+                                    <td>
+                                        <h6 class="py-3">{{ $restaurant->name }}</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="py-3">{{$restaurant->vat}}</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="py-3">{{$restaurant->address }}</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="py-3">{{$restaurant->id}}</h6>
+                                    </td>
+                                    <td>
+                                        <a href={{route('categories.edit', $restaurant->id)}}>
+                                            <button class="btn btn-custom"> 
+                                                <i class="fa-solid fa-pen"></i>  
+                                            </button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('categories.destroy', $restaurant->id) }}" method="POST" class="delete-form d-inline-block">
+                                            @csrf()
+                                            @method('delete')
+                                    
+                                            <button class="btn btn-success btn-custom">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                          </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+
+                                @endif
+                            </tbody>
+                        </table> 
+                        
                         @else
                             <div class="card dashboard shadow text-center ">
                                 <h3>{{ __('Crea il profilo del tuo ristorante!') }} </h3>
