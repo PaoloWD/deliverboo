@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DishController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
@@ -32,7 +33,7 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [RestaurantController::class, 'index'])->name('dashboard');
     Route::resource('restaurants', RestaurantController::class);
-    Route::resource('dishes', DishController::class);
+    Route::resource('dishes', DishController::class)->only(['index', 'show', 'create', 'store', 'edit', 'update', 'destroy']);
     Route::get('/restaurantsOrders/{restaurant}', [RestaurantController::class, 'showOrders'])->name("restaurants.showOrders");
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -40,6 +41,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/chart', [OrderController::class, 'chartDataByMonth'])->name('chart');
 });
+
+Route::middleware(['auth', 'admin'])->group(function(){
+    Route::resources('categories', CategoryController::class);
+});
+
 
 Route::get('/search', [RestaurantController::class, 'search'])->name('dishes.search'); 
 
