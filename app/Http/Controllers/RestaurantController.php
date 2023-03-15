@@ -92,7 +92,7 @@ class RestaurantController extends Controller
 
         // Controlla che nei dati che il server sta ricevendo, ci sia un valore per la chiave "categories".
         if ($request->has("categories")) {
-            // if (key_exists("technologies", $data)) {
+            // if (key_exists("categories", $data)) {
             $restaurant->categories()->attach($data["categories"]);
         }
 
@@ -167,7 +167,7 @@ class RestaurantController extends Controller
 
         $restaurant->categories()->sync($data["categories"]);
 
-        return redirect()->route('projects.show', $restaurant->id);
+        return redirect()->route('restaurants.show', $restaurant->id);
     }
 
     /**
