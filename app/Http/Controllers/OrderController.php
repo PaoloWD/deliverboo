@@ -87,14 +87,9 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, Order $order)
     {
-        $order = Order::findOrFail($id);
-        $order->status = 'Completato';
-        $order->save();
-
-
-        return redirect()->route('restaurants.showOrders', $order->restaurant_id);
+        //
     }
 
     /**

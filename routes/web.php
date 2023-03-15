@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\API\OrderController as APIOrderController;
 use App\Http\Controllers\DishController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
@@ -35,7 +34,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('restaurants', RestaurantController::class);
     Route::resource('dishes', DishController::class);
     Route::get('/restaurantsOrders/{restaurant}', [RestaurantController::class, 'showOrders'])->name("restaurants.showOrders");
-    Route::put('/restaurantsOrders/{restaurant}', [OrderController::class, 'update'])->name("restaurants.showOrders");
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
