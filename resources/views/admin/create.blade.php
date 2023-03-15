@@ -16,7 +16,7 @@
                 </div>
             @endif
 
-            <h2 class="custom-color">CREA IL TUO RISTORANTE</h2>
+            <h2 class="custom-color">CREA UNA NUOVA CATEGORIA</h2>
 
             <form id="my-form" action="{{ route('categories.store') }}" method="POST">
                 @csrf

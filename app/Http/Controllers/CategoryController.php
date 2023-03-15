@@ -78,11 +78,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        $categories = Category::all();
-
-        return view('admin.edit', compact('categories'));
+        return view('admin.edit', compact('category'));
     }
 
     /**
@@ -102,7 +100,7 @@ class CategoryController extends Controller
 
         // $category->categories()->sync($data["categories"]);
 
-        return redirect()->route('admin.show', $category->id);
+        return redirect()->route('categories.show', $category->id);
     }
 
     /**
