@@ -58,6 +58,9 @@ class OrderController extends Controller
     public function store(StoreOrderRequest $request){
         $data = $request->validated();
         $order = Order::create($data);
+        if($request->has('dish_id')){
+            $order->dishes()->attach($data['dish_id']);
+         }
         $order->save(); 
         Mail::to($order->customer_email)->send(new NewContactConfirmed($data));
         $id=$order->restaurant_id;
