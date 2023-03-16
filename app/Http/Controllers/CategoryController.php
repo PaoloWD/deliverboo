@@ -56,7 +56,7 @@ class CategoryController extends Controller
 
         $category->save();
 
-        return redirect()->route('categories.show', $category->id);
+        return redirect()->route('dashboard', $category->id);
     }
 
     /**
@@ -98,7 +98,7 @@ class CategoryController extends Controller
 
         // $category->categories()->sync($data["categories"]);
 
-        return redirect()->route('categories.show', $category->id);
+        return redirect()->route('dashboard', $category->id);
     }
 
     /**
