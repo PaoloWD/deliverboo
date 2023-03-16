@@ -114,8 +114,15 @@
                             @if ($order->status === 'Completato')
                                 <tr class="text-center">
                                     <td>
-                                        <input class="form-check-input py-2 px-2 mt-3" disabled type="checkbox" name=""
+
+                                        <form action="{{route('restaurants.showOrders', $order)}}" method="POST" class="status-check">
+                                            @csrf
+                                            @method('PATCH')
+                                            
+                                            <input class="form-check-input py-2 px-2 mt-3" type="checkbox" name=""
                                             value="{{ $order->id }}" id="check-{{ $order->id }}" checked>
+                                        </form>
+                                        
                                     </td>
                                     <td>
                                         <h6 class="py-3">Ordine #{{ $order->id }}</h6>

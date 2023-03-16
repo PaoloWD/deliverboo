@@ -123,6 +123,22 @@ class OrderController extends Controller
 
         return redirect()->route('restaurants.showOrders', $order->restaurant_id);
     }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Order  $order
+     * @return \Illuminate\Http\Response
+     */
+    public function unupdate($id)
+    {
+        $order = Order::findOrFail($id);
+        $order->status = 'In lavorazione';
+        $order->save();
+
+
+        return redirect()->route('restaurants.showOrders', $order->restaurant_id);
+    }
 
     /**
      * Remove the specified resource from storage.
