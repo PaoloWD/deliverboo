@@ -32,7 +32,11 @@ class OrderController extends Controller
         ->groupBy('months.month')
         ->orderBy('months.month')
         ->get();
-        return view('admin.statistics', compact('totalsByMonth','restaurantCounts'));
+
+        $restaurantCountTotal = DB::table('restaurants')
+        ->selectRaw('COUNT(*) as count')
+        ->first();
+        return view('admin.statistics', compact('totalsByMonth','restaurantCounts', 'restaurantCountTotal'));
     }
 
 
