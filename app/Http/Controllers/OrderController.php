@@ -16,10 +16,12 @@ class OrderController extends Controller
                   ->leftJoin('orders', function ($join) {
                       $join->on(DB::raw('months.month'), '=', DB::raw('MONTH(orders.created_at)'));
                   })
-                  ->selectRaw('months.month as month, COUNT(orders.id) as count, ROUND(SUM(orders.total_order / 10), 2) as total')
+                  ->selectRaw("DATE_FORMAT(CONCAT('2023-', months.month, '-01'), '%M') as month, COUNT(orders.id) as count, ROUND(SUM(orders.total_order / 10), 2) as total")
                   ->groupBy('months.month', DB::raw('MONTH(orders.created_at)'))
                   ->orderBy('months.month')
                   ->get();
+
+
 
         $restaurantCounts = DB::table(DB::raw('(SELECT 1 AS month UNION SELECT 2 AS month UNION SELECT 3 AS month UNION SELECT 4 AS month UNION SELECT 5 AS month UNION SELECT 6 AS month UNION SELECT 7 AS month UNION SELECT 8 AS month UNION SELECT 9 AS month UNION SELECT 10 AS month UNION SELECT 11 AS month UNION SELECT 12 AS month) AS months'))
         ->leftJoin('orders', function ($join) {
