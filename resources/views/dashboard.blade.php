@@ -242,6 +242,38 @@
                                 @endif
                             </tbody>
                         </table> 
+                        <table class="table table-striped table-hover mt-5">
+                            <thead class="custom-bg text-white">
+                                <tr>
+                                    <th scope="col">Nome Utente</th>
+                                    <th scope="col">E-mail</th>
+                                    <th scope="col">Creato il</th>
+                                    <th scope="col">ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                @if(isset($users) )
+                                @foreach ($users as $user)
+                                <tr>
+                                    <td>
+                                        <h6 class="py-3">{{$user->name}}</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="py-3">{{$user->email}}</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="py-3">{{$user->created_at}}</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="py-3">{{$user->id}}</h6>
+                                    </td>
+                                </tr>
+                                @endforeach
+
+                                @endif
+                            </tbody>
+                        </table> 
                         
                         @else
                             <div class="card dashboard shadow text-center ">
