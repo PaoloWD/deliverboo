@@ -153,15 +153,17 @@
                         </a>
                         <div class="container text-center">
                             <a href="{{ route('statistics') }}">
-                                <button class="btn btn-success mt-5 btn-custom">
+                                <button class="btn btn-success my-5 btn-custom">
                                     Vedi le tue statistiche
                                 </button>
                             </a>
                         </div>
                         <table class="table table-striped table-hover">
-                            <thead>
+                            <thead class="custom-bg text-white">
                                 <tr>
                                     <th scope="col">Nome Categoria</th>
+                                    <th scope="col">Modifica</th>
+                                    <th scope="col">Elimina</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -192,8 +194,8 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <table class="table table-striped table-hover">
-                            <thead>
+                        <table class="table table-striped table-hover mt-5">
+                            <thead class="custom-bg text-white">
                                 <tr>
                                     <th scope="col">Immagine</th>
                                     <th scope="col">Nome del Ristorante</th>
