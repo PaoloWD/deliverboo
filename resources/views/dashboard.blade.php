@@ -148,12 +148,12 @@
                         @elseif (Auth::user()->role === 'admin')
                         
                         <div class="container">
-                            <a href="{{ route('categories.create') }}">
+                            <a class="color-transparent" href="{{ route('categories.create') }}">
                                 <button class="btn  btn-success btn-custom shadow">
                                     Aggiungi categoria
                                 </button>
                             </a>
-                            <a href="{{ route('statistics') }}">
+                            <a class="color-transparent" href="{{ route('statistics') }}">
                                 <button class="btn ms-2 btn-custom shadow">
                                     Vedi le tue statistiche
                                 </button>
