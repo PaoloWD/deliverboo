@@ -58,8 +58,11 @@ class OrderController extends Controller
         $query = $request->get('name');
         
         $categories = [];
-        $categories = Category::where('name', 'like', '%' . $query . '%')
-    ->get();
+        if(isset($query)){
+            $categories = Category::where('name', 'like', '%' . $query . '%')
+            ->get();
+        } 
+        
     return view('admin.show', compact('categories'));
 }
 
