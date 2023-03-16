@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container pb-5">
-    <h2 class="custom-color py-5">Statistiche Generali:</h2>
-    <h4>Ristoranti totali nella piattaforma: {{$restaurantCountTotal->count}}</h4>
+    <h2 class="custom-color py-5">Statistiche Generali</h2>
+    <h4 class="custom-color">Ristoranti totali nella piattaforma: <strong>{{$restaurantCountTotal->count}}</strong></h4>
     <canvas id="myChart"></canvas>
     <div class="d-flex justify-content-center mt-5">
         <a class="link-show " href={{ route('dashboard') }}>
