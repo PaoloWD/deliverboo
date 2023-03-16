@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Restaurant;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -64,6 +65,32 @@ class OrderController extends Controller
         } 
         
     return view('admin.show', compact('categories'));
+}
+
+public function searchRestaurants(Request $request)
+    {
+        $query = $request->get('name');
+        
+        $restaurants = [];
+        if(isset($query)){
+            $restaurants = Restaurant::where('name', 'like', '%' . $query . '%')
+            ->get();
+        } 
+        
+    return view('admin.show', compact('restaurants'));
+}
+
+public function searchUsers(Request $request)
+    {
+        $query = $request->get('name');
+        
+        $users = [];
+        if(isset($query)){
+            $users = User::where('email', 'like', '%' . $query . '%')
+            ->get();
+        } 
+        
+    return view('admin.show', compact('users'));
 }
 
 

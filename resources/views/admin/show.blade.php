@@ -7,6 +7,7 @@
             <div class="card p-5 rounded-5" style="opacity: 0.95">
                 <h1 class="custom-color">Risultati della ricerca</h1>
                 <div class="card show-restaurant mt-4 p-4">
+                    @if(isset($categories))
                     <table class="table table-striped table-hover">
                         <thead class="custom-bg text-white">
                             <tr>
@@ -43,7 +44,43 @@
                             @endforeach
                         </tbody>
                     </table>
-                    
+                    @elseif(isset($restaurants))
+                    <table class="table table-striped table-hover">
+                        <thead class="custom-bg text-white">
+                            <tr>
+                                <th scope="col">Risultati della ricerca</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($restaurants as $restaurant)
+                            <tr>
+                                <td>
+                                    <h6 class="py-3">{{$restaurant->name}}</h6>
+                                </td>
+                                
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    @elseif(isset($users))
+                    <table class="table table-striped table-hover">
+                        <thead class="custom-bg text-white">
+                            <tr>
+                                <th scope="col">Risultati della ricerca</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($users as $user)
+                            <tr>
+                                <td>
+                                    <h6 class="py-3">{{$user->email}}</h6>
+                                </td>
+                                
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    @endif
                     <div class="text-center mt-4">
                         <a href="{{ route('dashboard') }}">
                             <button class="btn btn-success btn-custom"> Torna al pannello di controllo </button>

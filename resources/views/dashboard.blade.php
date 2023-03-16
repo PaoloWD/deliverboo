@@ -202,7 +202,7 @@
                         </table>
                         <div class="mt-5 mb-3">
                             <div class="container text-center">
-                                <form action="#" method="GET">
+                                <form action="{{route ('restaurants.search')}}" method="GET">
                                     <input type="text" name="name" placeholder="Nome del ristorante">
                                     <button type="submit" class="btn btn-success btn-custom shadow">Cerca</button>
                                 </form>
@@ -257,8 +257,8 @@
                             </tbody>
                         </table> 
                         <div class="container text-center">
-                            <form action="#" method="GET">
-                                <input type="text" name="name" placeholder="Nome dell' utente">
+                            <form action="{{route('users.search')}}" method="GET">
+                                <input type="text" name="name" placeholder="Email dell' utente">
                                 <button type="submit" class="btn btn-success btn-custom shadow">Cerca</button>
                             </form>
                         </div>
