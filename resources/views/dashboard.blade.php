@@ -39,6 +39,14 @@
                                             </button>
                                         </a>
                                     </div>
+                                    <div class="position-absolute" style="right:350px; bottom:20px">
+
+                                        <a href="{{ route('chart', $restaurant->id) }}">
+                                            <button class="btn btn-sm btn-success btn-custom shadow">
+                                                Statistiche <i class="fa-solid fa-magnifying-glass ms-2"></i>
+                                            </button>
+                                        </a>
+                                    </div>
                                     @if($dishes)
                                         @foreach ($dishes as $dish)
                                             <div class="position-absolute" style="right:200px; bottom:20px">
