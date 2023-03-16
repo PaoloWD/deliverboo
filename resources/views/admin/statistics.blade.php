@@ -5,6 +5,13 @@
 <div class="container pb-5">
     <h4 class="py-5 ">Statistiche Generali:</h4>
     <canvas id="myChart"></canvas>
+    <div class="d-flex justify-content-center mt-5">
+        <a class="link-show " href={{ route('dashboard') }}>
+            <button class="btn btn-custom">
+                Torna alla tua dashboard
+            </button>
+        </a>    
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
