@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Dish;
 use App\Models\Restaurant;
 
 class CategoryController extends Controller
@@ -16,7 +20,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        $categories = Category::all();
+        $restaurants = Restaurant::all();
+        $dishes = Dish::all();
+
+        return view("dashboard", compact('users', 'categories', 'restaurants', 'dishes'));
     }
 
     /**
@@ -26,7 +35,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+
+        return view("admin.create", compact('categories'));
     }
 
     /**
@@ -35,9 +46,17 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        //
+        // $admin = AdminMiddleware::user();
+        
+
+        $data = $request->validated();
+        $category = Category::create($data);
+
+        $category->save();
+
+        return redirect()->route('dashboard', $category->id);
     }
 
     /**
@@ -46,9 +65,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
+    
     {
-        //
+        
+        return view('admin.show', compact('category'));
     }
 
     /**
@@ -57,9 +78,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.edit', compact('category'));
     }
 
     /**
@@ -69,9 +90,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        $data = $request->validated();
+        $category->update($data);
+        $category->save();
+
+        // $category->categories()->sync($data["categories"]);
+
+        return redirect()->route('dashboard', $category->id);
     }
 
     /**
@@ -82,6 +109,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->restaurants()->detach();
+        $category->delete();
+
+        return redirect()->route("dashboard");
     }
 }

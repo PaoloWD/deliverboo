@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DishController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
@@ -32,14 +33,26 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [RestaurantController::class, 'index'])->name('dashboard');
     Route::resource('restaurants', RestaurantController::class);
-    Route::resource('dishes', DishController::class);
+    Route::resource('dishes', DishController::class)->only(['index', 'show', 'create', 'store', 'edit', 'update', 'destroy']);
     Route::get('/restaurantsOrders/{restaurant}', [RestaurantController::class, 'showOrders'])->name("restaurants.showOrders");
+    Route::put('/restaurantsOrders/{restaurant}', [OrderController::class, 'update'])->name("restaurants.showOrders");
+    Route::patch('/restaurantsOrders/{restaurant}', [OrderController::class, 'unupdate'])->name("restaurants.showOrders");
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/chart', [OrderController::class, 'chartDataByMonth'])->name('chart');
 });
+
+Route::middleware(['auth', 'admin'])->group(function(){
+    Route::resource('categories', CategoryController::class);
+    Route::get('/statistics', [OrderController::class, 'sumPricebyRestaurants'])->name('statistics');
+    Route::get('/search/categories', [OrderController::class, 'searchCategories'])->name('categories.search'); 
+    Route::get('/search/restaurants', [OrderController::class, 'searchRestaurants'])->name('restaurants.search'); 
+    Route::get('/search/users', [OrderController::class, 'searchUsers'])->name('users.search'); 
+
+});
+
 
 Route::get('/search', [RestaurantController::class, 'search'])->name('dishes.search'); 
 

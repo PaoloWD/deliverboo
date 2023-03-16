@@ -28,28 +28,31 @@ class RestaurantController extends Controller
         $categories = Category::all();
 
         $restaurant = Restaurant::where('user_id', auth()->id())->first();
+        $restaurants = Restaurant::all();
 
         $user_id = auth()->user()->id;
         $dishes = Dish::where('restaurant_id', $user_id)
         ->orderBy('name', 'asc')
         ->get();
 
-        return view("dashboard", compact('users', 'categories', 'restaurant', 'dishes'));
+        return view("dashboard", compact('users', 'categories', 'restaurant', 'dishes', 'restaurants'));
     }
 
+
+
     public function search(Request $request)
-{   
-    $user = Auth::user();
-    $query = $request->get('name');
-    $restaurant = Restaurant::where('user_id', auth()->id())->first();
-    $dishes = [];
-    if(isset($restaurant)) {
-        $dishes = Dish::where('restaurant_id', $restaurant->id)
-              ->where('name', 'like', '%'.$query.'%')
-              ->get();
+    {   
+        $user = Auth::user();
+        $query = $request->get('name');
+        $restaurant = Restaurant::where('user_id', auth()->id())->first();
+        $dishes = [];
+        if(isset($restaurant)) {
+            $dishes = Dish::where('restaurant_id', $restaurant->id)
+                ->where('name', 'like', '%'.$query.'%')
+                ->get();
+        }
+        return view('dishes.show', compact('dishes'));
     }
-    return view('dishes.show', compact('dishes'));
-}
 
     /**
      * Show the form for creating a new resource.
@@ -91,7 +94,7 @@ class RestaurantController extends Controller
 
         // Controlla che nei dati che il server sta ricevendo, ci sia un valore per la chiave "categories".
         if ($request->has("categories")) {
-            // if (key_exists("technologies", $data)) {
+            // if (key_exists("categories", $data)) {
             $restaurant->categories()->attach($data["categories"]);
         }
 
@@ -166,7 +169,7 @@ class RestaurantController extends Controller
 
         $restaurant->categories()->sync($data["categories"]);
 
-        return redirect()->route('projects.show', $restaurant->id);
+        return redirect()->route('restaurants.show', $restaurant->id);
     }
 
     /**

@@ -83,8 +83,11 @@
                         <ul class="navbar-nav ms-auto pe-5">
                             <li class="nav-item">
                                 @if (Auth::check())
-                                    <a class="nav-link custom-color"
-                                        href="{{ url('/dashboard') }}">{{ __('Vai al tuo Ristorante') }}</a>
+                                    @if(Auth::user()->role === 'admin')
+                                        <a class="nav-link custom-color" href="{{ url('/dashboard') }}">{{ __('Pannello Supremo') }}</a>
+                                    @else
+                                        <a class="nav-link custom-color" href="{{ url('/dashboard') }}">{{ __('Vai al tuo Ristorante') }}</a>
+                                    @endif
                                 @else
                                     <a class="nav-link custom-color" href="{{ url('/') }}">{{ __('Benvenuto') }}</a>
                                 @endif
