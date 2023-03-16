@@ -80,6 +80,7 @@
                                     <tr>
                                         <th scope="col">Immagine</th>
                                         <th scope="col">Nome del piatto</th>
+                                        <th scope="col">Tipologia</th>
                                         <th scope="col">Descrizione</th>
                                         <th scope="col">Ingredienti</th>
                                         <th scope="col">Prezzo</th>
@@ -105,6 +106,9 @@
                                         
                                         <td>
                                             <h6 class="py-3">{{ $dish->name }}</h6>
+                                        </td>
+                                        <td>
+                                            <h6 class="py-3">{{ $dish->type }}</h6>
                                         </td>
                                         <td>
                                             <h6 class="py-3">{{Str::limit($dish->description, 15)}}</h6>
