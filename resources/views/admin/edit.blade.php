@@ -35,7 +35,7 @@
                     @enderror
                 </div>
                 
-                <button type="submit" class="btn btn-success btn-custom shadow me-3">Modifica categoria</button>
+                <button type="submit" class="btn btn-success btn-custom shadow me-3">Salva</button>
                 <a href="/" class="btn btn-success btn-custom shadow">Annulla</a>
             </form>
         </div>
