@@ -16,7 +16,7 @@
                 </div>
             @endif
 
-            <h2 class="custom-color">CREA UNA NUOVA CATEGORIA</h2>
+            <h2 class="custom-color mb-4">CREA UNA NUOVA CATEGORIA</h2>
 
             <form id="my-form" action="{{ route('categories.store') }}" method="POST">
                 @csrf
@@ -32,7 +32,8 @@
                         </div>
                     @enderror
                 </div>
-                <button type="submit">Aggiungi categoria</button>
+                <button type="submit" class="btn btn-success btn-custom shadow me-2">Aggiungi categoria</button>
+                <a href="/" class="btn btn-success btn-custom shadow">Annulla</a>
             </form>
         </div>
     </div>

@@ -16,13 +16,13 @@
                 </div>
             @endif
 
-            <h2 class="custom-color">MODIFICA LA CATEGORIA {{$category->name}}</h2>
+            <h2 class="custom-color mb-4">MODIFICA LA CATEGORIA: <i>{{$category->name}}</i></h2>
 
             <form id="my-form" action="{{ route('categories.update', $category->id)  }}" method="POST">
                 @method('PUT')
                 @csrf
                 <div class="mb-3">
-                    <label class="form-label">Nome nuova categoria *</label>
+                    <label class="form-label">Nome nuova categoria</label>
                     <input type="text"
                     value="{{ $category->name }}"
                         class="form-control @error('name') is-invalid @elseif(old('name')) is-valid  @enderror"
@@ -35,7 +35,8 @@
                     @enderror
                 </div>
                 
-                <button type="submit">Modifica categoria</button>
+                <button type="submit" class="btn btn-success btn-custom shadow me-3">Modifica categoria</button>
+                <a href="/" class="btn btn-success btn-custom shadow">Annulla</a>
             </form>
         </div>
     </div>

@@ -153,7 +153,7 @@
                         </a>
                         <div class="container text-center">
                             <a href="{{ route('statistics') }}">
-                                <button class="btn btn-success my-5 btn-custom">
+                                <button class="btn btn-success my-5 btn-custom shadow">
                                     Vedi le tue statistiche
                                 </button>
                             </a>
