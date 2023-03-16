@@ -170,7 +170,7 @@
                                 @foreach ($categories as $category)
                                 <tr>
                                     <td>
-                                        <h6 class="py-3">{{ $category->name }}</h6>
+                                        <h6 class="py-3">{{$category->name}}</h6>
                                     </td>
                                     <td>
                                         <a href={{route('categories.edit', $category->id)}}>
@@ -181,7 +181,7 @@
                                     </td>
                                     <td>
                                        
-                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="delete-form d-inline-block">
+                                        <form action="{{route('categories.destroy', $category->id)}}" method="POST" class="delete-form d-inline-block">
                                             @csrf()
                                             @method('delete')
                                     
@@ -201,7 +201,7 @@
                                     <th scope="col">Nome del Ristorante</th>
                                     <th scope="col">Partita Iva</th>
                                     <th scope="col">Via</th>
-                                    <th scope="col">Proprietario</th>
+                                    <th scope="col">Creato il</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -224,16 +224,16 @@
                                    
                                     
                                     <td>
-                                        <h6 class="py-3">{{ $restaurant->name }}</h6>
+                                        <h6 class="py-3">{{$restaurant->name}}</h6>
                                     </td>
                                     <td>
                                         <h6 class="py-3">{{$restaurant->vat}}</h6>
                                     </td>
                                     <td>
-                                        <h6 class="py-3">{{$restaurant->address }}</h6>
+                                        <h6 class="py-3">{{$restaurant->address}}</h6>
                                     </td>
                                     <td>
-                                        <h6 class="py-3">{{$restaurant->id}}</h6>
+                                        <h6 class="py-3">{{$restaurant->created_at}}</h6>
                                     </td>
                                     
                                 </tr>
