@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'admin'])->group(function(){
     Route::resource('categories', CategoryController::class);
     Route::get('/statistics', [OrderController::class, 'sumPricebyRestaurants'])->name('statistics');
+    Route::get('/search/categories', [OrderController::class, 'searchCategories'])->name('categories.search'); 
 
 });
 

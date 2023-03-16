@@ -157,6 +157,12 @@
                                     Vedi le tue statistiche
                                 </button>
                             </a>
+                            <div class="mt-5 mb-3">
+                                <form action="{{ route('categories.search')}}" method="GET">
+                                    <input type="text" name="name" placeholder="Nome della categoria">
+                                    <button type="submit" class="btn btn-success btn-custom shadow">Cerca</button>
+                                </form>
+                            </div>
                         </div>
                         <table class="table table-striped table-hover">
                             <thead class="custom-bg text-white">
@@ -194,6 +200,14 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="mt-5 mb-3">
+                            <div class="container text-center">
+                                <form action="#" method="GET">
+                                    <input type="text" name="name" placeholder="Nome del ristorante">
+                                    <button type="submit" class="btn btn-success btn-custom shadow">Cerca</button>
+                                </form>
+                            </div>
+                        </div>
                         <table class="table table-striped table-hover mt-5">
                             <thead class="custom-bg text-white">
                                 <tr>
@@ -242,6 +256,12 @@
                                 @endif
                             </tbody>
                         </table> 
+                        <div class="container text-center">
+                            <form action="#" method="GET">
+                                <input type="text" name="name" placeholder="Nome dell' utente">
+                                <button type="submit" class="btn btn-success btn-custom shadow">Cerca</button>
+                            </form>
+                        </div>
                         <table class="table table-striped table-hover mt-5">
                             <thead class="custom-bg text-white">
                                 <tr>

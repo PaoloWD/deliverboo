@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Order;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
@@ -51,6 +52,18 @@ class OrderController extends Controller
     {
         //
     }
+
+    public function searchCategories(Request $request)
+    {
+        $query = $request->get('name');
+        
+        $categories = [];
+        $categories = Category::where('name', 'like', '%' . $query . '%')
+    ->get();
+    return view('admin.show', compact('categories'));
+}
+
+
     
     public function chartDataByMonth()
     {
