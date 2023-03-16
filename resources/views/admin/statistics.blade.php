@@ -3,11 +3,11 @@
 @section('content')
 
 <div class="container pb-5">
-    <h4 class="py-5 ">Statistiche Generali:</h4>
+    <h2 class="custom-color py-5">Statistiche Generali:</h2>
     <canvas id="myChart"></canvas>
     <div class="d-flex justify-content-center mt-5">
         <a class="link-show " href={{ route('dashboard') }}>
-            <button class="btn btn-custom">
+            <button class="btn btn-success btn-custom shadow">
                 Torna alla tua dashboard
             </button>
         </a>    
