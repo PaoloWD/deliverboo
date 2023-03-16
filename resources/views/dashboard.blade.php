@@ -254,23 +254,24 @@
                             <tbody>
                                
                                 @if(isset($users) )
-                                @foreach ($users as $user)
-                                <tr>
-                                    <td>
-                                        <h6 class="py-3">{{$user->name}}</h6>
-                                    </td>
-                                    <td>
-                                        <h6 class="py-3">{{$user->email}}</h6>
-                                    </td>
-                                    <td>
-                                        <h6 class="py-3">{{$user->created_at}}</h6>
-                                    </td>
-                                    <td>
-                                        <h6 class="py-3">{{$user->id}}</h6>
-                                    </td>
-                                </tr>
-                                @endforeach
-
+                                    @foreach ($users as $user)
+                                        @if(!$user->role)
+                                            <tr>
+                                                <td>
+                                                    <h6 class="py-3">{{$user->name}}</h6>
+                                                </td>
+                                                <td>
+                                                    <h6 class="py-3">{{$user->email}}</h6>
+                                                </td>
+                                                <td>
+                                                    <h6 class="py-3">{{$user->created_at}}</h6>
+                                                </td>
+                                                <td>
+                                                    <h6 class="py-3">{{$user->id}}</h6>
+                                                </td>
+                                            </tr>
+                                        @endif
+                                    @endforeach
                                 @endif
                             </tbody>
                         </table> 
