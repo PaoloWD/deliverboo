@@ -86,6 +86,7 @@
                             <option value="Contorno">Contorno</option>
                             <option value="Bevanda">Bevanda</option>
                             <option value="Dolce">Dolce</option>
+                            <option value="Panino">Panino</option>
                         </select>
 
                         {{-- Visibility-input --}}

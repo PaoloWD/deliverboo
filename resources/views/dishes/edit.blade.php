@@ -85,6 +85,7 @@
                         <option value="Contorno"{{ old('type') == 'Contorno' ? 'selected' : '' }}>Contorno</option>
                         <option value="Bevanda"{{ old('type') == 'Bevanda' ? 'selected' : '' }}>Bevanda</option>
                         <option value="Dolce"{{ old('type') == 'Dolce' ? 'selected' : '' }}>Dolce</option>
+                        <option value="Panino"{{ old('type') == 'Panino' ? 'selected' : '' }}>Panino</option>
                     </select>
 
                     {{-- visibility input --}}
