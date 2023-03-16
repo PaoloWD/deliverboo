@@ -8,11 +8,7 @@
                         Ciao <strong>{{ Auth::user()->name }}</strong>!
                     </h2>
                     <h5 class="custom-color">  Questa è la tua pagina personale!</h5>
-                    <a href="{{ route('categories.create') }}">
-                        <button class="btn btn-sm btn-success btn-custom shadow">
-                            Aggiungi categoria
-                        </button>
-                    </a>
+                  
                 </div>
                 <div>
                     <div class="py-3">
@@ -150,6 +146,11 @@
 
                             
                         @elseif (Auth::user()->role === 'admin')
+                        <a href="{{ route('categories.create') }}">
+                            <button class="btn btn-sm btn-success btn-custom shadow">
+                                Aggiungi categoria
+                            </button>
+                        </a>
                         <div class="container text-center">
                             <a href="{{ route('statistics') }}">
                                 <button class="btn btn-success mt-5 btn-custom">
@@ -232,24 +233,7 @@
                                     <td>
                                         <h6 class="py-3">{{$restaurant->id}}</h6>
                                     </td>
-                                    <td>
-                                        <a href={{route('categories.edit', $restaurant->id)}}>
-                                            <button class="btn btn-custom"> 
-                                                <i class="fa-solid fa-pen"></i>  
-                                            </button>
-                                        </a>
-                                    </td>
-                                    <td>
-
-                                        <form action="{{ route('categories.destroy', $restaurant->id) }}" method="POST" class="delete-form d-inline-block">
-                                            @csrf()
-                                            @method('delete')
                                     
-                                            <button class="btn btn-success btn-custom">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                          </form>
-                                    </td>
                                 </tr>
                                 @endforeach
 
