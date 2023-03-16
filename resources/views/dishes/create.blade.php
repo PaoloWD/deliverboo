@@ -80,6 +80,7 @@
                         <label for="type">Seleziona il tipo di piatto:</label>
                         <select name="type" id="type">
                             <option value="Antipasto">Antipasto</option>
+                            <option value="Pizza">Antipasto</option>
                             <option value="Primo">Primo</option>
                             <option value="Secondo">Secondo</option>
                             <option value="Contorno">Contorno</option>
