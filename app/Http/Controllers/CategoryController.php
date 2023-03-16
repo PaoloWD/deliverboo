@@ -94,8 +94,6 @@ class CategoryController extends Controller
     {
         $data = $request->validated();
         $category->update($data);
-        if()
-        
         $category->save();
 
         // $category->categories()->sync($data["categories"]);
@@ -112,9 +110,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::findOrFail($id);
-
-        // $category->categories()->detach();
-    
+        $category->restaurants()->detach();
         $category->delete();
 
         return redirect()->route("dashboard");

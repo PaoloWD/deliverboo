@@ -24,8 +24,9 @@
                 <div class="mb-3">
                     <label class="form-label">Nome nuova categoria *</label>
                     <input type="text"
+                    value="{{ $category->name }}"
                         class="form-control @error('name') is-invalid @elseif(old('name')) is-valid  @enderror"
-                        value="{{ $errors->has('name') ? '' : old('name') }}" name="name" required>
+                        value="{{ $errors->has('name') ? '' : old('name') }}" name="name">
 
                     @error('name')
                         <div class="invalid-feedback">
@@ -33,6 +34,7 @@
                         </div>
                     @enderror
                 </div>
+                
                 <button type="submit">Modifica categoria</button>
             </form>
         </div>

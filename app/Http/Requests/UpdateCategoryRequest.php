@@ -24,15 +24,14 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|string|min:1|max:255',
+            'name'=>'required|max:255',
         ];
     }
 
     public function messages(){
         return[
-            "name.required" => "La categoria è obbligatorio",
-            "name.min" =>  "La categoria deve avere almeno :min caratteri",
             "name.max" =>  "La categoria deve avere massimo :max caratteri",
+            "name.required" => "La categoria è obbligatorio",
         ];
     }
 }
