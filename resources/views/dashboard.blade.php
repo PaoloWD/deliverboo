@@ -161,22 +161,7 @@
 
                         <div class="container">
 
-                            <h3>  Gestione categorie:</h3>
-                            <div class="py-1 mt-2 mb-4 custom-bg w-100 rounded-1"></div>
-
-                            <a class="color-transparent" href="{{ route('categories.create') }}">
-                                <button class="btn  btn-success btn-custom shadow">
-                                    Aggiungi categoria
-                                </button>
-                            </a>
-
-                            <a class="color-transparent" href="{{ route('categories.search') }}">
-                                <button class="btn ms-2 btn-custom shadow ">
-                                    Vedi le categorie esistenti
-                                </button>
-                            </a>
-
-                            <h3 class="mt-5">  Visualizzazione Statistiche:</h3>
+                            <h3 class="mt-5">  Visualizzazione statistiche:</h3>
                             <div class="py-1 mt-2 mb-4 custom-bg w-100 rounded-1"></div>
                             <a class="color-transparent" href="{{ route('statistics') }}">
                                 <button class="btn ms-2 btn-custom shadow">
@@ -184,7 +169,35 @@
                                 </button>
                             </a>
 
-                            <h3 class="mt-5">  Gestione Ristoranti e ristoratori:</h3>
+                            <h3 class="mt-5">  Gestione categorie:</h3>
+                            <div class="py-1 mt-2 mb-4 custom-bg w-100 rounded-1"></div>
+
+                            <a class="color-transparent" href="{{ route('categories.create') }}">
+                                <button class="btn  btn-success btn-custom shadow">
+                                    Aggiungi categoria
+                                </button>
+                            </a>
+                            <a class="color-transparent" href="{{ route('categories.search') }}">
+                                <button class="btn ms-2 btn-custom shadow ">
+                                    Vedi le categorie esistenti
+                                </button>
+                            </a>
+
+                            <h3 class="mt-5">  Gestione tipologie:</h3>
+                            <div class="py-1 mt-2 mb-4 custom-bg w-100 rounded-1"></div>
+
+                            <a class="color-transparent" href="{{ route('dashboard') }}">
+                                <button class="btn  btn-success btn-custom shadow">
+                                    Aggiungi tipologia
+                                </button>
+                            </a>
+                            <a class="color-transparent" href="{{ route('dashboard') }}">
+                                <button class="btn ms-2 btn-custom shadow ">
+                                    Vedi le tipologie esistenti
+                                </button>
+                            </a>
+
+                            <h3 class="mt-5">  Gestione ristoranti e ristoratori:</h3>
                             <div class="py-1 mt-2 mb-4 custom-bg w-100 rounded-1"></div>
 
                             <a class="color-transparent" href="{{ route('restaurants.search') }}">
