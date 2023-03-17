@@ -3,7 +3,14 @@
 @section('content')
 
     <div class="container py-5">
-        <h4 class="pt-5 pb-3">Statistiche dei tuoi ordini</h4>
+        <div class="d-flex justify-content-between align-items-center my-5">
+            <h2 class="custom-color">Statistiche dei tuoi ordini</h2>
+            <a class="link-show " href={{ route('dashboard') }}>
+                <button class="btn btn-success btn-custom shadow">
+                    Torna alla tua dashboard
+                </button>
+            </a>    
+        </div>
         <canvas id="myChart"></canvas>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
