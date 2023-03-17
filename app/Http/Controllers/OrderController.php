@@ -16,12 +16,12 @@ class OrderController extends Controller
     public function sumPricebyRestaurants(){
         $currentDate = DB::table('orders')->max('created_at');
 
-$months = DB::table(DB::raw('(SELECT 0 AS offset UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9 UNION SELECT 10 UNION SELECT 11) AS offsets'))
+    $months = DB::table(DB::raw('(SELECT 0 AS offset UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9 UNION SELECT 10 UNION SELECT 11) AS offsets'))
     ->select(DB::raw("DATE_FORMAT(DATE_SUB(DATE_FORMAT('$currentDate', '%Y-%m-01'), INTERVAL offsets.offset MONTH), '%M %Y') AS month_year"))
     ->orderBy('offsets.offset')
     ->get();
 
-$monthNames = $months->pluck('month_year')->toArray();
+    $monthNames = $months->pluck('month_year')->toArray();
 
 $totalsByMonth = DB::table(DB::raw('(SELECT 1 AS month UNION SELECT 2 AS month UNION SELECT 3 AS month UNION SELECT 4 AS month UNION SELECT 5 AS month UNION SELECT 6 AS month UNION SELECT 7 AS month UNION SELECT 8 AS month UNION SELECT 9 AS month UNION SELECT 10 AS month UNION SELECT 11 AS month UNION SELECT 12 AS month) AS months'))
                   ->leftJoin('orders', function ($join) {
@@ -109,6 +109,14 @@ public function searchUsers(Request $request)
     
     public function chartDataByMonth()
     {
+        $currentDate = DB::table('orders')->max('created_at');
+
+    $months = DB::table(DB::raw('(SELECT 0 AS offset UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9 UNION SELECT 10 UNION SELECT 11) AS offsets'))
+    ->select(DB::raw("DATE_FORMAT(DATE_SUB(DATE_FORMAT('$currentDate', '%Y-%m-01'), INTERVAL offsets.offset MONTH), '%M %Y') AS month_year"))
+    ->orderBy('offsets.offset')
+    ->get();
+
+    $monthNames = $months->pluck('month_year')->toArray();
         $restaurantId = Auth::user()->id;
         $chartData = DB::table(DB::raw('(SELECT 1 AS month UNION SELECT 2 AS month UNION SELECT 3 AS month UNION SELECT 4 AS month UNION SELECT 5 AS month UNION SELECT 6 AS month UNION SELECT 7 AS month UNION SELECT 8 AS month UNION SELECT 9 AS month UNION SELECT 10 AS month UNION SELECT 11 AS month UNION SELECT 12 AS month) AS months'))
                     ->leftJoin('orders', function ($join) use ($restaurantId) {
@@ -116,7 +124,8 @@ public function searchUsers(Request $request)
                             ->where('orders.restaurant_id', $restaurantId);
                     })
                     ->selectRaw("DATE_FORMAT(CONCAT('2023-', months.month, '-01'), '%M') as month, COUNT(orders.id) as count, SUM(orders.total_order) as sum")
-                    ->groupBy('months.month')
+                    ->whereIn(DB::raw("DATE_FORMAT(CONCAT('2023-', months.month, '-01'), '%M %Y')"), $monthNames)
+                    ->groupBy('months.month', DB::raw('MONTH(orders.created_at)'))
                     ->orderBy('months.month')
                     ->get();
 
