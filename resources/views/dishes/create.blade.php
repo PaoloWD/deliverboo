@@ -76,6 +76,19 @@
                                 required>
                         </div>
 
+                        {{-- Select type --}}
+                        <label for="type">Seleziona il tipo di piatto:</label>
+                        <select name="type" id="type">
+                            <option value="Antipasto">Antipasto</option>
+                            <option value="Pizza">Antipasto</option>
+                            <option value="Primo">Primo</option>
+                            <option value="Secondo">Secondo</option>
+                            <option value="Contorno">Contorno</option>
+                            <option value="Bevanda">Bevanda</option>
+                            <option value="Dolce">Dolce</option>
+                            <option value="Panino">Panino</option>
+                        </select>
+
                         {{-- Visibility-input --}}
                         <div class="mb-3 form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="switch" name="visibility"

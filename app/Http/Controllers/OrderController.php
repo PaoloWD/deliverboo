@@ -103,7 +103,7 @@ public function searchUsers(Request $request)
                         $join->on(DB::raw('months.month'), '=', DB::raw('MONTH(orders.created_at)'))
                             ->where('orders.restaurant_id', $restaurantId);
                     })
-                    ->selectRaw('months.month as month, COUNT(orders.id) as count, SUM(orders.total_order) as sum')
+                    ->selectRaw("DATE_FORMAT(CONCAT('2023-', months.month, '-01'), '%M') as month, COUNT(orders.id) as count, SUM(orders.total_order) as sum")
                     ->groupBy('months.month')
                     ->orderBy('months.month')
                     ->get();

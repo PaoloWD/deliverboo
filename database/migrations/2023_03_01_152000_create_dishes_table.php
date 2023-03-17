@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('description');
             $table->string('ingredients');
+            $table->string('type');
             $table->float('price', 6, 2);
             $table->boolean('visibility')->default(0);
             $table->timestamps();

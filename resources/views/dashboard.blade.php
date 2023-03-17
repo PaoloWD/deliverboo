@@ -39,6 +39,14 @@
                                             </button>
                                         </a>
                                     </div>
+                                    <div class="position-absolute" style="right:350px; bottom:20px">
+
+                                        <a href="{{ route('chart', $restaurant->id) }}">
+                                            <button class="btn btn-sm btn-success btn-custom shadow">
+                                                Statistiche <i class="fa-solid fa-magnifying-glass ms-2"></i>
+                                            </button>
+                                        </a>
+                                    </div>
                                     @if($dishes)
                                         @foreach ($dishes as $dish)
                                             <div class="position-absolute" style="right:200px; bottom:20px">
@@ -52,7 +60,7 @@
                                     @endif
                                     <a href="{{ route('restaurants.showOrders', $restaurant->id) }}">
                                         <button class="btn btn-success btn-custom shadow">
-                                            Riepilogo ordini <i class=" ps-3 fa-solid fa-plus"></i>
+                                            Riepilogo ordini
                                         </button>
                                     </a>
                                 </div>
@@ -80,6 +88,7 @@
                                     <tr>
                                         <th scope="col">Immagine</th>
                                         <th scope="col">Nome del piatto</th>
+                                        <th scope="col">Tipologia</th>
                                         <th scope="col">Descrizione</th>
                                         <th scope="col">Ingredienti</th>
                                         <th scope="col">Prezzo</th>
@@ -105,6 +114,9 @@
                                         
                                         <td>
                                             <h6 class="py-3">{{ $dish->name }}</h6>
+                                        </td>
+                                        <td>
+                                            <h6 class="py-3">{{ $dish->type }}</h6>
                                         </td>
                                         <td>
                                             <h6 class="py-3">{{Str::limit($dish->description, 15)}}</h6>
@@ -146,21 +158,28 @@
 
                             
                         @elseif (Auth::user()->role === 'admin')
-                        <a href="{{ route('categories.create') }}">
-                            <button class="btn btn-sm btn-success btn-custom shadow">
-                                Aggiungi categoria
-                            </button>
-                        </a>
-                        <div class="container text-center">
-                            <a href="{{ route('statistics') }}">
-                                <button class="btn btn-success my-5 btn-custom shadow">
+                        
+                        <div class="container">
+                            <a class="color-transparent" href="{{ route('categories.create') }}">
+                                <button class="btn  btn-success btn-custom shadow">
+                                    Aggiungi categoria
+                                </button>
+                            </a>
+                            <a class="color-transparent" href="{{ route('statistics') }}">
+                                <button class="btn ms-2 btn-custom shadow">
                                     Vedi le tue statistiche
                                 </button>
                             </a>
-                            <div class="mt-5 mb-3">
+                            <div class="mt-3 mb-3">
                                 <form action="{{ route('categories.search')}}" method="GET">
-                                    <input type="text" name="name" placeholder="Nome della categoria">
-                                    <button type="submit" class="btn btn-success btn-custom shadow">Cerca</button>
+                                    <div class="row justify-content-end">
+                                        <div class="col-4">
+                                            <div class="my-border d-flex p-2 rounded-5">
+                                                <input class="form-control d-inline border-0" type="text" name="name" placeholder="Nome della categoria">
+                                                <button class="rounded-5 btn btn-custom custom-bg px-4 py-1" type="submit"><i class="fa-solid fa-magnifying-glass  text-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -201,14 +220,20 @@
                             </tbody>
                         </table>
                         <div class="mt-5 mb-3">
-                            <div class="container text-center">
+                            <div class="container text-end">
                                 <form action="{{route ('restaurants.search')}}" method="GET">
-                                    <input type="text" name="name" placeholder="Nome del ristorante">
-                                    <button type="submit" class="btn btn-success btn-custom shadow">Cerca</button>
+                                    <div class="row justify-content-end">
+                                        <div class="col-4">
+                                            <div class="my-border d-flex p-2 rounded-5">
+                                                <input class="form-control d-inline border-0" type="text" name="name" placeholder="Nome del ristorante">
+                                                <button class="rounded-5 btn btn-custom custom-bg px-4 py-1" type="submit"><i class="fa-solid fa-magnifying-glass  text-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
-                        <table class="table table-striped table-hover mt-5">
+                        <table class="table table-striped table-hover">
                             <thead class="custom-bg text-white">
                                 <tr>
                                     <th scope="col">Immagine</th>
@@ -256,13 +281,19 @@
                                 @endif
                             </tbody>
                         </table> 
-                        <div class="container text-center">
+                        <div class="container mt-5 mb-3">
                             <form action="{{route('users.search')}}" method="GET">
-                                <input type="text" name="name" placeholder="Email dell' utente">
-                                <button type="submit" class="btn btn-success btn-custom shadow">Cerca</button>
+                                <div class="row justify-content-end">
+                                    <div class="col-4">
+                                        <div class="my-border d-flex p-2 rounded-5">
+                                            <input class="form-control d-inline border-0" type="text" name="name" placeholder="Email dell'utente">
+                                            <button class="rounded-5 btn btn-custom custom-bg px-4 py-1" type="submit"><i class="fa-solid fa-magnifying-glass  text-white"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                         </div>
-                        <table class="table table-striped table-hover mt-5">
+                        <table class="table table-striped table-hover">
                             <thead class="custom-bg text-white">
                                 <tr>
                                     <th scope="col">Nome Utente</th>

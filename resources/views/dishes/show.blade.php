@@ -27,6 +27,7 @@
                                     <p><strong>Descrizione:</strong> {{ $dish->description }} </p>
                                     <p><strong>Ingredienti:</strong> {{ $dish->ingredients }} </p>
                                     <p><strong>Prezzo:</strong> {{ number_format($dish->price, 2, ',', '.') }} €</p>
+                                    <p><strong>Tipologia:</strong> {{ $dish->type }} </p>
                                 </div>
                                 <div class="d-flex gap-2  justify-content-center">
                                     <a class="link-show" href="{{ route('dashboard') }}">

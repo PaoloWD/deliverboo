@@ -4,7 +4,10 @@
     <div class="bg-dashboard py-5 ">
         <div class="container h-100 overflow-auto">
             <div class="container-form rounded-4">
-                <h1 class="fw-bolder custom-color">Ordini ricevuti</h1>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1 class="fw-bolder custom-color">Ordini ricevuti</h1>
+                    <a class="btn btn-primary btn-custom shadow" href="{{ route('dashboard') }}">Torna alla Dashboard</a>
+                </div>
                 <table class="table table-striped table-hover mt-3">
                     <thead class="text-white custom-bg">
                         <tr class="text-center">

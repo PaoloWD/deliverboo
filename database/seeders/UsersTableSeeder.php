@@ -42,7 +42,13 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Giorgia Venturelli',
                 'email' => 'giorgia@gmail.com',
                 'password' => Hash::make('password')
-            ]
+            ],
+            [
+                'name' => 'Supremo',
+                'email' => 'supremo@gmail.com',
+                'role' => 'admin',
+                'password' => Hash::make('password')
+            ],
         ];
 
         // La password è criptata utilizzando la funzione Hash::make.

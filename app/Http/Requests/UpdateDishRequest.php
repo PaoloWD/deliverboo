@@ -30,6 +30,7 @@ class UpdateDishRequest extends FormRequest
             'ingredients'=>'required|string|max:255',
             'price' => 'required|numeric|min:0|max:9999.99',
             'visibility' => 'boolean',
+            'type' => 'required'
         ];
     }
     public function messages(){

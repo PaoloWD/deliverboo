@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container py-5">
-        <h4 class="pt-5 pb-3">Statistiche dei tuoi ordini:</h4>
+        <h4 class="pt-5 pb-3">Statistiche dei tuoi ordini</h4>
         <canvas id="myChart"></canvas>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

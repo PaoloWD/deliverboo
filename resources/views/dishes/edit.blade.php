@@ -75,6 +75,19 @@
                         @endif
                     </div>
 
+                    {{-- Select type --}}
+                    <label for="type">Seleziona il tipo di piatto:</label>
+                    <select name="type" id="type">
+                        <option value="Antipasto" {{ old('type') == 'Antipasto' ? 'selected' : '' }}>Antipasto</option>
+                        <option value="Pizza" {{ old('type') == 'Pizza' ? 'selected' : '' }}>Pizza</option>
+                        <option value="Primo"{{ old('type') == 'Primo' ? 'selected' : '' }}>Primo</option>
+                        <option value="Secondo"{{ old('type') == 'Secondo' ? 'selected' : '' }}>Secondo</option>
+                        <option value="Contorno"{{ old('type') == 'Contorno' ? 'selected' : '' }}>Contorno</option>
+                        <option value="Bevanda"{{ old('type') == 'Bevanda' ? 'selected' : '' }}>Bevanda</option>
+                        <option value="Dolce"{{ old('type') == 'Dolce' ? 'selected' : '' }}>Dolce</option>
+                        <option value="Panino"{{ old('type') == 'Panino' ? 'selected' : '' }}>Panino</option>
+                    </select>
+
                     {{-- visibility input --}}
 
                     <div class="mb-3 form-check form-switch">

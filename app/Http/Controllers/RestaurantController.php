@@ -32,6 +32,7 @@ class RestaurantController extends Controller
 
         $user_id = auth()->user()->id;
         $dishes = Dish::where('restaurant_id', $user_id)
+        ->orderBy('type', 'asc')
         ->orderBy('name', 'asc')
         ->get();
 
