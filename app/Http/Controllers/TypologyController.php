@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dish;
 use Illuminate\Http\Request;
 
 class TypologyController extends Controller
@@ -13,7 +14,9 @@ class TypologyController extends Controller
      */
     public function index()
     {
-        //
+        $types = Dish::select('type')->get();
+
+        return view('admin.typologies', compact('types'));
     }
 
     /**
