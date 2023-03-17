@@ -33,7 +33,7 @@
                                             
                                             {{-- <input class="form-check-input py-2 px-2 mt-3" type="checkbox" name=""
                                                 value="{{ $order->id }}" id="check-{{ $order->id }}"> --}}
-                                                <i class="fa-solid fa-circle-xmark py-2 px-2 mt-1 fs-2"></i>
+                                                <i class="fa-solid fa-circle-xmark py-2 px-2 mt-1 fs-2 custom-color"></i>
                                         </form>
                                     </td>
                                     <td>
@@ -122,7 +122,7 @@
                                         <form action="{{route('restaurants.showOrders', $order)}}" method="POST" class="status-check">
                                             @csrf
                                             @method('PATCH')
-                                            <i class="fa-solid fa-circle-check py-2 px-2 mt-1 fs-2"></i>
+                                            <i class="fa-solid fa-circle-check py-2 px-2 mt-1 fs-2 custom-color"></i>
                                             {{-- <input class="form-check-input py-2 px-2 mt-3" type="checkbox" name=""
                                             value="{{ $order->id }}" id="check-{{ $order->id }}" checked> --}}
                                         </form>
