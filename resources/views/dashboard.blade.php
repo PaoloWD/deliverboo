@@ -177,7 +177,7 @@
                                     Aggiungi categoria
                                 </button>
                             </a>
-                            <a class="color-transparent" href="{{ route('categories.search') }}">
+                            <a class="color-transparent" href="{{ route('index.categories') }}">
                                 <button class="btn ms-2 btn-custom shadow ">
                                     Vedi le categorie esistenti
                                 </button>
@@ -200,13 +200,13 @@
                             <h3 class="mt-5">  Gestione ristoranti e ristoratori:</h3>
                             <div class="py-1 mt-2 mb-4 custom-bg w-100 rounded-1"></div>
 
-                            <a class="color-transparent" href="{{ route('restaurants.search') }}">
+                            <a class="color-transparent" href="{{ route('index.restaurants') }}">
                                 <button class="btn ms-2 btn-custom shadow">
                                     Vedi i ristoranti registrati
                                 </button>
                             </a>
 
-                            <a class="color-transparent" href="{{ route('users.search') }}">
+                            <a class="color-transparent" href="{{ route('index.users') }}">
                                 <button class="btn ms-2 btn-custom shadow">
                                     Vedi i ristoratori registrati
                                 </button>
