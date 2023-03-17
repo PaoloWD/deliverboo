@@ -164,11 +164,11 @@
                             <div class="row g-3 mt-5">
                                 {{-- statistiche --}}
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                  <div class="card shadow">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Visualizzazione statistiche:</h5>
+                                  <div class="card custom-bg shadow">
+                                    <div class="card-body text-center">
+                                      <h3 class="card-title text-white">Visualizzazione statistiche</h3>
                                       <a class="color-transparent" href="{{ route('statistics') }}">
-                                        <button class="btn btn-custom shadow">
+                                        <button class="btn custom-color shadow" style="background-color: white">
                                             Vedi le tue statistiche
                                         </button>
                                     </a>
@@ -178,8 +178,8 @@
                                 {{-- categorie --}}
                                 <div class="col-sm-6">
                                   <div class="card shadow">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Gestione categorie:</h5>
+                                    <div class="card-body text-center">
+                                      <h3 class="card-title">Gestione categorie</h3>
                                       <a class="color-transparent" href="{{ route('categories.create') }}">
                                         <button class="btn  btn-success btn-custom shadow">
                                             Aggiungi categoria
@@ -196,8 +196,8 @@
                                 {{-- ristoranti --}}
                                 <div class="col-sm-6">
                                     <div class="card shadow">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Gestione ristoranti:</h5>
+                                      <div class="card-body text-center">
+                                        <h3 class="card-title">Gestione ristoranti</h3>
                                         <a class="color-transparent" href="{{ route('index.restaurants') }}">
                                             <button class="btn btn-custom shadow">
                                                 Vedi i ristoranti registrati
@@ -208,11 +208,11 @@
                                   </div>
                                   {{-- ristoratori --}}
                                   <div class="col-sm-6">
-                                      <div class="card shadow">
-                                          <div class="card-body">
-                                              <h5 class="card-title">Gestione ristoratori:</h5>
+                                      <div class="card custom-bg shadow">
+                                          <div class="card-body text-center">
+                                              <h3 class="card-title text-white">Gestione ristoratori</h3>
                                                 <a class="color-transparent" href="{{ route('index.users') }}">
-                                                    <button class="btn btn-custom shadow">
+                                                    <button class="btn custom-color shadow" style="background-color: white">
                                                         Vedi i ristoratori registrati
                                                     </button>
                                                 </a>
