@@ -52,7 +52,6 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('/search/categories', [OrderController::class, 'searchCategories'])->name('categories.search'); 
     Route::get('/search/restaurants', [OrderController::class, 'searchRestaurants'])->name('restaurants.search'); 
     Route::get('/search/users', [OrderController::class, 'searchUsers'])->name('users.search'); 
-    Route::resource('typologies', TypologyController::class);
     Route::get('/users', [AdminController::class, 'indexUsers'])->name('index.users');
     Route::get('/restaurants', [AdminController::class, 'indexCategories'])->name('index.categories');
     Route::get('/my/categories', [AdminController::class, 'indexRestaurants'])->name('index.restaurants');
