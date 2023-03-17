@@ -161,216 +161,78 @@
 
                         <div class="container">
 
-                            <h3 class="mt-5">  Visualizzazione statistiche:</h3>
-                            <div class="py-1 mt-2 mb-4 custom-bg w-100 rounded-1"></div>
-                            <a class="color-transparent" href="{{ route('statistics') }}">
-                                <button class="btn ms-2 btn-custom shadow">
-                                    Vedi le tue statistiche
-                                </button>
-                            </a>
-
-                            <h3 class="mt-5">  Gestione categorie:</h3>
-                            <div class="py-1 mt-2 mb-4 custom-bg w-100 rounded-1"></div>
-
-                            <a class="color-transparent" href="{{ route('categories.create') }}">
-                                <button class="btn  btn-success btn-custom shadow">
-                                    Aggiungi categoria
-                                </button>
-                            </a>
-                            <a class="color-transparent" href="{{ route('index.categories') }}">
-                                <button class="btn ms-2 btn-custom shadow ">
-                                    Vedi le categorie esistenti
-                                </button>
-                            </a>
-
-                            <h3 class="mt-5">  Gestione tipologie:</h3>
-                            <div class="py-1 mt-2 mb-4 custom-bg w-100 rounded-1"></div>
-
-                            <a class="color-transparent" href="{{ route('dashboard') }}">
-                                <button class="btn  btn-success btn-custom shadow">
-                                    Aggiungi tipologia
-                                </button>
-                            </a>
-                            <a class="color-transparent" href="{{ route('dashboard') }}">
-                                <button class="btn ms-2 btn-custom shadow ">
-                                    Vedi le tipologie esistenti
-                                </button>
-                            </a>
-
-                            <h3 class="mt-5">  Gestione ristoranti e ristoratori:</h3>
-                            <div class="py-1 mt-2 mb-4 custom-bg w-100 rounded-1"></div>
-
-                            <a class="color-transparent" href="{{ route('index.restaurants') }}">
-                                <button class="btn ms-2 btn-custom shadow">
-                                    Vedi i ristoranti registrati
-                                </button>
-                            </a>
-
-                            <a class="color-transparent" href="{{ route('index.users') }}">
-                                <button class="btn ms-2 btn-custom shadow">
-                                    Vedi i ristoratori registrati
-                                </button>
-                            </a>
-                            
-
-                            {{-- 
-                            <div class="mt-3 mb-3">
-                                <form action="{{ route('categories.search')}}" method="GET">
-                                    <div class="row justify-content-end">
-                                        <div class="col-4">
-                                            <div class="my-border d-flex p-2 rounded-5">
-                                                <input class="form-control d-inline border-0" type="text" name="name" placeholder="Nome della categoria">
-                                                <button class="rounded-5 btn btn-custom custom-bg px-4 py-1" type="submit"><i class="fa-solid fa-magnifying-glass  text-white"></i></button>
-                                            </div>
-                                        </div>
+                            <div class="row g-3 mt-5">
+                                {{-- statistiche --}}
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                  <div class="card shadow">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Visualizzazione statistiche:</h5>
+                                      <a class="color-transparent" href="{{ route('statistics') }}">
+                                        <button class="btn ms-2 btn-custom shadow">
+                                            Vedi le tue statistiche
+                                        </button>
+                                    </a>
                                     </div>
-                                </form>
-                            </div>
-                        </div>
-                        <table class="table table-striped table-hover">
-                            <thead class="custom-bg text-white">
-                                <tr>
-                                    <th scope="col">Nome Categoria</th>
-                                    <th scope="col">Modifica</th>
-                                    <th scope="col">Elimina</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($categories as $category)
-                                <tr>
-                                    <td>
-                                        <h6 class="py-3">{{$category->name}}</h6>
-                                    </td>
-                                    <td>
-                                        <a href={{route('categories.edit', $category->id)}}>
-                                            <button class="btn btn-custom"> 
-                                                <i class="fa-solid fa-pen"></i>  
-                                            </button>
-                                        </a>
-                                    </td>
-                                    <td>
-                                       
-                                        <form action="{{route('categories.destroy', $category->id)}}" method="POST" class="delete-form d-inline-block">
-                                            @csrf()
-                                            @method('delete')
-                                    
-                                            <button class="btn btn-success btn-custom">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                          </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table> --}}
-                        {{-- <div class="mt-5 mb-3">
-                            <div class="container text-end">
-                                <form action="{{route ('restaurants.search')}}" method="GET">
-                                    <div class="row justify-content-end">
-                                        <div class="col-4">
-                                            <div class="my-border d-flex p-2 rounded-5">
-                                                <input class="form-control d-inline border-0" type="text" name="name" placeholder="Nome del ristorante">
-                                                <button class="rounded-5 btn btn-custom custom-bg px-4 py-1" type="submit"><i class="fa-solid fa-magnifying-glass  text-white"></i></button>
-                                            </div>
-                                        </div>
+                                  </div>
+                                </div>
+                                {{-- categorie --}}
+                                <div class="col-sm-6">
+                                  <div class="card shadow">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Gestione categorie:</h5>
+                                      <a class="color-transparent" href="{{ route('categories.create') }}">
+                                        <button class="btn  btn-success btn-custom shadow">
+                                            Aggiungi categoria
+                                        </button>
+                                    </a>
+                                    <a class="color-transparent" href="{{ route('index.categories') }}">
+                                        <button class="btn ms-2 btn-custom shadow ">
+                                            Vedi le categorie esistenti
+                                        </button>
+                                    </a>
                                     </div>
-                                </form>
-                            </div>
-                        </div>
-                        <table class="table table-striped table-hover">
-                            <thead class="custom-bg text-white">
-                                <tr>
-                                    <th scope="col">Immagine</th>
-                                    <th scope="col">Nome del Ristorante</th>
-                                    <th scope="col">Partita Iva</th>
-                                    <th scope="col">Via</th>
-                                    <th scope="col">Creato il</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                               
-                                @if(isset($restaurants) )
-                                @foreach ($restaurants as $restaurant)
-                                <tr>
-                                    @if(str_contains($restaurant->image, "https"))
-                                    
-                                    <td>
-                                        <img class="card-img-top restaurant-img" src="{{$restaurant->image}}"
-                                        alt="" style="height:51px; width:51px">
-                                    </td>
-                                    @else
-                                    <td>
-                                        <img class="card-img-top restaurant-img" src="{{ asset('storage/' . $restaurant->image) }}"
-                                        alt="" style="height:51px; width:51px">
-                                    </td>
-                                    @endif
-                                   
-                                    
-                                    <td>
-                                        <h6 class="py-3">{{$restaurant->name}}</h6>
-                                    </td>
-                                    <td>
-                                        <h6 class="py-3">{{$restaurant->vat}}</h6>
-                                    </td>
-                                    <td>
-                                        <h6 class="py-3">{{$restaurant->address}}</h6>
-                                    </td>
-                                    <td>
-                                        <h6 class="py-3">{{$restaurant->created_at}}</h6>
-                                    </td>
-                                    
-                                </tr>
-                                @endforeach
-
-                                @endif
-                            </tbody>
-                        </table>  --}}
-                        {{-- <div class="container mt-5 mb-3">
-                            <form action="{{route('users.search')}}" method="GET">
-                                <div class="row justify-content-end">
-                                    <div class="col-4">
-                                        <div class="my-border d-flex p-2 rounded-5">
-                                            <input class="form-control d-inline border-0" type="text" name="name" placeholder="Email dell'utente">
-                                            <button class="rounded-5 btn btn-custom custom-bg px-4 py-1" type="submit"><i class="fa-solid fa-magnifying-glass  text-white"></i></button>
+                                  </div>
+                                </div>
+                                {{-- tipologie --}}
+                                <div class="col-sm-6">
+                                    <div class="card shadow">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Gestione tipologie:</h5>
+                                        <a class="color-transparent" href="{{ route('dashboard') }}">
+                                          <button class="btn  btn-success btn-custom shadow">
+                                              Aggiungi tipologia
+                                          </button>
+                                      </a>
+                                      <a class="color-transparent" href="{{ route('dashboard') }}">
+                                          <button class="btn ms-2 btn-custom shadow ">
+                                              Vedi le tipologie esistenti
+                                          </button>
+                                      </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {{-- ristoranti e ristoratori --}}
+                                  <div class="col-sm-6">
+                                      <div class="card shadow">
+                                          <div class="card-body">
+                                              <h5 class="card-title">Gestione ristoranti e ristoratori:</h5>
+                                              <a class="color-transparent" href="{{ route('dashboard') }}">
+                                                <button class="btn  btn-success btn-custom shadow">
+                                                    Aggiungi tipologia
+                                                </button>
+                                            </a>
+                                            <a class="color-transparent" href="{{ route('dashboard') }}">
+                                                <button class="btn ms-2 btn-custom shadow ">
+                                                    Vedi le tipologie esistenti
+                                                </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                        <table class="table table-striped table-hover">
-                            <thead class="custom-bg text-white">
-                                <tr>
-                                    <th scope="col">Nome Utente</th>
-                                    <th scope="col">E-mail</th>
-                                    <th scope="col">Creato il</th>
-                                    <th scope="col">ID</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                               
-                                @if(isset($users) )
-                                    @foreach ($users as $user)
-                                        @if(!$user->role)
-                                            <tr>
-                                                <td>
-                                                    <h6 class="py-3">{{$user->name}}</h6>
-                                                </td>
-                                                <td>
-                                                    <h6 class="py-3">{{$user->email}}</h6>
-                                                </td>
-                                                <td>
-                                                    <h6 class="py-3">{{$user->created_at}}</h6>
-                                                </td>
-                                                <td>
-                                                    <h6 class="py-3">{{$user->id}}</h6>
-                                                </td>
-                                            </tr>
-                                        @endif
-                                    @endforeach
-                                @endif
-                            </tbody>
-                        </table> 
-                        --}}
+                            </div>
+                                
+                            </div>
+
                         @else
                             <div class="card dashboard shadow text-center ">
                                 <h3>{{ __('Crea il profilo del tuo ristorante!') }} </h3>
