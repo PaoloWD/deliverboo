@@ -112,7 +112,8 @@
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
-
+                                    @if (Auth::user()->role === 'admin')
+                                    {{-- Dropdow super admin --}}
                                     <div class="dropdown-menu dropdown-menu-right custom-color" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item custom-color" href="{{ url('dashboard') }}">{{ __('Pannello di controllo') }}</a>
                                         <a class="dropdown-item custom-color" href="{{ url('profile') }}">{{ __('Profilo') }}</a>
@@ -127,6 +128,24 @@
                                             @csrf
                                         </form>
                                     </div>
+                                    
+                                    
+                                    @else
+                                    <div class="dropdown-menu dropdown-menu-right custom-color" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item custom-color" href="{{ url('dashboard') }}">{{ __('Pannello di controllo') }}</a>
+                                        <a class="dropdown-item custom-color" href="{{ url('profile') }}">{{ __('Profilo') }}</a>
+                                        <a class="dropdown-item custom-color" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            {{ __('Esci') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                    @endif
                                 </li>
                             @endguest
                         </ul>
