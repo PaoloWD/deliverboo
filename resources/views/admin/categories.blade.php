@@ -63,6 +63,15 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <div class="d-flex justify-content-center mt-5">
+                <a class="link-show " href={{ route('dashboard') }}>
+                    <button class="btn btn-success btn-custom shadow">
+                        Torna alla tua dashboard
+                    </button>
+                </a>    
+            </div>
+
         </div>
     </div>
 </div>
