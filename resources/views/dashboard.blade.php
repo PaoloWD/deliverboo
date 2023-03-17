@@ -161,7 +161,7 @@
 
                         
                         
-                        {{-- <div class="container">
+                        <div class="container">
                             <a class="color-transparent" href="{{ route('categories.create') }}">
                                 <button class="btn  btn-success btn-custom shadow">
                                     Aggiungi categoria
@@ -172,6 +172,7 @@
                                     Vedi le tue statistiche
                                 </button>
                             </a>
+                            {{-- 
                             <div class="mt-3 mb-3">
                                 <form action="{{ route('categories.search')}}" method="GET">
                                     <div class="row justify-content-end">
