@@ -7,7 +7,7 @@
             <h2 class="custom-color">Statistiche dei tuoi ordini</h2>
             <a class="link-show " href={{ route('dashboard') }}>
                 <button class="btn btn-success btn-custom shadow">
-                    Torna alla tua dashboard
+                    Torna alla dashboard
                 </button>
             </a>    
         </div>
