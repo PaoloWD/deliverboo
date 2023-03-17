@@ -6,6 +6,7 @@ use App\Http\Controllers\DishController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\TypologyController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -51,10 +52,10 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('/search/categories', [OrderController::class, 'searchCategories'])->name('categories.search'); 
     Route::get('/search/restaurants', [OrderController::class, 'searchRestaurants'])->name('restaurants.search'); 
     Route::get('/search/users', [OrderController::class, 'searchUsers'])->name('users.search'); 
+    Route::resource('typologies', TypologyController::class);
     Route::get('/users', [AdminController::class, 'indexUsers'])->name('index.users');
     Route::get('/restaurants', [AdminController::class, 'indexCategories'])->name('index.categories');
     Route::get('/my/categories', [AdminController::class, 'indexRestaurants'])->name('index.restaurants');
-
 });
 
 
