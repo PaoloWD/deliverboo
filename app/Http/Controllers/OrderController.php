@@ -64,7 +64,7 @@ class OrderController extends Controller
             ->get();
         } 
         
-    return view('admin.show', compact('categories'));
+    return view('admin.categories', compact('categories'));
 }
 
 public function searchRestaurants(Request $request)
@@ -77,7 +77,7 @@ public function searchRestaurants(Request $request)
             ->get();
         } 
         
-    return view('admin.show', compact('restaurants'));
+    return view('admin.restaurants', compact('restaurants'));
 }
 
 public function searchUsers(Request $request)
@@ -90,7 +90,7 @@ public function searchUsers(Request $request)
             ->get();
         } 
         
-    return view('admin.show', compact('users'));
+    return view('admin.users', compact('users'));
 }
 
 
