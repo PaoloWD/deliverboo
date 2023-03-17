@@ -54,7 +54,7 @@
                                         <h6 class="py-3">{{ number_format($order->total_order, 2, ',', '.') }} €</h6>
                                     </td>
                                     <td>
-                                        <h6 class="py-3">{{ $order->created_at }}</h6>
+                                        <h6 class="py-3">{{ $order->created_at->format('d/m/Y H:i') }}</h6>
                                     </td>
                                     <td>
                                         <button class="btn btn-custom p-2 mt-2" type="button" data-bs-toggle="collapse"
