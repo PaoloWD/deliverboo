@@ -50,7 +50,6 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('/search/categories', [OrderController::class, 'searchCategories'])->name('categories.search'); 
     Route::get('/search/restaurants', [OrderController::class, 'searchRestaurants'])->name('restaurants.search'); 
     Route::get('/search/users', [OrderController::class, 'searchUsers'])->name('users.search'); 
-
 });
 
 
