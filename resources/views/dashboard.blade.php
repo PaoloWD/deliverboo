@@ -168,7 +168,7 @@
                                     <div class="card-body">
                                       <h5 class="card-title">Visualizzazione statistiche:</h5>
                                       <a class="color-transparent" href="{{ route('statistics') }}">
-                                        <button class="btn ms-2 btn-custom shadow">
+                                        <button class="btn btn-custom shadow">
                                             Vedi le tue statistiche
                                         </button>
                                     </a>
@@ -193,39 +193,29 @@
                                     </div>
                                   </div>
                                 </div>
-                                {{-- tipologie --}}
+                                {{-- ristoranti --}}
                                 <div class="col-sm-6">
                                     <div class="card shadow">
                                       <div class="card-body">
-                                        <h5 class="card-title">Gestione tipologie:</h5>
-                                        <a class="color-transparent" href="{{ route('dashboard') }}">
-                                          <button class="btn  btn-success btn-custom shadow">
-                                              Aggiungi tipologia
-                                          </button>
-                                      </a>
-                                      <a class="color-transparent" href="{{ route('dashboard') }}">
-                                          <button class="btn ms-2 btn-custom shadow ">
-                                              Vedi le tipologie esistenti
-                                          </button>
-                                      </a>
+                                        <h5 class="card-title">Gestione ristoranti:</h5>
+                                        <a class="color-transparent" href="{{ route('index.restaurants') }}">
+                                            <button class="btn btn-custom shadow">
+                                                Vedi i ristoranti registrati
+                                            </button>
+                                        </a>
                                       </div>
                                     </div>
                                   </div>
-                                  {{-- ristoranti e ristoratori --}}
+                                  {{-- ristoratori --}}
                                   <div class="col-sm-6">
                                       <div class="card shadow">
                                           <div class="card-body">
-                                              <h5 class="card-title">Gestione ristoranti e ristoratori:</h5>
-                                              <a class="color-transparent" href="{{ route('dashboard') }}">
-                                                <button class="btn  btn-success btn-custom shadow">
-                                                    Aggiungi tipologia
-                                                </button>
-                                            </a>
-                                            <a class="color-transparent" href="{{ route('dashboard') }}">
-                                                <button class="btn ms-2 btn-custom shadow ">
-                                                    Vedi le tipologie esistenti
-                                                </button>
-                                            </a>
+                                              <h5 class="card-title">Gestione ristoratori:</h5>
+                                                <a class="color-transparent" href="{{ route('index.users') }}">
+                                                    <button class="btn btn-custom shadow">
+                                                        Vedi i ristoratori registrati
+                                                    </button>
+                                                </a>
                                         </div>
                                     </div>
                                 </div>
