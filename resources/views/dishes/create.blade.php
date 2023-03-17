@@ -78,7 +78,7 @@
 
                         {{-- Select type --}}
                         <label for="type">Seleziona il tipo di piatto:</label>
-                        <select name="type" id="type">
+                        <select class="form-select my-3" name="type" id="type">
                             <option value="Antipasto">Antipasto</option>
                             <option value="Pizza">Antipasto</option>
                             <option value="Primo">Primo</option>
