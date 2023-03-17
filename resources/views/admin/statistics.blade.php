@@ -20,6 +20,7 @@
 <script>
     var restaurantCounts=  {!! json_encode($restaurantCounts) !!};
     var totalsByMonth = {!! json_encode($totalsByMonth) !!};
+    var months = {!! json_encode($months) !!};
     var months = [];
     var counts = [];
     var sums = [];  
@@ -38,7 +39,7 @@
 
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: months,
             datasets: [{
