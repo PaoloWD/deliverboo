@@ -158,8 +158,10 @@
 
                             
                         @elseif (Auth::user()->role === 'admin')
+
                         
-                        <div class="container">
+                        
+                        {{-- <div class="container">
                             <a class="color-transparent" href="{{ route('categories.create') }}">
                                 <button class="btn  btn-success btn-custom shadow">
                                     Aggiungi categoria
@@ -218,8 +220,8 @@
                                 </tr>
                                 @endforeach
                             </tbody>
-                        </table>
-                        <div class="mt-5 mb-3">
+                        </table> --}}
+                        {{-- <div class="mt-5 mb-3">
                             <div class="container text-end">
                                 <form action="{{route ('restaurants.search')}}" method="GET">
                                     <div class="row justify-content-end">
@@ -280,8 +282,8 @@
 
                                 @endif
                             </tbody>
-                        </table> 
-                        <div class="container mt-5 mb-3">
+                        </table>  --}}
+                        {{-- <div class="container mt-5 mb-3">
                             <form action="{{route('users.search')}}" method="GET">
                                 <div class="row justify-content-end">
                                     <div class="col-4">
@@ -326,7 +328,7 @@
                                 @endif
                             </tbody>
                         </table> 
-                        
+                        --}}
                         @else
                             <div class="card dashboard shadow text-center ">
                                 <h3>{{ __('Crea il profilo del tuo ristorante!') }} </h3>
