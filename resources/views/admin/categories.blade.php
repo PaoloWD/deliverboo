@@ -4,7 +4,7 @@
     <div class="home-jumbotron fix py-5 overflow-hidden">
         <div class="container shadow rounded-4 p-5 presentation-banner h-100 overflow-auto">
             <div class="container">
-                <a class="color-transparent" href="{{ route('categories.create') }}">
+                {{-- <a class="color-transparent" href="{{ route('categories.create') }}">
                     <button class="btn  btn-success btn-custom shadow">
                         Aggiungi categoria
                     </button>
@@ -13,7 +13,7 @@
                     <button class="btn ms-2 btn-custom shadow">
                         Vedi le tue statistiche
                     </button>
-                </a>
+                </a> --}}
                 <div class="mt-3 mb-3">
                     <form action="{{ route('categories.search')}}" method="GET">
                         <div class="row justify-content-end">
