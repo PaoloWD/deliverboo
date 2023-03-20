@@ -125,7 +125,17 @@ class RestaurantsTableSeeder extends Seeder
                     'updated_at' => '2023/01/12 11:20:45',
                     'user_id' => 10,
                 ])->categories()->attach($category_id);
-
+                
+                $category_id = Category::whereIn('id', [4, 6, 2])->pluck('id')->toArray();
+                Restaurant::create([
+                    'name' => 'Ristorante da Tomas',
+                    'image' => 'http://fevaristorante.it/images/feva/home_feva-ristorante_sala2.jpg',
+                    'vat' => '56374659801',
+                    'address' => 'Via Roma, 10',
+                    'created_at' => '2023/01/12 11:20:45',
+                    'updated_at' => '2023/01/12 11:20:45',
+                    'user_id' => 11,
+                ])->categories()->attach($category_id);
                         
     }
 }

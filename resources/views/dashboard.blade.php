@@ -17,7 +17,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        @if ($restaurant?->user_id === Auth::user()->id)
+                        @if ($restaurant?->user_id === Auth::user()->id && Auth::user()->role !== 'admin' )
                             <div class="card text-bg-dark shadow">
                                 @if(str_contains($restaurant->image, "https"))
                                     <img class="card-img-top dish-img" src="{{$restaurant->image}}"
@@ -39,7 +39,8 @@
                                             </button>
                                         </a>
                                     </div>
-                                    <div class="position-absolute d-none d-lg-block" style="right:350px; bottom:20px">
+                                    <div class="position-absolute d-none d-lg-block" style="right:200px; bottom:20px">
+                                        
                                         <div class="">
                                             <a href="{{ route('chart', $restaurant->id) }}">
                                                 <button class="btn btn-sm btn-success btn-custom shadow">
@@ -50,7 +51,7 @@
                                     </div>
                                     @if($dishes)
                                         @foreach ($dishes as $dish)
-                                            <div class="position-absolute d-none d-lg-block" style="right:200px; bottom:20px">
+                                            <div class="position-absolute d-none d-lg-block" style="right:350px; bottom:20px">
                                                 <a href="{{ route('dishes.show', $dish->id) }}">
                                                     <button class="btn btn-sm btn-success btn-custom shadow">
                                                         I tuoi piatti <i class="fa-solid fa-magnifying-glass ms-2"></i>
@@ -73,7 +74,7 @@
 
                                     <a href="{{ route('dishes.create') }}">
                                         <button class="btn btn-success btn-custom shadow">
-                                            Crea il tuo piatto<i class="ps-0 fa-solid fa-plus"></i>
+                                            Crea il tuo piatto 
                                         </button>
                                     </a>
                                 </div>
@@ -103,18 +104,22 @@
                                     <div class="mt-2">
                                         <a href="{{ route('dishes.create') }}">
                                             <button class="btn btn-success btn-custom w-100 shadow">
-                                                Crea il tuo piatto <i class=" ps-3 fa-solid fa-plus"></i>
+                                                Crea il tuo piatto 
                                             </button>
                                         </a>
                                     </div>
                                 </div>
+                                @if(isset($dish))
                                 <div class="d-lg-none col-12">
                                      <div class="mt-2">
+                                        
                                         <a href="{{ route('dishes.show', $dish->id) }}">
                                             <button class="btn btn-sm btn-success btn-custom w-100 shadow">
                                                 I tuoi piatti <i class="fa-solid fa-magnifying-glass ms-2"></i>
                                             </button>
                                         </a>
+                                        @endif
+                                        
                                     </div>
                                 </div>
                             </div>
