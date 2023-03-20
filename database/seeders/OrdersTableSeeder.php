@@ -70,15 +70,15 @@ class OrdersTableSeeder extends Seeder
         Order::create([
             'status' => 'Completato',
             'total_order' => '40.00',
-            'order_time' => '2023/02/23',
-            'order_date' => '2023/02/23',
+            'order_time' => '2023/03/23',
+            'order_date' => '2023/03/23',
             'customer_name' => 'Giovanni Verdi',
             'customer_address' => 'Via Boolean Careers, 8',
             'customer_phone' => '3344444444',
             'customer_email' => 'giovanniverdi@gmail.com',
             'restaurant_id' => '2',
-            'created_at' => '2023/02/23 11:20:45',
-            'updated_at' => '2023/02/23 11:20:45',
+            'created_at' => '2023/03/23 11:20:45',
+            'updated_at' => '2023/03/23 11:20:45',
         ])->dishes()->attach($dishIds3);
 
         Order::create([
@@ -126,15 +126,15 @@ class OrdersTableSeeder extends Seeder
         Order::create([
             'status' => 'Completato',
             'total_order' => '16.00',
-            'order_time' => '2023/02/23',
-            'order_date' => '2023/02/23',
+            'order_time' => '2023/03/23',
+            'order_date' => '2023/03/23',
             'customer_name' => 'Paolo Meneguzzi',
             'customer_address' => 'Via Boolean Careers, 8',
             'customer_phone' => '3344444444',
             'customer_email' => 'paolomeneguzzi@gmail.com',
             'restaurant_id' => '2',
-            'created_at' => '2023/02/23 11:20:45',
-            'updated_at' => '2023/02/23 11:20:45',
+            'created_at' => '2023/03/23 11:20:45',
+            'updated_at' => '2023/03/23 11:20:45',
         ])->dishes()->attach($dishIds2);
 
         Order::create([
