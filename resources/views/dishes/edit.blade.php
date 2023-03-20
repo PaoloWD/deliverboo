@@ -77,7 +77,7 @@
 
                     {{-- Select type --}}
                     <label for="type">Seleziona il tipo di piatto:</label>
-                    <select name="type" id="type">
+                    <select class="form-select my-3" name="type" id="type">
                         <option value="Antipasto" {{ old('type') == 'Antipasto' ? 'selected' : '' }}>Antipasto</option>
                         <option value="Pizza" {{ old('type') == 'Pizza' ? 'selected' : '' }}>Pizza</option>
                         <option value="Primo"{{ old('type') == 'Primo' ? 'selected' : '' }}>Primo</option>
