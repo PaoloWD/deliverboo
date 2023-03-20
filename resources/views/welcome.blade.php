@@ -3,9 +3,7 @@
     <div class="bg-dark">
         <div class="home-jumbotron py-5">
 
-
-
-            <div class="container  rounded-4 p-5 presentation-banner text-center shadow">
+            <div class="container rounded-4 p-5 presentation-banner text-center shadow welcome-container">
                 <h1 class="custom-color">Benvenuto sulla pagina del Ristorante DeliveBoo</h1>
 
 

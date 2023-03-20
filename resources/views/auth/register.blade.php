@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="login-jumbotron pt-5">
-    <div class="container ">
+<div class="login-jumbotron jumbo-register pt-5">
+    <div class="container container-register">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card presentation-banner shadow rounded-4 overflow-hidden border-0">
-                    <div class="card-header custom-bg">
+                    <div class="card-header custom-bg nav-register">
                         <div class="logo fs-4 fw-bold d-flex align-items-center text-white" style="height:40px">
                             <i class="fa-solid fa-bowl-food px-2"></i>
                             DeliveBoo
