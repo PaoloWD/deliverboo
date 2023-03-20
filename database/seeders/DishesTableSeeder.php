@@ -204,7 +204,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://www.nonsprecare.it/wp-content/uploads/2022/04/ricetta-patatine-fritte.jpg',
                 'description' => 'Patate tagliate a fette di forma allungata e fritte in olio bollente',
                 'ingredients' => 'Patate',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 3.50,
                 'visibility' => true,
                 'restaurant_id' => 1
@@ -214,7 +214,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/1c/cd/1d/1ccd1de6bfbdeeca85e0f1bd54abf284.jpg',
                 'description' => 'Sfogliata con speck e mozzarella ',
                 'ingredients' => 'sfoglia, speck, mortadella, rucola',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 4.90,
                 'visibility' => true,
                 'restaurant_id' => 1
@@ -224,7 +224,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/6c/bb/0e/6cbb0e1ba8045da51f7dd7c649c17e0e.jpg',
                 'description' => 'Pizza con prosciutto crudo',
                 'ingredients' => 'farina, pomodoro, mozzarella, basilico, prosciutto crudo',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 7.50,
                 'visibility' => true,
                 'restaurant_id' => 1
@@ -234,7 +234,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8e/e9/4e/8ee94e8275db673d40ed1ed01a897316.jpg',
                 'description' => 'Piatto unico di insalata fresca, tipico della cucina napoletana',
                 'ingredients' => 'pomodoro, mozzarella, basilico',
-                'type' => 'antipasto',
+                'type' => 'Antipasto',
                 'price' => 6,
                 'visibility' => true,
                 'restaurant_id' => 1
@@ -242,9 +242,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Mexican cheeseburgers',
                 'image' => 'https://i.pinimg.com/564x/32/07/66/32076664aca03b56a25b64c29b360698.jpg',
-                'description' => 'Il classico panino Mexican cheeseburgers con carne di fassone e formaggio',
+                'description' => 'Il classico Panino Mexican cheeseburgers con carne di fassone e formaggio',
                 'ingredients' => 'lattuga, carne di fassone, crema al guaiamole, pomodoro, formaggio',
-                'type' => 'panino',
+                'type' => 'Panino',
                 'price' => 10.50,
                 'visibility' => true,
                 'restaurant_id' => 1
@@ -252,9 +252,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza Rucola & Speck',
                 'image' => 'https://i.pinimg.com/564x/41/a6/84/41a684b0da336a9c348eb4c72dee78cc.jpg',
-                'description' => 'pizza con pomodorini secchi, rucola, speck',
+                'description' => 'Pizza con pomodorini secchi, rucola, speck',
                 'ingredients' => 'pomodoro, mozzarella, basilico, pomodori secchi, rucola',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 8,
                 'visibility' => true,
                 'restaurant_id' => 1
@@ -264,7 +264,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/19/74/9f/19749ff3f3b941efc53616f84230a56d.jpg',
                 'description' => 'Coca Cola in bottiglia',
                 'ingredients' => 'Acqua, anidride carbonica, zucchero, colorante caramello (E 150D), aromi naturali, caffeina e acido fosforico (E 338)',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 3,
                 'visibility' => true,
                 'restaurant_id' => 1
@@ -274,7 +274,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/2b/15/56/2b1556cef5dfa17f11930aae144c1e61.jpg',
                 'description' => 'Acqua San Pellegrino',
                 'ingredients' => 'Freschissima acqua delle sorgenti Monte San Pellegrino',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 2,
                 'visibility' => true,
                 'restaurant_id' => 1
@@ -283,7 +283,7 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza margherita',
                 'image' => 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg',
-                'description' => 'La classica pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
+                'description' => 'La classica Pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
                 'ingredients' => 'Farina, pomodoro, mozzarella, basilico',
                 'type' => 'Pizza',
                 'price' => 8.00,
@@ -465,7 +465,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://www.nonsprecare.it/wp-content/uploads/2022/04/ricetta-patatine-fritte.jpg',
                 'description' => 'Patate tagliate a fette di forma allungata e fritte in olio bollente',
                 'ingredients' => 'Patate',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 3.50,
                 'visibility' => true,
                 'restaurant_id' => 2
@@ -475,7 +475,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/1c/cd/1d/1ccd1de6bfbdeeca85e0f1bd54abf284.jpg',
                 'description' => 'Sfogliata con speck e mozzarella ',
                 'ingredients' => 'sfoglia, speck, mortadella, rucola',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 4.90,
                 'visibility' => true,
                 'restaurant_id' => 2
@@ -485,7 +485,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/6c/bb/0e/6cbb0e1ba8045da51f7dd7c649c17e0e.jpg',
                 'description' => 'Pizza con prosciutto crudo',
                 'ingredients' => 'farina, pomodoro, mozzarella, basilico, prosciutto crudo',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 7.50,
                 'visibility' => true,
                 'restaurant_id' => 2
@@ -495,7 +495,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8e/e9/4e/8ee94e8275db673d40ed1ed01a897316.jpg',
                 'description' => 'Piatto unico di insalata fresca, tipico della cucina napoletana',
                 'ingredients' => 'pomodoro, mozzarella, basilico',
-                'type' => 'antipasto',
+                'type' => 'Antipasto',
                 'price' => 6,
                 'visibility' => true,
                 'restaurant_id' => 2
@@ -503,9 +503,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Mexican cheeseburgers',
                 'image' => 'https://i.pinimg.com/564x/32/07/66/32076664aca03b56a25b64c29b360698.jpg',
-                'description' => 'Il classico panino Mexican cheeseburgers con carne di fassone e formaggio',
+                'description' => 'Il classico Panino Mexican cheeseburgers con carne di fassone e formaggio',
                 'ingredients' => 'lattuga, carne di fassone, crema al guaiamole, pomodoro, formaggio',
-                'type' => 'panino',
+                'type' => 'Panino',
                 'price' => 10.50,
                 'visibility' => true,
                 'restaurant_id' => 2
@@ -513,9 +513,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza Rucola & Speck',
                 'image' => 'https://i.pinimg.com/564x/41/a6/84/41a684b0da336a9c348eb4c72dee78cc.jpg',
-                'description' => 'pizza con pomodorini secchi, rucola, speck',
+                'description' => 'Pizza con pomodorini secchi, rucola, speck',
                 'ingredients' => 'pomodoro, mozzarella, basilico, pomodori secchi, rucola',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 8,
                 'visibility' => true,
                 'restaurant_id' => 2
@@ -525,7 +525,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/19/74/9f/19749ff3f3b941efc53616f84230a56d.jpg',
                 'description' => 'Coca Cola in bottiglia',
                 'ingredients' => 'Acqua, anidride carbonica, zucchero, colorante caramello (E 150D), aromi naturali, caffeina e acido fosforico (E 338)',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 3,
                 'visibility' => true,
                 'restaurant_id' => 2
@@ -535,7 +535,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/2b/15/56/2b1556cef5dfa17f11930aae144c1e61.jpg',
                 'description' => 'Acqua San Pellegrino',
                 'ingredients' => 'Freschissima acqua delle sorgenti Monte San Pellegrino',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 2,
                 'visibility' => true,
                 'restaurant_id' => 2
@@ -594,7 +594,7 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza margherita',
                 'image' => 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg',
-                'description' => 'La classica pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
+                'description' => 'La classica Pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
                 'ingredients' => 'Farina, pomodoro, mozzarella, basilico',
                 'type' => 'Pizza',
                 'price' => 8.00,
@@ -726,7 +726,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://www.nonsprecare.it/wp-content/uploads/2022/04/ricetta-patatine-fritte.jpg',
                 'description' => 'Patate tagliate a fette di forma allungata e fritte in olio bollente',
                 'ingredients' => 'Patate',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 3.50,
                 'visibility' => true,
                 'restaurant_id' => 3
@@ -736,7 +736,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/1c/cd/1d/1ccd1de6bfbdeeca85e0f1bd54abf284.jpg',
                 'description' => 'Sfogliata con speck e mozzarella ',
                 'ingredients' => 'sfoglia, speck, mortadella, rucola',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 4.90,
                 'visibility' => true,
                 'restaurant_id' => 3
@@ -746,7 +746,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/6c/bb/0e/6cbb0e1ba8045da51f7dd7c649c17e0e.jpg',
                 'description' => 'Pizza con prosciutto crudo',
                 'ingredients' => 'farina, pomodoro, mozzarella, basilico, prosciutto crudo',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 7.50,
                 'visibility' => true,
                 'restaurant_id' => 3
@@ -756,7 +756,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8e/e9/4e/8ee94e8275db673d40ed1ed01a897316.jpg',
                 'description' => 'Piatto unico di insalata fresca, tipico della cucina napoletana',
                 'ingredients' => 'pomodoro, mozzarella, basilico',
-                'type' => 'antipasto',
+                'type' => 'Antipasto',
                 'price' => 6,
                 'visibility' => true,
                 'restaurant_id' => 3
@@ -764,9 +764,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Mexican cheeseburgers',
                 'image' => 'https://i.pinimg.com/564x/32/07/66/32076664aca03b56a25b64c29b360698.jpg',
-                'description' => 'Il classico panino Mexican cheeseburgers con carne di fassone e formaggio',
+                'description' => 'Il classico Panino Mexican cheeseburgers con carne di fassone e formaggio',
                 'ingredients' => 'lattuga, carne di fassone, crema al guaiamole, pomodoro, formaggio',
-                'type' => 'panino',
+                'type' => 'Panino',
                 'price' => 10.50,
                 'visibility' => true,
                 'restaurant_id' => 3
@@ -774,9 +774,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza Rucola & Speck',
                 'image' => 'https://i.pinimg.com/564x/41/a6/84/41a684b0da336a9c348eb4c72dee78cc.jpg',
-                'description' => 'pizza con pomodorini secchi, rucola, speck',
+                'description' => 'Pizza con pomodorini secchi, rucola, speck',
                 'ingredients' => 'pomodoro, mozzarella, basilico, pomodori secchi, rucola',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 8,
                 'visibility' => true,
                 'restaurant_id' => 3
@@ -786,7 +786,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/19/74/9f/19749ff3f3b941efc53616f84230a56d.jpg',
                 'description' => 'Coca Cola in bottiglia',
                 'ingredients' => 'Acqua, anidride carbonica, zucchero, colorante caramello (E 150D), aromi naturali, caffeina e acido fosforico (E 338)',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 3,
                 'visibility' => true,
                 'restaurant_id' => 3
@@ -796,7 +796,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/2b/15/56/2b1556cef5dfa17f11930aae144c1e61.jpg',
                 'description' => 'Acqua San Pellegrino',
                 'ingredients' => 'Freschissima acqua delle sorgenti Monte San Pellegrino',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 2,
                 'visibility' => true,
                 'restaurant_id' => 3
@@ -895,7 +895,7 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza margherita',
                 'image' => 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg',
-                'description' => 'La classica pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
+                'description' => 'La classica Pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
                 'ingredients' => 'Farina, pomodoro, mozzarella, basilico',
                 'type' => 'Pizza',
                 'price' => 8.00,
@@ -987,7 +987,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://www.nonsprecare.it/wp-content/uploads/2022/04/ricetta-patatine-fritte.jpg',
                 'description' => 'Patate tagliate a fette di forma allungata e fritte in olio bollente',
                 'ingredients' => 'Patate',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 3.50,
                 'visibility' => true,
                 'restaurant_id' => 4
@@ -997,7 +997,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/1c/cd/1d/1ccd1de6bfbdeeca85e0f1bd54abf284.jpg',
                 'description' => 'Sfogliata con speck e mozzarella ',
                 'ingredients' => 'sfoglia, speck, mortadella, rucola',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 4.90,
                 'visibility' => true,
                 'restaurant_id' => 4
@@ -1007,7 +1007,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/6c/bb/0e/6cbb0e1ba8045da51f7dd7c649c17e0e.jpg',
                 'description' => 'Pizza con prosciutto crudo',
                 'ingredients' => 'farina, pomodoro, mozzarella, basilico, prosciutto crudo',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 7.50,
                 'visibility' => true,
                 'restaurant_id' => 4
@@ -1017,7 +1017,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8e/e9/4e/8ee94e8275db673d40ed1ed01a897316.jpg',
                 'description' => 'Piatto unico di insalata fresca, tipico della cucina napoletana',
                 'ingredients' => 'pomodoro, mozzarella, basilico',
-                'type' => 'antipasto',
+                'type' => 'Antipasto',
                 'price' => 6,
                 'visibility' => true,
                 'restaurant_id' => 4
@@ -1025,9 +1025,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Mexican cheeseburgers',
                 'image' => 'https://i.pinimg.com/564x/32/07/66/32076664aca03b56a25b64c29b360698.jpg',
-                'description' => 'Il classico panino Mexican cheeseburgers con carne di fassone e formaggio',
+                'description' => 'Il classico Panino Mexican cheeseburgers con carne di fassone e formaggio',
                 'ingredients' => 'lattuga, carne di fassone, crema al guaiamole, pomodoro, formaggio',
-                'type' => 'panino',
+                'type' => 'Panino',
                 'price' => 10.50,
                 'visibility' => true,
                 'restaurant_id' => 4
@@ -1035,9 +1035,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza Rucola & Speck',
                 'image' => 'https://i.pinimg.com/564x/41/a6/84/41a684b0da336a9c348eb4c72dee78cc.jpg',
-                'description' => 'pizza con pomodorini secchi, rucola, speck',
+                'description' => 'Pizza con pomodorini secchi, rucola, speck',
                 'ingredients' => 'pomodoro, mozzarella, basilico, pomodori secchi, rucola',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 8,
                 'visibility' => true,
                 'restaurant_id' => 4
@@ -1047,7 +1047,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/19/74/9f/19749ff3f3b941efc53616f84230a56d.jpg',
                 'description' => 'Coca Cola in bottiglia',
                 'ingredients' => 'Acqua, anidride carbonica, zucchero, colorante caramello (E 150D), aromi naturali, caffeina e acido fosforico (E 338)',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 3,
                 'visibility' => true,
                 'restaurant_id' => 4
@@ -1057,7 +1057,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/2b/15/56/2b1556cef5dfa17f11930aae144c1e61.jpg',
                 'description' => 'Acqua San Pellegrino',
                 'ingredients' => 'Freschissima acqua delle sorgenti Monte San Pellegrino',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 2,
                 'visibility' => true,
                 'restaurant_id' => 4
@@ -1176,7 +1176,7 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza margherita',
                 'image' => 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg',
-                'description' => 'La classica pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
+                'description' => 'La classica Pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
                 'ingredients' => 'Farina, pomodoro, mozzarella, basilico',
                 'type' => 'Pizza',
                 'price' => 8.00,
@@ -1248,7 +1248,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://www.nonsprecare.it/wp-content/uploads/2022/04/ricetta-patatine-fritte.jpg',
                 'description' => 'Patate tagliate a fette di forma allungata e fritte in olio bollente',
                 'ingredients' => 'Patate',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 3.50,
                 'visibility' => true,
                 'restaurant_id' => 5
@@ -1258,7 +1258,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/1c/cd/1d/1ccd1de6bfbdeeca85e0f1bd54abf284.jpg',
                 'description' => 'Sfogliata con speck e mozzarella ',
                 'ingredients' => 'sfoglia, speck, mortadella, rucola',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 4.90,
                 'visibility' => true,
                 'restaurant_id' => 5
@@ -1268,7 +1268,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/6c/bb/0e/6cbb0e1ba8045da51f7dd7c649c17e0e.jpg',
                 'description' => 'Pizza con prosciutto crudo',
                 'ingredients' => 'farina, pomodoro, mozzarella, basilico, prosciutto crudo',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 7.50,
                 'visibility' => true,
                 'restaurant_id' => 5
@@ -1278,7 +1278,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8e/e9/4e/8ee94e8275db673d40ed1ed01a897316.jpg',
                 'description' => 'Piatto unico di insalata fresca, tipico della cucina napoletana',
                 'ingredients' => 'pomodoro, mozzarella, basilico',
-                'type' => 'antipasto',
+                'type' => 'Antipasto',
                 'price' => 6,
                 'visibility' => true,
                 'restaurant_id' => 5
@@ -1286,9 +1286,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Mexican cheeseburgers',
                 'image' => 'https://i.pinimg.com/564x/32/07/66/32076664aca03b56a25b64c29b360698.jpg',
-                'description' => 'Il classico panino Mexican cheeseburgers con carne di fassone e formaggio',
+                'description' => 'Il classico Panino Mexican cheeseburgers con carne di fassone e formaggio',
                 'ingredients' => 'lattuga, carne di fassone, crema al guaiamole, pomodoro, formaggio',
-                'type' => 'panino',
+                'type' => 'Panino',
                 'price' => 10.50,
                 'visibility' => true,
                 'restaurant_id' => 5
@@ -1296,9 +1296,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza Rucola & Speck',
                 'image' => 'https://i.pinimg.com/564x/41/a6/84/41a684b0da336a9c348eb4c72dee78cc.jpg',
-                'description' => 'pizza con pomodorini secchi, rucola, speck',
+                'description' => 'Pizza con pomodorini secchi, rucola, speck',
                 'ingredients' => 'pomodoro, mozzarella, basilico, pomodori secchi, rucola',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 8,
                 'visibility' => true,
                 'restaurant_id' => 5
@@ -1308,7 +1308,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/19/74/9f/19749ff3f3b941efc53616f84230a56d.jpg',
                 'description' => 'Coca Cola in bottiglia',
                 'ingredients' => 'Acqua, anidride carbonica, zucchero, colorante caramello (E 150D), aromi naturali, caffeina e acido fosforico (E 338)',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 3,
                 'visibility' => true,
                 'restaurant_id' => 5
@@ -1318,7 +1318,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/2b/15/56/2b1556cef5dfa17f11930aae144c1e61.jpg',
                 'description' => 'Acqua San Pellegrino',
                 'ingredients' => 'Freschissima acqua delle sorgenti Monte San Pellegrino',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 2,
                 'visibility' => true,
                 'restaurant_id' => 5
@@ -1509,7 +1509,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://www.nonsprecare.it/wp-content/uploads/2022/04/ricetta-patatine-fritte.jpg',
                 'description' => 'Patate tagliate a fette di forma allungata e fritte in olio bollente',
                 'ingredients' => 'Patate',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 3.50,
                 'visibility' => true,
                 'restaurant_id' => 6
@@ -1519,7 +1519,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/1c/cd/1d/1ccd1de6bfbdeeca85e0f1bd54abf284.jpg',
                 'description' => 'Sfogliata con speck e mozzarella ',
                 'ingredients' => 'sfoglia, speck, mortadella, rucola',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 4.90,
                 'visibility' => true,
                 'restaurant_id' => 6
@@ -1529,7 +1529,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/6c/bb/0e/6cbb0e1ba8045da51f7dd7c649c17e0e.jpg',
                 'description' => 'Pizza con prosciutto crudo',
                 'ingredients' => 'farina, pomodoro, mozzarella, basilico, prosciutto crudo',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 7.50,
                 'visibility' => true,
                 'restaurant_id' => 6
@@ -1539,7 +1539,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8e/e9/4e/8ee94e8275db673d40ed1ed01a897316.jpg',
                 'description' => 'Piatto unico di insalata fresca, tipico della cucina napoletana',
                 'ingredients' => 'pomodoro, mozzarella, basilico',
-                'type' => 'antipasto',
+                'type' => 'Antipasto',
                 'price' => 6,
                 'visibility' => true,
                 'restaurant_id' => 6
@@ -1547,9 +1547,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Mexican cheeseburgers',
                 'image' => 'https://i.pinimg.com/564x/32/07/66/32076664aca03b56a25b64c29b360698.jpg',
-                'description' => 'Il classico panino Mexican cheeseburgers con carne di fassone e formaggio',
+                'description' => 'Il classico Panino Mexican cheeseburgers con carne di fassone e formaggio',
                 'ingredients' => 'lattuga, carne di fassone, crema al guaiamole, pomodoro, formaggio',
-                'type' => 'panino',
+                'type' => 'Panino',
                 'price' => 10.50,
                 'visibility' => true,
                 'restaurant_id' => 6
@@ -1557,9 +1557,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza Rucola & Speck',
                 'image' => 'https://i.pinimg.com/564x/41/a6/84/41a684b0da336a9c348eb4c72dee78cc.jpg',
-                'description' => 'pizza con pomodorini secchi, rucola, speck',
+                'description' => 'Pizza con pomodorini secchi, rucola, speck',
                 'ingredients' => 'pomodoro, mozzarella, basilico, pomodori secchi, rucola',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 8,
                 'visibility' => true,
                 'restaurant_id' => 6
@@ -1569,7 +1569,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/19/74/9f/19749ff3f3b941efc53616f84230a56d.jpg',
                 'description' => 'Coca Cola in bottiglia',
                 'ingredients' => 'Acqua, anidride carbonica, zucchero, colorante caramello (E 150D), aromi naturali, caffeina e acido fosforico (E 338)',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 3,
                 'visibility' => true,
                 'restaurant_id' => 6
@@ -1579,7 +1579,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/2b/15/56/2b1556cef5dfa17f11930aae144c1e61.jpg',
                 'description' => 'Acqua San Pellegrino',
                 'ingredients' => 'Freschissima acqua delle sorgenti Monte San Pellegrino',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 2,
                 'visibility' => true,
                 'restaurant_id' => 6
@@ -1588,7 +1588,7 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza margherita',
                 'image' => 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg',
-                'description' => 'La classica pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
+                'description' => 'La classica Pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
                 'ingredients' => 'Farina, pomodoro, mozzarella, basilico',
                 'type' => 'Pizza',
                 'price' => 8.00,
@@ -1770,7 +1770,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://www.nonsprecare.it/wp-content/uploads/2022/04/ricetta-patatine-fritte.jpg',
                 'description' => 'Patate tagliate a fette di forma allungata e fritte in olio bollente',
                 'ingredients' => 'Patate',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 3.50,
                 'visibility' => true,
                 'restaurant_id' => 7
@@ -1780,7 +1780,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/1c/cd/1d/1ccd1de6bfbdeeca85e0f1bd54abf284.jpg',
                 'description' => 'Sfogliata con speck e mozzarella ',
                 'ingredients' => 'sfoglia, speck, mortadella, rucola',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 4.90,
                 'visibility' => true,
                 'restaurant_id' => 7
@@ -1790,7 +1790,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/6c/bb/0e/6cbb0e1ba8045da51f7dd7c649c17e0e.jpg',
                 'description' => 'Pizza con prosciutto crudo',
                 'ingredients' => 'farina, pomodoro, mozzarella, basilico, prosciutto crudo',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 7.50,
                 'visibility' => true,
                 'restaurant_id' => 7
@@ -1800,7 +1800,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8e/e9/4e/8ee94e8275db673d40ed1ed01a897316.jpg',
                 'description' => 'Piatto unico di insalata fresca, tipico della cucina napoletana',
                 'ingredients' => 'pomodoro, mozzarella, basilico',
-                'type' => 'antipasto',
+                'type' => 'Antipasto',
                 'price' => 6,
                 'visibility' => true,
                 'restaurant_id' => 7
@@ -1808,9 +1808,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Mexican cheeseburgers',
                 'image' => 'https://i.pinimg.com/564x/32/07/66/32076664aca03b56a25b64c29b360698.jpg',
-                'description' => 'Il classico panino Mexican cheeseburgers con carne di fassone e formaggio',
+                'description' => 'Il classico Panino Mexican cheeseburgers con carne di fassone e formaggio',
                 'ingredients' => 'lattuga, carne di fassone, crema al guaiamole, pomodoro, formaggio',
-                'type' => 'panino',
+                'type' => 'Panino',
                 'price' => 10.50,
                 'visibility' => true,
                 'restaurant_id' => 7
@@ -1818,9 +1818,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza Rucola & Speck',
                 'image' => 'https://i.pinimg.com/564x/41/a6/84/41a684b0da336a9c348eb4c72dee78cc.jpg',
-                'description' => 'pizza con pomodorini secchi, rucola, speck',
+                'description' => 'Pizza con pomodorini secchi, rucola, speck',
                 'ingredients' => 'pomodoro, mozzarella, basilico, pomodori secchi, rucola',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 8,
                 'visibility' => true,
                 'restaurant_id' => 7
@@ -1830,7 +1830,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/19/74/9f/19749ff3f3b941efc53616f84230a56d.jpg',
                 'description' => 'Coca Cola in bottiglia',
                 'ingredients' => 'Acqua, anidride carbonica, zucchero, colorante caramello (E 150D), aromi naturali, caffeina e acido fosforico (E 338)',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 3,
                 'visibility' => true,
                 'restaurant_id' => 7
@@ -1840,7 +1840,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/2b/15/56/2b1556cef5dfa17f11930aae144c1e61.jpg',
                 'description' => 'Acqua San Pellegrino',
                 'ingredients' => 'Freschissima acqua delle sorgenti Monte San Pellegrino',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 2,
                 'visibility' => true,
                 'restaurant_id' => 7
@@ -1849,7 +1849,7 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza margherita',
                 'image' => 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg',
-                'description' => 'La classica pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
+                'description' => 'La classica Pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
                 'ingredients' => 'Farina, pomodoro, mozzarella, basilico',
                 'type' => 'Pizza',
                 'price' => 8.00,
@@ -2031,7 +2031,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://www.nonsprecare.it/wp-content/uploads/2022/04/ricetta-patatine-fritte.jpg',
                 'description' => 'Patate tagliate a fette di forma allungata e fritte in olio bollente',
                 'ingredients' => 'Patate',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 3.50,
                 'visibility' => true,
                 'restaurant_id' => 8
@@ -2041,7 +2041,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/1c/cd/1d/1ccd1de6bfbdeeca85e0f1bd54abf284.jpg',
                 'description' => 'Sfogliata con speck e mozzarella ',
                 'ingredients' => 'sfoglia, speck, mortadella, rucola',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 4.90,
                 'visibility' => true,
                 'restaurant_id' => 8
@@ -2051,7 +2051,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/6c/bb/0e/6cbb0e1ba8045da51f7dd7c649c17e0e.jpg',
                 'description' => 'Pizza con prosciutto crudo',
                 'ingredients' => 'farina, pomodoro, mozzarella, basilico, prosciutto crudo',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 7.50,
                 'visibility' => true,
                 'restaurant_id' => 8
@@ -2061,7 +2061,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8e/e9/4e/8ee94e8275db673d40ed1ed01a897316.jpg',
                 'description' => 'Piatto unico di insalata fresca, tipico della cucina napoletana',
                 'ingredients' => 'pomodoro, mozzarella, basilico',
-                'type' => 'antipasto',
+                'type' => 'Antipasto',
                 'price' => 6,
                 'visibility' => true,
                 'restaurant_id' => 8
@@ -2069,9 +2069,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Mexican cheeseburgers',
                 'image' => 'https://i.pinimg.com/564x/32/07/66/32076664aca03b56a25b64c29b360698.jpg',
-                'description' => 'Il classico panino Mexican cheeseburgers con carne di fassone e formaggio',
+                'description' => 'Il classico Panino Mexican cheeseburgers con carne di fassone e formaggio',
                 'ingredients' => 'lattuga, carne di fassone, crema al guaiamole, pomodoro, formaggio',
-                'type' => 'panino',
+                'type' => 'Panino',
                 'price' => 10.50,
                 'visibility' => true,
                 'restaurant_id' => 8
@@ -2079,9 +2079,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza Rucola & Speck',
                 'image' => 'https://i.pinimg.com/564x/41/a6/84/41a684b0da336a9c348eb4c72dee78cc.jpg',
-                'description' => 'pizza con pomodorini secchi, rucola, speck',
+                'description' => 'Pizza con pomodorini secchi, rucola, speck',
                 'ingredients' => 'pomodoro, mozzarella, basilico, pomodori secchi, rucola',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 8,
                 'visibility' => true,
                 'restaurant_id' => 8
@@ -2091,7 +2091,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/19/74/9f/19749ff3f3b941efc53616f84230a56d.jpg',
                 'description' => 'Coca Cola in bottiglia',
                 'ingredients' => 'Acqua, anidride carbonica, zucchero, colorante caramello (E 150D), aromi naturali, caffeina e acido fosforico (E 338)',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 3,
                 'visibility' => true,
                 'restaurant_id' => 8
@@ -2101,7 +2101,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/2b/15/56/2b1556cef5dfa17f11930aae144c1e61.jpg',
                 'description' => 'Acqua San Pellegrino',
                 'ingredients' => 'Freschissima acqua delle sorgenti Monte San Pellegrino',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 2,
                 'visibility' => true,
                 'restaurant_id' => 8
@@ -2110,7 +2110,7 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza margherita',
                 'image' => 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg',
-                'description' => 'La classica pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
+                'description' => 'La classica Pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
                 'ingredients' => 'Farina, pomodoro, mozzarella, basilico',
                 'type' => 'Pizza',
                 'price' => 8.00,
@@ -2292,7 +2292,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://www.nonsprecare.it/wp-content/uploads/2022/04/ricetta-patatine-fritte.jpg',
                 'description' => 'Patate tagliate a fette di forma allungata e fritte in olio bollente',
                 'ingredients' => 'Patate',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 3.50,
                 'visibility' => true,
                 'restaurant_id' => 9
@@ -2302,7 +2302,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/1c/cd/1d/1ccd1de6bfbdeeca85e0f1bd54abf284.jpg',
                 'description' => 'Sfogliata con speck e mozzarella ',
                 'ingredients' => 'sfoglia, speck, mortadella, rucola',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 4.90,
                 'visibility' => true,
                 'restaurant_id' => 9
@@ -2312,7 +2312,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/6c/bb/0e/6cbb0e1ba8045da51f7dd7c649c17e0e.jpg',
                 'description' => 'Pizza con prosciutto crudo',
                 'ingredients' => 'farina, pomodoro, mozzarella, basilico, prosciutto crudo',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 7.50,
                 'visibility' => true,
                 'restaurant_id' => 9
@@ -2322,7 +2322,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8e/e9/4e/8ee94e8275db673d40ed1ed01a897316.jpg',
                 'description' => 'Piatto unico di insalata fresca, tipico della cucina napoletana',
                 'ingredients' => 'pomodoro, mozzarella, basilico',
-                'type' => 'antipasto',
+                'type' => 'Antipasto',
                 'price' => 6,
                 'visibility' => true,
                 'restaurant_id' => 9
@@ -2330,9 +2330,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Mexican cheeseburgers',
                 'image' => 'https://i.pinimg.com/564x/32/07/66/32076664aca03b56a25b64c29b360698.jpg',
-                'description' => 'Il classico panino Mexican cheeseburgers con carne di fassone e formaggio',
+                'description' => 'Il classico Panino Mexican cheeseburgers con carne di fassone e formaggio',
                 'ingredients' => 'lattuga, carne di fassone, crema al guaiamole, pomodoro, formaggio',
-                'type' => 'panino',
+                'type' => 'Panino',
                 'price' => 10.50,
                 'visibility' => true,
                 'restaurant_id' => 9
@@ -2340,9 +2340,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza Rucola & Speck',
                 'image' => 'https://i.pinimg.com/564x/41/a6/84/41a684b0da336a9c348eb4c72dee78cc.jpg',
-                'description' => 'pizza con pomodorini secchi, rucola, speck',
+                'description' => 'Pizza con pomodorini secchi, rucola, speck',
                 'ingredients' => 'pomodoro, mozzarella, basilico, pomodori secchi, rucola',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 8,
                 'visibility' => true,
                 'restaurant_id' => 9
@@ -2352,7 +2352,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/19/74/9f/19749ff3f3b941efc53616f84230a56d.jpg',
                 'description' => 'Coca Cola in bottiglia',
                 'ingredients' => 'Acqua, anidride carbonica, zucchero, colorante caramello (E 150D), aromi naturali, caffeina e acido fosforico (E 338)',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 3,
                 'visibility' => true,
                 'restaurant_id' => 9
@@ -2362,7 +2362,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/2b/15/56/2b1556cef5dfa17f11930aae144c1e61.jpg',
                 'description' => 'Acqua San Pellegrino',
                 'ingredients' => 'Freschissima acqua delle sorgenti Monte San Pellegrino',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 2,
                 'visibility' => true,
                 'restaurant_id' => 9
@@ -2371,7 +2371,7 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza margherita',
                 'image' => 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg',
-                'description' => 'La classica pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
+                'description' => 'La classica Pizza margherita tipica Napoletana con pomodoro, mozzarella e basilico',
                 'ingredients' => 'Farina, pomodoro, mozzarella, basilico',
                 'type' => 'Pizza',
                 'price' => 8.00,
@@ -2553,7 +2553,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://www.nonsprecare.it/wp-content/uploads/2022/04/ricetta-patatine-fritte.jpg',
                 'description' => 'Patate tagliate a fette di forma allungata e fritte in olio bollente',
                 'ingredients' => 'Patate',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 3.50,
                 'visibility' => true,
                 'restaurant_id' => 10
@@ -2563,7 +2563,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/1c/cd/1d/1ccd1de6bfbdeeca85e0f1bd54abf284.jpg',
                 'description' => 'Sfogliata con speck e mozzarella ',
                 'ingredients' => 'sfoglia, speck, mortadella, rucola',
-                'type' => 'contorno',
+                'type' => 'Contorno',
                 'price' => 4.90,
                 'visibility' => true,
                 'restaurant_id' => 10
@@ -2573,7 +2573,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/6c/bb/0e/6cbb0e1ba8045da51f7dd7c649c17e0e.jpg',
                 'description' => 'Pizza con prosciutto crudo',
                 'ingredients' => 'farina, pomodoro, mozzarella, basilico, prosciutto crudo',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 7.50,
                 'visibility' => true,
                 'restaurant_id' => 10
@@ -2583,7 +2583,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8e/e9/4e/8ee94e8275db673d40ed1ed01a897316.jpg',
                 'description' => 'Piatto unico di insalata fresca, tipico della cucina napoletana',
                 'ingredients' => 'pomodoro, mozzarella, basilico',
-                'type' => 'antipasto',
+                'type' => 'Antipasto',
                 'price' => 6,
                 'visibility' => true,
                 'restaurant_id' => 10
@@ -2591,9 +2591,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Mexican cheeseburgers',
                 'image' => 'https://i.pinimg.com/564x/32/07/66/32076664aca03b56a25b64c29b360698.jpg',
-                'description' => 'Il classico panino Mexican cheeseburgers con carne di fassone e formaggio',
+                'description' => 'Il classico Panino Mexican cheeseburgers con carne di fassone e formaggio',
                 'ingredients' => 'lattuga, carne di fassone, crema al guaiamole, pomodoro, formaggio',
-                'type' => 'panino',
+                'type' => 'Panino',
                 'price' => 10.50,
                 'visibility' => true,
                 'restaurant_id' => 10
@@ -2601,9 +2601,9 @@ class DishesTableSeeder extends Seeder
             [
                 'name' => 'Pizza Rucola & Speck',
                 'image' => 'https://i.pinimg.com/564x/41/a6/84/41a684b0da336a9c348eb4c72dee78cc.jpg',
-                'description' => 'pizza con pomodorini secchi, rucola, speck',
+                'description' => 'Pizza con pomodorini secchi, rucola, speck',
                 'ingredients' => 'pomodoro, mozzarella, basilico, pomodori secchi, rucola',
-                'type' => 'pizza',
+                'type' => 'Pizza',
                 'price' => 8,
                 'visibility' => true,
                 'restaurant_id' => 10
@@ -2613,7 +2613,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/19/74/9f/19749ff3f3b941efc53616f84230a56d.jpg',
                 'description' => 'Coca Cola in bottiglia',
                 'ingredients' => 'Acqua, anidride carbonica, zucchero, colorante caramello (E 150D), aromi naturali, caffeina e acido fosforico (E 338)',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 3,
                 'visibility' => true,
                 'restaurant_id' => 10
@@ -2623,7 +2623,7 @@ class DishesTableSeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/2b/15/56/2b1556cef5dfa17f11930aae144c1e61.jpg',
                 'description' => 'Acqua San Pellegrino',
                 'ingredients' => 'Freschissima acqua delle sorgenti Monte San Pellegrino',
-                'type' => 'bevande',
+                'type' => 'Bevanda',
                 'price' => 2,
                 'visibility' => true,
                 'restaurant_id' => 10
