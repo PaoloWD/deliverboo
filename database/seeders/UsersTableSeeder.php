@@ -43,6 +43,32 @@ class UsersTableSeeder extends Seeder
                 'email' => 'giorgia@gmail.com',
                 'password' => Hash::make('password')
             ],
+            //Nuovi utenti
+            [
+                'name' => 'Gabriella Chessa',
+                'email' => 'gabriella@gmail.com',
+                'password' => Hash::make('password')
+            ],
+            [
+                'name' => 'Luca Coniglio',
+                'email' => 'luca@gmail.com',
+                'password' => Hash::make('password')
+            ],
+            [
+                'name' => 'Biagio Mangani',
+                'email' => 'biagio@gmail.com',
+                'password' => Hash::make('password')
+            ],
+            [
+                'name' => 'Lucio Bo',
+                'email' => 'lucio@gmail.com',
+                'password' => Hash::make('password')
+            ],
+            [
+                'name' => 'Davide Arrighi',
+                'email' => 'davide@gmail.com',
+                'password' => Hash::make('password')
+            ],
             [
                 'name' => 'Supremo',
                 'email' => 'supremo@gmail.com',

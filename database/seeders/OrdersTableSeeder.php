@@ -150,5 +150,33 @@ class OrdersTableSeeder extends Seeder
             'created_at' => '2023/02/23 11:20:45',
             'updated_at' => '2023/02/23 11:20:45',
         ])->dishes()->attach($dishIds4);
+
+        Order::create([
+            'status' => 'In lavorazione',
+            'total_order' => '26.00',
+            'order_time' => '2023/01/23',
+            'order_date' => '2023/01/23',
+            'customer_name' => 'Paolo Maccarrone',
+            'customer_address' => 'Via Boolean Careers, 8',
+            'customer_phone' => '3344444444',
+            'customer_email' => 'paolomaccarrone@gmail.com',
+            'restaurant_id' => '2',
+            'created_at' => '2023/01/23 11:20:45',
+            'updated_at' => '2023/01/23 11:20:45',
+        ])->dishes()->attach($dishIds3);
+
+        Order::create([
+            'status' => 'In lavorazione',
+            'total_order' => '20.00',
+            'order_time' => '2023/01/23',
+            'order_date' => '2023/01/23',
+            'customer_name' => 'Paolo Maccarrone',
+            'customer_address' => 'Via Boolean Careers, 8',
+            'customer_phone' => '3344444444',
+            'customer_email' => 'paolomaccarrone@gmail.com',
+            'restaurant_id' => '2',
+            'created_at' => '2023/01/23 11:20:45',
+            'updated_at' => '2023/01/23 11:20:45',
+        ])->dishes()->attach($dishIds);
     }
 }
