@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="bg-dark">
-        <div class="home-jumbotron py-5 overflow-hidden">
+        <div class="home-jumbotron py-5">
 
 
 
