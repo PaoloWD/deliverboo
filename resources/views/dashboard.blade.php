@@ -167,11 +167,16 @@
                                   <div class="card custom-bg shadow">
                                     <div class="card-body text-center">
                                       <h3 class="card-title text-white">Visualizzazione statistiche</h3>
-                                      <a class="color-transparent" href="{{ route('statistics') }}">
-                                        <button class="btn custom-color shadow" style="background-color: white">
-                                            Vedi le tue statistiche
-                                        </button>
-                                    </a>
+                                      <div class="d-none d-lg-block">
+                                        <a class="color-transparent" href="{{ route('statistics') }}">
+                                          <button class="btn custom-color shadow" style="background-color: white">Vedi le tue statistiche</button>
+                                        </a>
+                                      </div>
+                                      <div class="d-lg-none">
+                                        <a class="color-transparent" href="{{ route('statistics') }}">
+                                          <button class="btn custom-color shadow" style="background-color: white"><i class="fa-solid fa-eye"></i></button>
+                                        </a>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -180,16 +185,30 @@
                                   <div class="card shadow">
                                     <div class="card-body text-center">
                                       <h3 class="card-title">Gestione categorie</h3>
-                                      <a class="color-transparent" href="{{ route('categories.create') }}">
-                                        <button class="btn  btn-success btn-custom shadow">
-                                            Aggiungi categoria
-                                        </button>
-                                    </a>
-                                    <a class="color-transparent" href="{{ route('index.categories') }}">
-                                        <button class="btn ms-2 btn-custom shadow ">
-                                            Vedi le categorie esistenti
-                                        </button>
-                                    </a>
+                                      <div class="d-none d-lg-block">
+                                          <a class="color-transparent" href="{{ route('categories.create') }}">
+                                            <button class="btn btn-success btn-custom shadow mt-1">
+                                                Aggiungi categoria
+                                            </button>
+                                        </a>
+                                        <a class="color-transparent" href="{{ route('index.categories') }}">
+                                            <button class="btn ms-2 btn-custom shadow mt-1">
+                                                Vedi le categorie esistenti
+                                            </button>
+                                        </a>
+                                      </div>
+                                      <div class="d-lg-none">
+                                        <a class="color-transparent" href="{{ route('categories.create') }}">
+                                          <button class="btn btn-success btn-custom shadow">
+                                            <i class="fa-solid fa-plus"></i>
+                                          </button>
+                                      </a>
+                                      <a class="color-transparent" href="{{ route('index.categories') }}">
+                                          <button class="btn ms-2 btn-custom shadow ">
+                                            <i class="fa-solid fa-eye"></i>
+                                          </button>
+                                      </a>
+                                    </div>
                                     </div>
                                   </div>
                                 </div>
@@ -198,11 +217,20 @@
                                     <div class="card shadow">
                                       <div class="card-body text-center">
                                         <h3 class="card-title">Gestione ristoranti</h3>
-                                        <a class="color-transparent" href="{{ route('index.restaurants') }}">
-                                            <button class="btn btn-custom shadow">
-                                                Vedi i ristoranti registrati
-                                            </button>
-                                        </a>
+                                        <div class="d-none d-lg-block">
+                                            <a class="color-transparent" href="{{ route('index.restaurants') }}">
+                                                <button class="btn btn-custom shadow">
+                                                    Vedi i ristoranti registrati
+                                                </button>
+                                            </a>
+                                        </div>
+                                        <div class="d-lg-none">
+                                            <a class="color-transparent" href="{{ route('index.restaurants') }}">
+                                                <button class="btn btn-custom shadow">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                </button>
+                                            </a>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -211,11 +239,20 @@
                                       <div class="card custom-bg shadow">
                                           <div class="card-body text-center">
                                               <h3 class="card-title text-white">Gestione ristoratori</h3>
+                                              <div class="d-none d-lg-block">
+                                                  <a class="color-transparent" href="{{ route('index.users') }}">
+                                                      <button class="btn custom-color shadow" style="background-color: white">
+                                                          Vedi i ristoratori registrati
+                                                      </button>
+                                                  </a>
+                                              </div>
+                                              <div class="d-lg-none">
                                                 <a class="color-transparent" href="{{ route('index.users') }}">
                                                     <button class="btn custom-color shadow" style="background-color: white">
-                                                        Vedi i ristoratori registrati
+                                                        <i class="fa-solid fa-eye"></i>
                                                     </button>
                                                 </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
