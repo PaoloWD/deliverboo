@@ -39,7 +39,7 @@
                                             </button>
                                         </a>
                                     </div>
-                                    <div class="position-absolute d-none d-md-block" style="right:350px; bottom:20px">
+                                    <div class="position-absolute d-none d-lg-block" style="right:350px; bottom:20px">
                                         <div class="">
                                             <a href="{{ route('chart', $restaurant->id) }}">
                                                 <button class="btn btn-sm btn-success btn-custom shadow">
@@ -50,7 +50,7 @@
                                     </div>
                                     @if($dishes)
                                         @foreach ($dishes as $dish)
-                                            <div class="position-absolute d-none d-md-block" style="right:200px; bottom:20px">
+                                            <div class="position-absolute d-none d-lg-block" style="right:200px; bottom:20px">
                                                 <a href="{{ route('dishes.show', $dish->id) }}">
                                                     <button class="btn btn-sm btn-success btn-custom shadow">
                                                         I tuoi piatti <i class="fa-solid fa-magnifying-glass ms-2"></i>
@@ -59,7 +59,7 @@
                                             </div>
                                         @endforeach
                                     @endif
-                                    <div class="d-none d-md-block">
+                                    <div class="d-none d-lg-block">
                                         <a href="{{ route('restaurants.showOrders', $restaurant->id) }}">
                                             <button class="btn btn-success btn-custom shadow">
                                                 Riepilogo ordini
@@ -68,12 +68,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-none d-md-flex justify-content-between">
+                            <div class="d-none d-lg-flex justify-content-between">
                                 <div class="mt-5 mb-3">
 
                                     <a href="{{ route('dishes.create') }}">
                                         <button class="btn btn-success btn-custom shadow">
-                                            Crea il tuo piatto <i class=" ps-3 fa-solid fa-plus"></i>
+                                            Crea il tuo piatto<i class="ps-0 fa-solid fa-plus"></i>
                                         </button>
                                     </a>
                                 </div>
@@ -85,21 +85,21 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="d-md-none col-12 mt-2">
+                                <div class="d-lg-none col-12 mt-2">
                                     <a href="{{ route('restaurants.showOrders', $restaurant->id) }}">
                                         <button class="btn btn-success w-100 btn-custom shadow">
                                             Riepilogo ordini
                                         </button>
                                     </a>
                                 </div>
-                                <div class="d-md-none col-12 mt-2">
+                                <div class="d-lg-none col-12 mt-2">
                                     <a href="{{ route('chart', $restaurant->id) }}">
                                         <button class="btn btn-sm btn-success btn-custom w-100 shadow">
                                             Statistiche
                                         </button>
                                     </a>
                                 </div>
-                                <div class="d-md-none col-12 ">
+                                <div class="d-lg-none col-12 ">
                                     <div class="mt-2">
                                         <a href="{{ route('dishes.create') }}">
                                             <button class="btn btn-success btn-custom w-100 shadow">
@@ -108,9 +108,18 @@
                                         </a>
                                     </div>
                                 </div>
+                                <div class="d-lg-none col-12">
+                                     <div class="mt-2">
+                                        <a href="{{ route('dishes.show', $dish->id) }}">
+                                            <button class="btn btn-sm btn-success btn-custom w-100 shadow">
+                                                I tuoi piatti <i class="fa-solid fa-magnifying-glass ms-2"></i>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
 
-                            <table class="table table-striped table-hover">
+                            <table class="table d-none d-lg-table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">Immagine</th>
