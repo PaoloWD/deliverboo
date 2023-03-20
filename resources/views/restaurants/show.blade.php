@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="bg-dashboard">
-    <div class="container">
-        <div class="pt-5 text-center">
-            <div class="card p-5 rounded-5" style="opacity: 0.95">
-                <h1 class="custom-color">Questo è il tuo ristorante!</h1>
-                <div class="card show-restaurant mt-4 p-4">
+    <div class="container py-3">
+        <div class=" text-center">
+            <div class="" style="opacity: 0.95">
+                {{-- <h2 class="custom-color title-show-resturant">Questo è il tuo ristorante!</h2> --}}
+                <div class="card show-restaurant p-3">
                     <div class="card-title text-center">
                         <h2></h2>
                     </div>
@@ -23,13 +23,13 @@
                         <p><strong>Indirizzo:</strong> {{$restaurant->address}}</p>
                         <p><strong>Categorie:</strong>
                             @foreach ($restaurant->categories as $categories )
-                            <div class="badge text-bg-danger custom-bg rounded-pill my-3 shadow">
+                            <div class="badge text-bg-danger custom-bg rounded-pill shadow mb-0">
                                 {{ $categories->name }}
                             </div>
                             @endforeach 
                         </p>
                     </div>
-                    <div class="text-center mt-4">
+                    <div class="text-center mt-2">
                         <a href="{{ route('dashboard') }}">
                             <button class="btn btn-success btn-custom"> Torna al pannello di controllo </button>
                         </a>
